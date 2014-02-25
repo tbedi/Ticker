@@ -11,7 +11,7 @@ namespace Ticker.Classes
 {
     public class cPichart 
     {
-        public Highcharts GetPichart()
+        public static Highcharts GetPichart()
         {
             Highcharts chart = new Highcharts("chart")
           .InitChart(new Chart
