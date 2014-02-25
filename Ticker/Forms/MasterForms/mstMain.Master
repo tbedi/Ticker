@@ -8,12 +8,13 @@
     <script src="../../Themes/js/highcharts.js"></script>
     <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
     <script src="../../Themes/js/jquery.min.js"></script>
+    <link href="../../Themes/Css/ssResponsive.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div >
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
