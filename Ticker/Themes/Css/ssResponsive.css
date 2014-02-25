@@ -15,8 +15,8 @@
 
 .boxStyleKey {
     background: rgba(128, 128, 128, 0.60);
-    height: 200px;
-    width: 250px;
+    height:200px;
+    width: 350px;
     border:thin solid #0094ff;
     -webkit-transition: all 1s;
     transition: all 1s;

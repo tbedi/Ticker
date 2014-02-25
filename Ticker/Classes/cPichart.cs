@@ -21,10 +21,10 @@ namespace Ticker.Classes
               {
                   LinearGradient = new[] { 0, 0, 0, 400 },
                   Stops = new object[,]
-            {
-                { 0, Color.FromArgb(13, 255, 255, 255) },
-                { 1, Color.FromArgb(13, 255, 255, 255) }
-            }
+                  {
+                    { 0, Color.FromArgb(13, 255, 255, 255) },
+                    { 1, Color.FromArgb(13, 255, 255, 255) }
+                  }
               })
           })
           .SetTitle(new Title { Text = "Browser market shares at a specific website, 2010" })
@@ -62,7 +62,8 @@ namespace Ticker.Classes
                                            new object[] { "Opera", 6.2 },
                                            new object[] { "Others", 0.7 }
                                        })
-          });
+          })
+          ;
 
             return chart;
         }

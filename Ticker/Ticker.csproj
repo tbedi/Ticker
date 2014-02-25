@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Forms\Pages\ajxCalls.aspx" />
     <Content Include="Forms\Pages\frmDashboard.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
     <Content Include="Themes\js\highcharts-more.js" />
@@ -72,13 +73,22 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\cDonut.cs" />
     <Compile Include="Classes\cPichart.cs" />
+    <Compile Include="Classes\ExtensionMethods.cs" />
     <Compile Include="Forms\MasterForms\mstMain.Master.cs">
       <DependentUpon>mstMain.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\MasterForms\mstMain.Master.designer.cs">
       <DependentUpon>mstMain.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\ajxCalls.aspx.cs">
+      <DependentUpon>ajxCalls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\ajxCalls.aspx.designer.cs">
+      <DependentUpon>ajxCalls.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pages\frmDashboard.aspx.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
@@ -91,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forms\MasterForms\mstMain.Master" />
+    <Content Include="Themes\js\jquery-2.0.2.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

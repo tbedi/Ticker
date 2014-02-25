@@ -6,8 +6,10 @@
     <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
     <script src="../../Themes/js/highcharts.src.js"></script>
     <div id="Flick" class="HomeDivKey">
-        <div id="dvNewyorkBoxHolder" class="boxStyleKey"></div>
-        <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+        <div id="dvNewyorkBoxHolder" class="boxStyleKey">
+            <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+        </div>
     </div>
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+   
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 </asp:Content>
