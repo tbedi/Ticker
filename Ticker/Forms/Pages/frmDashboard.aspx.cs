@@ -16,17 +16,19 @@ namespace Ticker.Forms.Pages
 {
     public partial class frmDashboard : System.Web.UI.Page
     {
+        public static string p1 = "";
+             
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             ltrChart.Text = cDonut.ExampleDonut().ToHtmlString();
         }
 
         [System.Web.Services.WebMethod]
         [System.Web.Script.Services.ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static String apply()
+        public static void apply()
         {
-            String name = @"[['Firefox', 44.2],['IE7', 26.6],['IE6', 20],['Chrome', 3.1],['Remain',10]]";
-            return name;
+            p1 = "['Firefox', 44.2],['IE7', 26.6],['IE6', 20],['Chrome', 3.1],['Remain',10]";
         }
 
 

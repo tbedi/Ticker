@@ -27,19 +27,20 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Width=350,
-                    Height=200
+                    Height = 200,
+                    Width = 350
                 }
                 )
-                .SetTitle(new Title { Text = "Salses per year" })
+                .SetTitle( new Title { Text = ""} )
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %'; }" })
                 .SetPlotOptions(new PlotOptions
                 {
                     Pie = new PlotOptionsPie
                     {
                         AllowPointSelect = true,
-                        InnerSize= new PercentageOrPixel(60, true),
+                        InnerSize = new PercentageOrPixel(60, true),
                         Cursor = Cursors.Pointer,
+                        Size = new PercentageOrPixel(100, true),
                         DataLabels = new PlotOptionsPieDataLabels
                         {
                             Color = ColorTranslator.FromHtml("#000000"),
@@ -54,7 +55,7 @@ namespace Ticker.Classes
                             }
                         }
                     }
-                    
+
                 })
                 .SetSeries(new Series
                 {
@@ -76,6 +77,7 @@ namespace Ticker.Classes
                                                new object[] { "Others", 0.7 }
                                            })
                 });
+              
             return chart;
         }
     }
