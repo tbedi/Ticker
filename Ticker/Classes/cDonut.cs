@@ -7,13 +7,16 @@ using DotNet.Highcharts.Enums;
 using DotNet.Highcharts.Helpers;
 using DotNet.Highcharts.Options;
 using System.Drawing;
+using Ticker.BI;
 
 namespace Ticker.Classes
 {
     public static class cDonut
     {
-        public static  Highcharts OrderCanceledDonut()
+       public static BIOrder b = new BIOrder();
+        public static Highcharts OrderCanceledDonut()
         {
+           
             Highcharts chart = new Highcharts("chart")
                 .InitChart(new Chart
                 {
@@ -39,7 +42,7 @@ namespace Ticker.Classes
                         Style = "color: '#FFF'",
                         Floating=true,
                     })
-                .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ this.percentage +' %'; }" })
+                .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %'; }" })
                 .SetPlotOptions(new PlotOptions
                 {
                     Pie = new PlotOptionsPie
@@ -53,7 +56,7 @@ namespace Ticker.Classes
                             Distance = 0,
                             Color = ColorTranslator.FromHtml("#232222"),
                             ConnectorColor = ColorTranslator.FromHtml("#808080"),
-                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.percentage; }"
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage); }"
                         },
                         Point = new PlotOptionsPiePoint
                         {
@@ -70,13 +73,7 @@ namespace Ticker.Classes
                 {
                     Type = ChartTypes.Pie,
                     Name = "Browser share",
-                    Data = new Data(new object[]
-                                           {
-                                               new object[] { "SOW", 18 },
-                                               new object[] { "SOPR", 12, },
-                                               new object[] { "SOI", 20, },
-                                               new object[] { "SOEP", 50, }
-                                           })
+                    Data = new Data(b.GetOrder().ToPieChartSeries())
                 });
             return chart;
         }

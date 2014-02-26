@@ -42,7 +42,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\DotNet.Highcharts.2.0\DotNet.Highcharts.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -76,11 +82,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BI\BIOrder.cs" />
     <Compile Include="Classes\cDonut.cs" />
     <Compile Include="Classes\cGuage.cs" />
     <Compile Include="Classes\cPichart.cs" />
     <Compile Include="Classes\cStackedBar.cs" />
     <Compile Include="Classes\ExtensionMethods.cs" />
+    <Compile Include="DataBase\Command\cmdClass.cs" />
+    <Compile Include="DataBase\EntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Forms\MasterForms\mstMain.Master.cs">
       <DependentUpon>mstMain.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,9 +131,20 @@
       <DependentUpon>frmStackedBar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\OrderDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forms\MasterForms\mstMain.Master" />
+    <EntityDeploy Include="DataBase\EntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EntityModel.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EntityDeploy>
+    <Content Include="DataBase\EntityModel.edmx.diagram">
+      <DependentUpon>EntityModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Themes\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -141,7 +169,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>false</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
