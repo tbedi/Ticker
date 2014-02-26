@@ -1,109 +1,55 @@
 ﻿body {
+      background: #494848;
     width: 100%;
-    height: 800px;
+    height: 780px;
     margin:0;
+
 }
 
-/*Home Page Div*/
+td {
+    /*//border:thin solid Black*/
+}
+
+.divOrderDetails {
+    background:rgba(0, 0, 0, .60);
+    width:250px;
+    height:500px;
+
+}
 .HomeDivKey {
     background: #494848;
     background-size: cover;
     width: 100%;
-    height: 800px;
     margin: 0px;
+    
+    
+}
+.CenterLabel1 {
+    position:absolute;
+    margin-left:105px;
+    margin-top:75px;
+    color:#093b5c;
+    font-size:40px;
 }
 
 .boxStyleKey {
     background: rgba(128, 128, 128, 0.60);
     height:200px;
-    width: 350px;
-    border:thin solid #0094ff;
+    width: 270px;
+    float:left;
+    margin-left:10px;
     -webkit-transition: all 1s;
-    transition: all 1s;
-}
-/*#region Donut Chart */
-
-.donut-container {
-    width: 150px;
-    height: 150px;
-    float: left;
-    -webkit-border-radius: 175px;
-    -moz-border-radius: 175px;
-    border-radius: 175px;
-    margin-right: 20px;
+    transition: all 1s ;
+    
 }
 
-.donut-inner {
-    width: 134px;
-    height: 134px;
-    position: relative;
-    top: 8px;
-    left: 8px;
-    background: #FFF;
-    -webkit-border-radius: 65px;
-    -moz-border-radius: 65px;
-    border-radius: 65px;
-}
-
-.donut-label {
-    line-height: 130px;
-    text-align: center;
-    font-size: 20px;
-}
-
-/*#endregion */
-/*#region Slide page */
-
-#Flick {
-    margin: 0;
-    -webkit-animation: fadein 5s; /* Safari and Chrome */
-    -moz-animation: fadein 5s; /* Firefox */
-    -ms-animation: fadein 5s; /* Internet Explorer */
-    -o-animation: fadein 5s; /* Opera */
-    animation: fadein 5s;
-}
-
-@keyframes fadein {
-    from {
-        margin-top: -810px;
-    }
-
-    to {
-        margin-top: 0px;
-    }
-}
-
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        margin-top: -810px;
-    }
-
-    to {
-        margin-top: 0px;
-    }
-}
-
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        margin-top: -810px;
-    }
-
-    to {
-        margin-top: 0px;
-    }
-}
-
-@-o-keyframes fadein { /* Opera */
-    from;
-
-{
-    margin-top: -810px;
-}
-
-to {
-    margin-top: 0px;
-}
+.leftSideBox {
+     background: rgba(128, 128, 128, 0.60);
+    height:200px;
+    width: 250px;
+    float:left;
+    margin-left:10px;
+    -webkit-transition: all 1s;
+    transition: all 1s ;
 
 }
-
-/*#endregion */

@@ -42,10 +42,78 @@
         });
     </script>
      <div id="container" style="height: 200px; width: 350px"></div>--%>
-    <div id="Flick" class="HomeDivKey">
-        <div id="dvNewyorkBoxHolder" class="boxStyleKey">
-            <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
-        </div>
-    </div>
+    <table style="width: 1600px; border: thin solid Black; height: 780px">
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <div id="dvBoxLeftTop" class="leftSideBox">
+                    <asp:Label ID="lblDate" runat="server" Text="14"  ForeColor="#cccccc" Font-Size="50" />
+                </div>
+            </td>
+            <td>&nbsp;</td>
+            <td rowspan="2" style="vertical-align: bottom">
+                <table id="tblOrderDetails" style="width: 80%;">
+                    <tr>
+                        <td colspan="2">
+                            <asp:Label ID="lblOrderHeader" runat="server" Text="ORDER PROCESSING" Font-Size="X-Large" ForeColor="#ffffff" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="dvNywhDetails" class="divOrderDetails" style="float: right">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div id="dvNywt" class="divOrderDetails" style="float: left">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+            <td>
+                <div class="leftSideBox" style="width: 400px"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)"></div>
+            </td>
+            <td style="vertical-align: bottom">
+                <div class="leftSideBox" style="width: 400px; float: left"></div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td colspan="2">
+                <div id="dvMain" class="HomeDivKey">
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <div>
+                                    <div id="asdFlick" class="boxStyleKey"  >
+                                        <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
+                                        <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+                                    </div>
+                                    <div id="Div2" class="boxStyleKey" >
+                                        <asp:Label ID="Label1" runat="server" Text="910" CssClass="CenterLabel1" />
+                                        <asp:Literal ID="ltrOrderhold" runat="server"></asp:Literal>
+                                    </div>
+                                    <div id="dvSetting" class="leftSideBox" style="width: 230px; background: #007acc"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+   
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 </asp:Content>
