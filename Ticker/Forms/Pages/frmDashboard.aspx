@@ -42,19 +42,45 @@
         });
     </script>
      <div id="container" style="height: 200px; width: 350px"></div>--%>
-    <table style="width: 1600px; border: thin solid Black; height: 780px">
+    <table class="maintbl">
         <tr>
             <td colspan="4">&nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="vertical-align: bottom;">
                 <div id="dvBoxLeftTop" class="leftSideBox">
-                    <asp:Label ID="lblDate" runat="server" Text="14"  ForeColor="#cccccc" Font-Size="50" />
+                    <asp:Label ID="lblDate" runat="server" Text="14" ForeColor="#cccccc" Font-Size="50" />
                 </div>
             </td>
-            <td>&nbsp;</td>
-            <td rowspan="2" style="vertical-align: bottom">
-                <table id="tblOrderDetails" style="width: 80%;">
+            <td style="width: 30%;">
+                <table style="width: 100%">
+                    <tr>
+                        <td colspan="2">
+                            <asp:Label ID="Label2" runat="server" Text="ORDER DETAILS" Font-Size="X-Large" ForeColor="#ffffff" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="smallBox"></div>
+                        </td>
+                        <td>
+                            <div class="smallBox"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="smallBox"></div>
+                        </td>
+                        <td>
+                            <div class="smallBox"></div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+            <td rowspan="2" style="vertical-align: bottom;">
+                <table id="tblOrderDetails" style="width: 100%;">
                     <tr>
                         <td colspan="2">
                             <asp:Label ID="lblOrderHeader" runat="server" Text="ORDER PROCESSING" Font-Size="X-Large" ForeColor="#ffffff" />
@@ -63,11 +89,43 @@
                     <tr>
                         <td>
                             <div id="dvNywhDetails" class="divOrderDetails" style="float: right">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="text-align:center;">
+                                            <asp:Label ID="Label3" runat="server" Text="NYWH" Font-Size="Large" ForeColor="#fff00" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </table>
                             </div>
                         </td>
 
                         <td>
                             <div id="dvNywt" class="divOrderDetails" style="float: left">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td style="text-align:center;" >
+                                            <asp:Label ID="Label4" runat="server" Text="NYWT" Font-Size="Large" ForeColor="#fff00" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </table>
                             </div>
                         </td>
                     </tr>
@@ -75,15 +133,15 @@
 
             </td>
             <td>
-                <div class="leftSideBox" style="width: 400px"></div>
+                <div class="leftSideBox" style="width: 200px"></div>
             </td>
         </tr>
         <tr>
-            <td>
+            <td style="vertical-align: top; float: left;">
                 <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)"></div>
             </td>
             <td style="vertical-align: bottom">
-                <div class="leftSideBox" style="width: 400px; float: left"></div>
+                <div class="leftSideBox" style="width: 97%; float: left"></div>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -95,11 +153,11 @@
                         <tr>
                             <td>
                                 <div>
-                                    <div id="asdFlick" class="boxStyleKey"  >
+                                    <div id="asdFlick" class="boxStyleKey">
                                         <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
                                         <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                                     </div>
-                                    <div id="Div2" class="boxStyleKey" >
+                                    <div id="Div2" class="boxStyleKey">
                                         <asp:Label ID="Label1" runat="server" Text="910" CssClass="CenterLabel1" />
                                         <asp:Literal ID="ltrOrderhold" runat="server"></asp:Literal>
                                     </div>

@@ -121,7 +121,7 @@ namespace Ticker.Classes
                             Distance = 0,
                             Color = ColorTranslator.FromHtml("#232222"),
                             ConnectorColor = ColorTranslator.FromHtml("#808080"),
-                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ this.percentage; }"
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+this.percentage; }"
                         },
                         Point = new PlotOptionsPiePoint
                         {
