@@ -21,7 +21,7 @@ namespace Ticker.Forms.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
            
-            ltrChart.Text = cDonut.ExampleDonut().ToHtmlString();
+           ltrChart.Text = cDonut.ExampleDonut().ToHtmlString();
         }
 
         [System.Web.Services.WebMethod]
