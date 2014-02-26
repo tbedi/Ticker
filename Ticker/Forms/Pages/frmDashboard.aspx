@@ -91,7 +91,7 @@
                             <div id="dvNywhDetails" class="divOrderDetails" style="float: right">
                                 <table style="width: 100%">
                                     <tr>
-                                        <td style="text-align:center;">
+                                        <td style="text-align: center;">
                                             <asp:Label ID="Label3" runat="server" Text="NYWH" Font-Size="Large" ForeColor="#fff00" />
                                         </td>
                                     </tr>
@@ -112,7 +112,7 @@
                             <div id="dvNywt" class="divOrderDetails" style="float: left">
                                 <table style="width: 100%">
                                     <tr>
-                                        <td style="text-align:center;" >
+                                        <td style="text-align: center;">
                                             <asp:Label ID="Label4" runat="server" Text="NYWT" Font-Size="Large" ForeColor="#fff00" />
                                         </td>
                                     </tr>
