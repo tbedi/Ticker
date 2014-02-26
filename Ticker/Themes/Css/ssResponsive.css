@@ -10,12 +10,7 @@ td {
     /*//border:thin solid Black*/
 }
 
-.divOrderDetails {
-    background:rgba(15, 103, 169, 0.71);
-    width:300px;
-    height:500px;
 
-}
 .HomeDivKey {
     background: #494848;
     background-size: cover;
@@ -60,4 +55,29 @@ td {
     margin: 5px;
     -webkit-transition: all 1s;
     transition: all 1s;
+}
+.divOrderDetails {
+    background:rgba(0, 122, 204, 0.76);
+    width:300px;
+    height:500px;
+}
+.ShipmentInfoDiv {
+    /*border-radius:5px;*/
+    background:rgba(255, 255, 255, 0.40);
+    width: 100%;
+    height: 130px;
+    text-align: center;
+    vertical-align: central;
+    margin:0;
+}
+
+.lblShipmentNumber {
+    color:whitesmoke;
+    font-size:75px;
+    font-weight:bold;
+    font-family:Arial, Verdana, Candara ;
+}
+.lblShipmentSubtitle {
+     color:whitesmoke;
+    font-size:25px;
 }

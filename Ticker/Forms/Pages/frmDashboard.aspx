@@ -3,45 +3,20 @@
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
     <script src="../../Themes/js/highcharts.src.js"></script>
-  <%--  <script type="text/javascript">
+    <%--<script type="text/javascript">
         $(document).ready(function Donutchart() {
-            var chart = new Highcharts.Chart({
-                chart: {
-                    renderTo: 'container',
-                    type: 'pie'
-                },
+            $.ajax({
+                type: "POST",
+                contenttype: "application",
 
-                plotOptions: {
-                    pie: {
-                        borderColor: '#000000',
-                        innerSize: '60%'
-                    }
-                },
-                series: [{
-                    data:[ <%=p1%>]
-                }]
-            },
-            // using 
 
-            function (chart) {
-                var xpos = '50%'; var ypos = '53%'; var circleradius = 102; chart.renderer.circle(xpos, ypos, circleradius).attr({ fill: '#ddd', }).add();
-
-                // Render the text 
-                chart.renderer.text('<span style="color:Gray; fontSize:35;">35%</span>', 155, 215).css({
-                    width: circleradius * 2,
-                    color: '#4572A7',
-                    fontSize: '16px',
-                    textAlign: 'center'
-                }).attr({
-                    // why doesn't zIndex get the text in front of the chart?
-                    zIndex: 999
-                }).add();
-            });
+                });
         });
-    </script>
-     <div id="container" style="height: 200px; width: 350px"></div>--%>
+            
+    </script>--%>
     <table class="maintbl">
         <tr>
             <td colspan="4">&nbsp;</td>
@@ -91,18 +66,40 @@
                             <div id="dvNywhDetails" class="divOrderDetails" style="float: right">
                                 <table style="width: 100%">
                                     <tr>
-                                        <td style="text-align: center;">
-                                            <asp:Label ID="Label3" runat="server" Text="NYWH" Font-Size="Large" ForeColor="#fff00" />
+                                        <td style="text-align: left;">
+                                            <asp:Label ID="Label3" runat="server" Text="SYOSSET" Font-Size="25" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td>
+                                            <div class="ShipmentInfoDiv">
+                                                <p>
+                                                    <asp:Label ID="Label5" runat="server" Text="New Shipment" CssClass="lblShipmentSubtitle" />
+                                                </p>
+                                                <asp:Label ID="lblNewNywhNumber" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                            </div>
+
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>&nbsp;</td>
+                                        <td>
+                                            <div class="ShipmentInfoDiv">
+                                                <p>
+                                                    <asp:Label ID="Label8" runat="server" Text="In process" CssClass="lblShipmentSubtitle" />
+                                                </p>
+                                                <asp:Label ID="Label9" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td>
+                                            <div class="ShipmentInfoDiv">
+                                                <p>
+                                                    <asp:Label ID="Label10" runat="server" Text="Shipped" CssClass="lblShipmentSubtitle" />
+                                                </p>
+                                                <asp:Label ID="Label11" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                            </div>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -112,18 +109,39 @@
                             <div id="dvNywt" class="divOrderDetails" style="float: left">
                                 <table style="width: 100%">
                                     <tr>
-                                        <td style="text-align: center;">
-                                            <asp:Label ID="Label4" runat="server" Text="NYWT" Font-Size="Large" ForeColor="#fff00" />
+                                        <td style="text-align: left;">
+                                            <asp:Label ID="Label4" runat="server" Text="PORT WASHINGTON" Font-Size="23" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td>
+                                            <div class="ShipmentInfoDiv">
+                                                <p>
+                                                    <asp:Label ID="Label6" runat="server" Text="New Shipment" CssClass="lblShipmentSubtitle" />
+                                                </p>
+                                                <asp:Label ID="Label7" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>&nbsp;</td>
+                                        <td>
+                                            <div class="ShipmentInfoDiv">
+                                                <p>
+                                                    <asp:Label ID="Label12" runat="server" Text="In process " CssClass="lblShipmentSubtitle" />
+                                                </p>
+                                                <asp:Label ID="Label13" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td></td>
+                                        <td>
+                                            <div class="ShipmentInfoDiv">
+                                                <p>
+                                                    <asp:Label ID="Label14" runat="server" Text="Shipped" CssClass="lblShipmentSubtitle" />
+                                                </p>
+                                                <asp:Label ID="Label15" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                            </div>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -155,13 +173,21 @@
                                 <div>
                                     <div id="asdFlick" class="boxStyleKey">
                                         <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
-                                        <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                            <ContentTemplate>
+                                                <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                     </div>
                                     <div id="Div2" class="boxStyleKey">
                                         <asp:Label ID="Label1" runat="server" Text="910" CssClass="CenterLabel1" />
-                                        <asp:Literal ID="ltrOrderhold" runat="server"></asp:Literal>
+                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                            <ContentTemplate>
+                                                <asp:Literal ID="ltrOrderhold" runat="server"></asp:Literal>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                     </div>
-                                    <div id="dvSetting" class="leftSideBox" style="width: 230px; background: #007acc"></div>
+                                    <div id="dvSetting" class="leftSideBox" style="width: 230px; background: rgba(135, 56, 5, 0.89)"></div>
                                 </div>
                             </td>
                         </tr>
@@ -172,6 +198,6 @@
             <td>&nbsp;</td>
         </tr>
     </table>
-   
-    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+    <asp:Timer ID="tmrAjaxOrderOnCold" runat="server" Interval="30000" OnTick="tmrAjaxOrderOnCold_Tick"></asp:Timer>
+    
 </asp:Content>
