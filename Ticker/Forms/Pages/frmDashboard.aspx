@@ -11,7 +11,7 @@
             <td style="vertical-align: bottom;">
                 <div id="dvBoxLeftTop" class="leftSideBox">
                     <%--<asp:Label ID="lblDate" runat="server" Text="14" ForeColor="#cccccc" Font-Size="50" />--%>
-                    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                    <asp:UpdatePanel ID="upPanel" runat="server">
                         <ContentTemplate>
                             <asp:Literal ID="ltrRegularOrder" runat="server"></asp:Literal>
                         </ContentTemplate>
@@ -162,16 +162,19 @@
                     <table style="width: 100%">
                         <tr>
                             <td>
-                                <div>
-                                   
-                                    <div class="BottomChartBOx" >
-                                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
-                                            <ContentTemplate>
-                                                <asp:Literal ID="ltrStackedColumn" runat="server"></asp:Literal>
-                                            </ContentTemplate>
-                                        </asp:UpdatePanel>
-                                    </div>
-                                    <div id="dvSetting" class="leftSideBox" style="width: 230px; background: rgba(135, 56, 5, 0.89)"></div>
+                                <div class="BottomChartBOx" style="float:left;">
+                                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                        <ContentTemplate>
+                                            <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                                 <div class="BottomChartBOx"  style="float:left; background:rgba(50, 192, 202, 0.53)">
+                                    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                                        <ContentTemplate>
+                                            <asp:Literal ID="ltrStackedColumnTop5Partner" runat="server"></asp:Literal>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
                                 </div>
                             </td>
                         </tr>

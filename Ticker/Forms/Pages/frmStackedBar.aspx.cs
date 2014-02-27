@@ -12,7 +12,7 @@ namespace Ticker.Forms.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ltrChart.Text = cStackedBar.GetStackedBar().ToHtmlString();
+            ltrChart.Text = cStackedBar.GetTop_5_SKU_By_Ordered().ToHtmlString();
         }
     }
 }
