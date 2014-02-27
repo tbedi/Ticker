@@ -74,7 +74,17 @@ namespace Ticker.Forms.Pages
             ltrStackedColumn.Text = cStackedBar.GetStackedBar().ToHtmlString();
 
             ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
-            litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
+
+            if (cDonut.PartOrderQuantity().ToHtmlString()==null)
+            {
+                litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
+            }
+            else
+            {
+                lblError.Text = "Record Not Found";
+            }
+
+            lblHoldOrder.Text = "";
 
         }
     }

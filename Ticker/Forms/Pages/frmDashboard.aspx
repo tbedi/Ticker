@@ -27,7 +27,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="smallBox"></div>
+                            <div class="smallBox">
+                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle"></asp:Label>
+                                <asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle"> </asp:Label>
+                            </div>
                         </td>
                         <td>
                             <div class="smallBox"></div>
@@ -145,6 +148,7 @@
                     <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                         <ContentTemplate>
                             <asp:Literal ID="litPartOrderQuantity" runat="server"></asp:Literal>
+                            <asp:Label ID="lblError" runat="server"></asp:Label>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>

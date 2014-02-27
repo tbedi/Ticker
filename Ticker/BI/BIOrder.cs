@@ -91,6 +91,19 @@ namespace Ticker.BI
         
         }
 
+        public int GetHold()
+        {
+            int hold = 0;
+            try
+            {
+              hold= order.GetNoOfHoldOrders();
+            }
+            catch (Exception)
+            {
+            }
+            return hold;
+        }
+
 
         public double GetTotalOrder()
         {

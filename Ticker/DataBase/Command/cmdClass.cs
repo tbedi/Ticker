@@ -44,11 +44,63 @@ namespace Ticker.DataBase.Command
             List<RegularOrderDTO> lsorder = new List<RegularOrderDTO>();
             try
             {
-                var Reugular = _x3v6.ExecuteStoreQuery<RegularOrderDTO>(@"SELECT so.SOHTYP_0 [OrderType],cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-                                                                   FROM PRODUCTION.SORDER so WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                   AND so.SOHTYP_0 IN ('SOI','SON','SOP')
-                                                                   GROUP BY so.SOHTYP_0
-                                                                   ORDER BY [NoofRegularOrders] desc, [OrderType];").ToList();
+                var Reugular = _x3v6.ExecuteStoreQuery<RegularOrderDTO>(@"select distinct soh.SOHTYP_0 [OrderType] , ISNULL(a.[NoofRegularOrders],0) AS [NoofRegularOrders]
+from PRODUCTION.SORDER soh left join (SELECT
+
+so.SOHTYP_0 [OrderType],
+
+cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+
+FROM
+
+PRODUCTION.SORDER so
+
+WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+
+AND so.SOHTYP_0 IN ('SOI')
+
+GROUP BY so.SOHTYP_0
+
+union
+
+SELECT
+
+so.SOHTYP_0 [OrderType],
+
+cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+
+FROM
+
+PRODUCTION.SORDER so
+
+WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+
+AND so.SOHTYP_0 IN ('SON')
+
+GROUP BY so.SOHTYP_0
+
+
+union
+
+SELECT
+
+so.SOHTYP_0 [OrderType],
+
+cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+
+FROM
+
+PRODUCTION.SORDER so
+
+WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+
+AND so.SOHTYP_0 IN ('SOP')
+
+GROUP BY so.SOHTYP_0) as a
+
+on soh.SOHTYP_0 = a.[OrderType]
+where soh.SOHTYP_0 IN ('SON','SOI','SOP')
+ORDER BY [NoofRegularOrders] DESC;").ToList();
                 if (Reugular.Count() > 0)
                 {
                     foreach (var item in Reugular)
