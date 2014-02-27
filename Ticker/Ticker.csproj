@@ -131,7 +131,12 @@
       <DependentUpon>frmStackedBar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\HoldOrder.cs" />
     <Compile Include="Views\OrderDTO.cs" />
+    <Compile Include="Views\PartOrderDTO.cs" />
+    <Compile Include="Views\RegularOrderDTO.cs" />
+    <Compile Include="Views\TopPartnerDTO.cs" />
+    <Compile Include="Views\TopQuantityOrdered.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forms\MasterForms\mstMain.Master" />
@@ -169,7 +174,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>62229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

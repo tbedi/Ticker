@@ -70,7 +70,7 @@ namespace Ticker.Classes
                 {
                     Type = ChartTypes.Pie,
                     Name = "Browser share",
-                    Data = new Data(b.GetOrder().ToPieChartSeries())
+                    Data = new Data(b.GetQuantityOrderCat().ToPieChartSeries())
                 });
             return chart;
         }
@@ -139,5 +139,127 @@ namespace Ticker.Classes
                 });
             return chart;
         }
+
+        public static Highcharts RegularOrder()
+        {
+
+            Highcharts chart = new Highcharts("chartRegular")
+                .InitChart(new Chart
+                {
+                    PlotShadow = false,
+                    BackgroundColor = new BackColorOrGradient(new Gradient
+                    {
+                        LinearGradient = new[] { 0, 0, 0, 400 },
+                        Stops = new object[,]
+                  {
+                    { 0, Color.FromArgb(13, 255, 255, 255) },
+                    { 1, Color.FromArgb(13, 255, 255, 255) }
+                  }
+                    }),
+                    Height = 200,
+                    Width = 250,
+                    ZoomType = ZoomTypes.Xy,
+                })
+                .SetTitle(new Title
+                {
+
+                    Text = "",
+                })
+                .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %'; }" })
+                .SetPlotOptions(new PlotOptions
+                {
+                    Pie = new PlotOptionsPie
+                    {
+                        AllowPointSelect = true,
+                        InnerSize = new PercentageOrPixel(60, true),
+                        Cursor = Cursors.Auto,
+                        Size = new PercentageOrPixel(90, true),
+                        DataLabels = new PlotOptionsPieDataLabels
+                        {
+                            Distance = 5,
+                            Color = ColorTranslator.FromHtml("#fffff"),
+                            ConnectorColor = ColorTranslator.FromHtml("#fffff"),
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
+                        },
+                        Point = new PlotOptionsPiePoint
+                        {
+
+                            Events = new PlotOptionsPiePointEvents
+                            {
+                                //Click = "function() { alert (this.category +': '+ this.y); }"
+                            }
+                        }
+                    }
+
+                })
+                .SetSeries(new Series
+                {
+                    Type = ChartTypes.Pie,
+                    Name = "Browser share",
+                    Data = new Data(b.GetRegularOrderQuantity().RegularOrder())
+                });
+            return chart;
+        }
+        public static Highcharts PartOrderQuantity()
+        {
+
+            Highcharts chart = new Highcharts("chartParts")
+                .InitChart(new Chart
+                {
+                    PlotShadow = false,
+                    BackgroundColor = new BackColorOrGradient(new Gradient
+                    {
+                        LinearGradient = new[] { 0, 0, 0, 400 },
+                        Stops = new object[,]
+                  {
+                    { 0, Color.FromArgb(13, 255, 255, 255) },
+                    { 1, Color.FromArgb(13, 255, 255, 255) }
+                  }
+                    }),
+                    Height = 200,
+                    Width = 250,
+                    ZoomType = ZoomTypes.Xy,
+                })
+                .SetTitle(new Title
+                {
+
+                    Text = "",
+                })
+                .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %'; }" })
+                .SetPlotOptions(new PlotOptions
+                {
+                    Pie = new PlotOptionsPie
+                    {
+                        AllowPointSelect = true,
+                        InnerSize = new PercentageOrPixel(60, true),
+                        Cursor = Cursors.Auto,
+                        Size = new PercentageOrPixel(90, true),
+                        DataLabels = new PlotOptionsPieDataLabels
+                        {
+                            Distance = 5,
+                            Color = ColorTranslator.FromHtml("#fffff"),
+                            ConnectorColor = ColorTranslator.FromHtml("#fffff"),
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
+                        },
+                        Point = new PlotOptionsPiePoint
+                        {
+
+                            Events = new PlotOptionsPiePointEvents
+                            {
+                                //Click = "function() { alert (this.category +': '+ this.y); }"
+                            }
+                        }
+                    }
+
+                })
+                .SetSeries(new Series
+                {
+                    Type = ChartTypes.Pie,
+                    Name = "Browser share",
+                    Data = new Data(b.GetPartOrderQuantity().PartOrder())
+                });
+            return chart;
+        }
+
     }
 }
