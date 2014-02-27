@@ -17,14 +17,14 @@ namespace Ticker.DataBase.Command
             List<OrderDTO> lsorder = new List<OrderDTO>();
             try
             {
-                 var Catorder = _x3v6.ExecuteStoreQuery<OrderDTO>(@"SELECT itm.TCLCOD_0 [Category],
-                                                                          cast(SUM(soq.QTY_0) as float) [QtyOrdered]
-                                                                          FROM PRODUCTION.SORDER so INNER JOIN PRODUCTION.SORDERQ soq
-                                                                          ON soq.SOHNUM_0 = so.SOHNUM_0
-                                                                          INNER JOIN PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0
-                                                                          INNER JOIN PRODUCTION.ITMMASTER itm ON itm.ITMREF_0 = soq.ITMREF_0
-                                                                          WHERE  cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                          GROUP BY itm.TCLCOD_0 ORDER BY [QtyOrdered] desc, [Category];").ToList();
+                var Catorder = _x3v6.ExecuteStoreQuery<OrderDTO>(@"SELECT itm.TCLCOD_0 [Category],
+                                                                    cast(SUM(soq.QTY_0) as float) [QtyOrdered]
+                                                                    FROM PRODUCTION.SORDER so INNER JOIN PRODUCTION.SORDERQ soq
+                                                                    ON soq.SOHNUM_0 = so.SOHNUM_0
+                                                                    INNER JOIN PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0
+                                                                    INNER JOIN PRODUCTION.ITMMASTER itm ON itm.ITMREF_0 = soq.ITMREF_0 AND sop.LINTYP_0 <> 7
+                                                                    WHERE  cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                    GROUP BY itm.TCLCOD_0 ORDER BY [Category];").ToList();
                 if (Catorder.Count() > 0)
                 {
                     foreach (var item in Catorder)
@@ -45,62 +45,35 @@ namespace Ticker.DataBase.Command
             try
             {
                 var Reugular = _x3v6.ExecuteStoreQuery<RegularOrderDTO>(@"select distinct soh.SOHTYP_0 [OrderType] , ISNULL(a.[NoofRegularOrders],0) AS [NoofRegularOrders]
-from PRODUCTION.SORDER soh left join (SELECT
-
-so.SOHTYP_0 [OrderType],
-
-cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-
-FROM
-
-PRODUCTION.SORDER so
-
-WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-
-AND so.SOHTYP_0 IN ('SOI')
-
-GROUP BY so.SOHTYP_0
-
-union
-
-SELECT
-
-so.SOHTYP_0 [OrderType],
-
-cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-
-FROM
-
-PRODUCTION.SORDER so
-
-WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-
-AND so.SOHTYP_0 IN ('SON')
-
-GROUP BY so.SOHTYP_0
-
-
-union
-
-SELECT
-
-so.SOHTYP_0 [OrderType],
-
-cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-
-FROM
-
-PRODUCTION.SORDER so
-
-WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-
-AND so.SOHTYP_0 IN ('SOP')
-
-GROUP BY so.SOHTYP_0) as a
-
-on soh.SOHTYP_0 = a.[OrderType]
-where soh.SOHTYP_0 IN ('SON','SOI','SOP')
-ORDER BY [NoofRegularOrders] DESC;").ToList();
+                                                                                                        from PRODUCTION.SORDER soh left join (SELECT
+                                                                                                        so.SOHTYP_0 [OrderType],
+                                                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+                                                                                                        FROM
+                                                                                                        PRODUCTION.SORDER so
+                                                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                                                        AND so.SOHTYP_0 IN ('SOI')
+                                                                                                        GROUP BY so.SOHTYP_0
+                                                                                                        union
+                                                                                                        SELECT
+                                                                                                        so.SOHTYP_0 [OrderType],
+                                                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+                                                                                                        FROM
+                                                                                                        PRODUCTION.SORDER so
+                                                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                                                        AND so.SOHTYP_0 IN ('SON')
+                                                                                                        GROUP BY so.SOHTYP_0
+                                                                                                        union
+                                                                                                        SELECT
+                                                                                                        so.SOHTYP_0 [OrderType],
+                                                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+                                                                                                        FROM
+                                                                                                        PRODUCTION.SORDER so
+                                                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                                                        AND so.SOHTYP_0 IN ('SOP')
+                                                                                                        GROUP BY so.SOHTYP_0) as a
+                                                                                                        on soh.SOHTYP_0 = a.[OrderType]
+                                                                                                        where soh.SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                                                        ORDER BY [NoofRegularOrders] DESC;").ToList();
                 if (Reugular.Count() > 0)
                 {
                     foreach (var item in Reugular)
@@ -123,7 +96,7 @@ ORDER BY [NoofRegularOrders] DESC;").ToList();
             {
                 var parts = _x3v6.ExecuteStoreQuery<PartOrderDTO>(@"SELECT so.SOHTYP_0 [OrderType],cast(COUNT(so.SOHNUM_0) as float) [NoofPartOrders]
                                                                 FROM PRODUCTION.SORDER so WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                AND so.SOHTYP_0 IN ('SOPR','SOPRM','WRT') GROUP BY so.SOHTYP_0
+                                                                AND so.SOHTYP_0 IN ('SOPR','SOPRM','WRT') GROUP BY so.SOHTYP_0 
                                                                 ORDER BY [NoofPartOrders] desc, [OrderType];").ToList();
                 if (parts.Count() > 0)
                 {
@@ -159,15 +132,20 @@ ORDER BY [NoofRegularOrders] DESC;").ToList();
         
         }
 
-        public List<TopQuantityOrdered> GetTopQuantityOrder()
+        public List<TopQuantityOrdered> GetTop5SkuQuantityOrder()
         {
             List<TopQuantityOrdered> lstopquantity = new List<TopQuantityOrdered>();
             try
             {
-                var top = _x3v6.ExecuteStoreQuery<TopQuantityOrdered>(@"SELECT top 10 soq.ITMREF_0 [ProductID],sop.ITMDES_0 [SKU],cast(SUM(soq.QTY_0) as float) [QtyOrdered]
-                                                                        FROM PRODUCTION.SORDER so INNER JOIN PRODUCTION.SORDERQ soq ON soq.SOHNUM_0 = so.SOHNUM_0
-                                                                        INNER JOIN PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7
-                                                                        WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                var top = _x3v6.ExecuteStoreQuery<TopQuantityOrdered>(@"SELECT top 5 soq.ITMREF_0 [ProductID],sop.ITMDES_0 [SKU],cast(SUM(soq.QTY_0) as float) [QtyOrdered]
+                                                                        FROM 
+                                                                        PRODUCTION.SORDER so 
+                                                                        INNER JOIN 
+                                                                        PRODUCTION.SORDERQ soq 
+                                                                        ON soq.SOHNUM_0 = so.SOHNUM_0 
+                                                                        INNER JOIN PRODUCTION.SORDERP sop 
+                                                                        ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7 
+                                                                        WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date) 
                                                                         GROUP BY soq.ITMREF_0, sop.ITMDES_0
                                                                         ORDER BY [QtyOrdered] desc, [ProductID];").ToList();
                 if (top.Count() > 0)
@@ -185,14 +163,14 @@ ORDER BY [NoofRegularOrders] DESC;").ToList();
             return lstopquantity;
         }
 
-        public List<TopPartnerDTO> GetTopParnerOrder()
+        public List<TopPartnerDTO> GetTop5ParnerOrder()
         {
             List<TopPartnerDTO> lspartner = new List<TopPartnerDTO>();
             try
             {
-                var partner = _x3v6.ExecuteStoreQuery<TopPartnerDTO>(@"SELECT top 10 so.BPCORD_0 [PartnerID],so.BPCNAM_0 [Partner],cast(SUM(soq.QTY_0) as float) [QtyOrdered]
+                var partner = _x3v6.ExecuteStoreQuery<TopPartnerDTO>(@"SELECT top 5 so.BPCORD_0 [PartnerID],so.BPCNAM_0 [Partner],cast(SUM(soq.QTY_0) as float) [QtyOrdered]
                                                                        FROM PRODUCTION.SORDER so INNER JOIN PRODUCTION.SORDERQ soq ON soq.SOHNUM_0 = so.SOHNUM_0 INNER JOIN
-                                                                       PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7
+                                                                       PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7 
                                                                        WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                        GROUP BY so.BPCORD_0, so.BPCNAM_0
                                                                        ORDER BY [QtyOrdered] DESC, [Partner];").ToList();
