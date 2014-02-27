@@ -21,7 +21,7 @@ td {
 }
 .CenterLabel1 {
     position:absolute;
-    margin-left:-140px;
+    margin-left:-160px;
     margin-top:150px;
     color:#5fc0fe;
     /*color:#093b5c;*/
@@ -38,10 +38,11 @@ td {
     -webkit-transition: all 1s;
     transition: all 1s ;
     
+    
 }
 .BottomChartBOx {
     background: #0e0e0e;
-    width: 470px;
+    width: 440px;
     margin: 5px;
     height: 200px;
     float: left;

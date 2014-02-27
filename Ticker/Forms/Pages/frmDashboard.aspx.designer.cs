@@ -202,13 +202,31 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// ltrStackedColumn control.
+        /// ltrStackedColumnTop5SKU control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrStackedColumn;
+        protected global::System.Web.UI.WebControls.Literal ltrStackedColumnTop5SKU;
+        
+        /// <summary>
+        /// UpdatePanel4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
+        
+        /// <summary>
+        /// ltrStackedColumnTop5Partner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrStackedColumnTop5Partner;
         
         /// <summary>
         /// tmrAjaxOrderOnCold control.

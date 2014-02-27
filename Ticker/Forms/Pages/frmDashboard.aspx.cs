@@ -71,7 +71,8 @@ namespace Ticker.Forms.Pages
             //ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
             lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
 
-            ltrStackedColumn.Text = cStackedBar.GetStackedBar().ToHtmlString();
+            ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered().ToHtmlString();
+            ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered().ToHtmlString();
         }
     }
 }
