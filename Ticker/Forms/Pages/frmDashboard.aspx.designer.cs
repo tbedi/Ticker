@@ -31,6 +31,15 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.UpdatePanel upPanel;
         
         /// <summary>
+        /// lblregularorder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblregularorder;
+        
+        /// <summary>
         /// ltrRegularOrder control.
         /// </summary>
         /// <remarks>
@@ -229,6 +238,15 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.UpdatePanel UpdatePanel5;
         
         /// <summary>
+        /// lblpart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpart;
+        
+        /// <summary>
         /// litPartOrderQuantity control.
         /// </summary>
         /// <remarks>
@@ -238,7 +256,6 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Literal litPartOrderQuantity;
         
         /// <summary>
-
         /// lblError control.
         /// </summary>
         /// <remarks>
@@ -248,7 +265,6 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-
         /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
