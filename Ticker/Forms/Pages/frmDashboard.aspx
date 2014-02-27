@@ -11,7 +11,7 @@
             <td style="vertical-align: bottom;">
                 <div id="dvBoxLeftTop" class="leftSideBox">
                     <%--<asp:Label ID="lblDate" runat="server" Text="14" ForeColor="#cccccc" Font-Size="50" />--%>
-                    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                    <asp:UpdatePanel ID="upPanel" runat="server">
                         <ContentTemplate>
                             <asp:Literal ID="ltrRegularOrder" runat="server"></asp:Literal>
                         </ContentTemplate>
