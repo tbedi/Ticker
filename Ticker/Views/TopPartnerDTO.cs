@@ -9,6 +9,6 @@ namespace Ticker.Views
     {
         public string PartnerID { get; set; }
         public string Partner { get; set; }
-        public float QtyOrdered { get; set; }
+        public Double QtyOrdered { get; set; }
     }
 }
