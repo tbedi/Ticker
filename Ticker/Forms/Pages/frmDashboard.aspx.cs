@@ -68,7 +68,7 @@ namespace Ticker.Forms.Pages
         {
             ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
 
-            ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
+            //ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
             lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
 
             ltrStackedColumn.Text = cStackedBar.GetStackedBar().ToHtmlString();

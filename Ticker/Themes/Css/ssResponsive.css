@@ -21,25 +21,33 @@ td {
 }
 .CenterLabel1 {
     position:absolute;
-    margin-left:-190px;
-    margin-top:120px;
+    margin-left:-140px;
+    margin-top:150px;
     color:#5fc0fe;
     /*color:#093b5c;*/
-    font-size:70px;
+    font-size:100px;
     font-weight:bold;
 }
 
 .boxStyleKey {
     background: rgba(128, 128, 128, 0.60);
-    height:300px;
-    width: 370px;
+    height:400px;
+    width: 470px;
+    margin:5px;
     float:left;
-    margin-left:10px;
     -webkit-transition: all 1s;
     transition: all 1s ;
     
 }
-
+.BottomChartBOx {
+    background: #0e0e0e;
+    width: 470px;
+    margin: 5px;
+    height: 200px;
+    float: left;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
 .leftSideBox {
     background: rgba(128, 128, 128, 0.60);
     height: 200px;
@@ -61,8 +69,8 @@ td {
 }
 .divOrderDetails {
     background:rgba(0, 122, 204, 0.76);
-    width:300px;
-    height:430px;
+    width:200px;
+    height:310px;
     
 }
 .ShipmentInfoDiv {
