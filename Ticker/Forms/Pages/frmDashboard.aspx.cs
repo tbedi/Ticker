@@ -80,6 +80,9 @@ namespace Ticker.Forms.Pages
             ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
             litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
 
+<<<<<<< HEAD
+>>>>>>> 5a04158fae527961faf3a0d0e6b9d0aa1b436c10
+=======
 >>>>>>> 5a04158fae527961faf3a0d0e6b9d0aa1b436c10
         }
     }
