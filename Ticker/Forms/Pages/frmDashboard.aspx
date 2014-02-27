@@ -27,12 +27,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align:center;">
+                        <td >
                             <div class="smallBox">
-                                <p>
-                                    <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle"></asp:Label>
-                                </p>
-                               <div style="margin-top:30px"><asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" > </asp:Label></div> 
+                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle"></asp:Label>
+                               <div style="margin-top:30px;text-align:center;"><asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" > </asp:Label></div> 
                             </div>
                         </td>
                         <td>

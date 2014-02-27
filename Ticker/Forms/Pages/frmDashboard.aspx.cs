@@ -79,15 +79,15 @@ namespace Ticker.Forms.Pages
 
            // ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
 
-            if (cDonut.PartOrderQuantity().ToHtmlString()==null)
-            {
+            //if (cDonut.PartOrderQuantity().ToHtmlString()==null)
+            //{
                 litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
                 lblError.Visible = false;
-            }
-            else
-            {
-                lblError.Text = "Record Not Found";
-            }
+            //}
+            //else
+            //{
+              //  lblError.Text = "Record Not Found";
+            //}
 
             lblHoldOrder.Text =Convert.ToString(bOrder.GetHold());
 
