@@ -37,7 +37,7 @@ namespace Ticker.Classes
 
             foreach (var item in data)
             {
-                returnObject.Add(new object[] { item.OrderType, item.NoofPartOrders });
+                returnObject.Add(new object[] { item.OrderType, item.NoofPartsOrders });
             }
 
             return returnObject.ToArray();

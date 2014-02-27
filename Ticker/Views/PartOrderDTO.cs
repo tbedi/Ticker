@@ -8,6 +8,6 @@ namespace Ticker.Views
     public class PartOrderDTO
     {
         public string OrderType { get; set; }
-        public double NoofPartOrders { get; set; }
+        public double NoofPartsOrders { get; set; }
     }
 }

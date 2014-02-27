@@ -225,7 +225,7 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 200,
+                    Height = 170,
                     Width = 250,
                     ZoomType = ZoomTypes.Xy,
                 })

@@ -89,7 +89,8 @@ namespace Ticker.Forms.Pages
               //  lblError.Text = "Record Not Found";
             //}
 
-            lblHoldOrder.Text =Convert.ToString(bOrder.GetHold());
+            lblHoldOrder.Text =bOrder.GetHold().ToString();
+            lblship.Text =Convert.ToInt32(bOrder.GetShippedpercentage()).ToString();
 
         }
     }

@@ -94,10 +94,37 @@ namespace Ticker.DataBase.Command
             List<PartOrderDTO> lsorder = new List<PartOrderDTO>();
             try
             {
-                var parts = _x3v6.ExecuteStoreQuery<PartOrderDTO>(@"SELECT so.SOHTYP_0 [OrderType],cast(COUNT(so.SOHNUM_0) as float) [NoofPartOrders]
-                                                                FROM PRODUCTION.SORDER so WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                AND so.SOHTYP_0 IN ('SOPR','SOPRM','WRT') GROUP BY so.SOHTYP_0 
-                                                                ORDER BY [NoofPartOrders] desc, [OrderType];").ToList();
+                var parts = _x3v6.ExecuteStoreQuery<PartOrderDTO>(@"select distinct soh.SOHTYP_0 [OrderType] , ISNULL(a.[NoofRegularOrders],0) AS [NoofPartsOrders]
+                                                                        from PRODUCTION.SORDER soh left join (
+                                                                        SELECT
+                                                                        so.SOHTYP_0 [OrderType],
+                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+                                                                        FROM
+                                                                        PRODUCTION.SORDER so
+                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                        AND so.SOHTYP_0 IN ('SOPR')
+                                                                        GROUP BY so.SOHTYP_0
+                                                                        union
+                                                                        SELECT
+                                                                        so.SOHTYP_0 [OrderType],
+                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+                                                                        FROM
+                                                                        PRODUCTION.SORDER so
+                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                        AND so.SOHTYP_0 IN ('SOPRM')
+                                                                        GROUP BY so.SOHTYP_0
+                                                                        union
+                                                                        SELECT
+                                                                        so.SOHTYP_0 [OrderType],
+                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
+                                                                        FROM
+                                                                        PRODUCTION.SORDER so
+                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                        AND so.SOHTYP_0 IN ('WRT')
+                                                                        GROUP BY so.SOHTYP_0) as a
+                                                                        on soh.SOHTYP_0 = a.[OrderType]
+                                                                        where soh.SOHTYP_0 IN ('SOPR','SOPRM','WRT')
+                                                                        ORDER BY [NoofPartsOrders] DESC;").ToList();
                 if (parts.Count() > 0)
                 {
                     foreach (var item in parts)
@@ -191,5 +218,36 @@ namespace Ticker.DataBase.Command
 
         }
 
+        public List<double> GetShipped()
+        {
+            List<double> lsshipped = new List<double>();
+            try
+            {
+                var shipped = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(*) [Shipped]
+                                                                    FROM
+                                                                    PRODUCTION.SDELIVERY 
+                                                                    WHERE CAST(SHIDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE)
+                                                                    AND CFMFLG_0 = 2
+                                                                    UNION ALL
+                                                                    SELECT
+                                                                    COUNT(*)
+                                                                    FROM
+                                                                    PRODUCTION.SDELIVERY
+                                                                    WHERE CAST(CREDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE)").ToList();
+                                                                   
+                if (shipped.Count() > 0)
+                {
+                    foreach (var item in shipped)
+                    {
+                        double partnertop = (double)item;
+                        lsshipped.Add(partnertop);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return lsshipped;
+        }
     }
 }

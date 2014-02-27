@@ -73,11 +73,11 @@ namespace Ticker.BI
                 {
                     foreach (var item in lsod)
                     {
-                        _TotalCount = _TotalCount + item.NoofPartOrders;
+                        _TotalCount = _TotalCount + item.NoofPartsOrders;
                     }
                     foreach (var items in lsod)
                     {
-                        items.NoofPartOrders = Math.Round(((items.NoofPartOrders / _TotalCount) * 100), 2);
+                        items.NoofPartsOrders = Math.Round(((items.NoofPartsOrders / _TotalCount) * 100), 2);
                     }
                     BIOrder.TotalCount = _TotalCount;
                 }
@@ -90,6 +90,27 @@ namespace Ticker.BI
             return lsod;
         
         }
+
+        public double GetShippedpercentage()
+        {
+            List<double> lsod = new List<double>();
+            double _TotalCount = 0;
+            try
+            {
+                lsod = order.GetShipped();
+
+                if (lsod.Count > 0)
+                {
+                    _TotalCount = (lsod[0] / lsod[1]) * 100;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return _TotalCount;
+        }
+
+
 
         public int GetHold()
         {
