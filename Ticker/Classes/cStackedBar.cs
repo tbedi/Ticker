@@ -25,7 +25,7 @@ namespace Ticker.Classes
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 440,
+                 Width = 470,
                  Height = 200,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
@@ -93,8 +93,8 @@ namespace Ticker.Classes
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 440,
-                 Height = 200,
+                 Width = 405,
+                 Height = 400,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
