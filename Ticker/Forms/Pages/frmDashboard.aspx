@@ -28,13 +28,14 @@
                             <div class="smallBox"></div>
                         </td>
                     </tr>
-                    <tr>
+                      <tr>
                         <td>
+                            <div class="smallBox"></div>
                         </td>
                         <td>
+                            <div class="smallBox"></div>
                         </td>
                     </tr>
-
                 </table>
 
             </td>
@@ -143,7 +144,7 @@
                 <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)"></div>
             </td>
             <td style="vertical-align: bottom">
-                <div class="leftSideBox" style="width: 97%; float: left"></div>
+                <div class="leftSideBox" style="width:480px; float: left; "></div>
             </td>
             <td>&nbsp;</td>
         </tr>
