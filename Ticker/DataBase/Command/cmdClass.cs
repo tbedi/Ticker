@@ -146,6 +146,7 @@ namespace Ticker.DataBase.Command
                                                                         INNER JOIN PRODUCTION.SORDERP sop 
                                                                         ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7 
                                                                         WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date) 
+                                                                        AND so.SOHTYP_0 IN ('SON','SOI','SOP')
                                                                         GROUP BY soq.ITMREF_0, sop.ITMDES_0
                                                                         ORDER BY [QtyOrdered] desc, [ProductID];").ToList();
                 if (top.Count() > 0)
@@ -172,6 +173,7 @@ namespace Ticker.DataBase.Command
                                                                        FROM PRODUCTION.SORDER so INNER JOIN PRODUCTION.SORDERQ soq ON soq.SOHNUM_0 = so.SOHNUM_0 INNER JOIN
                                                                        PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7 
                                                                        WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                       AND so.SOHTYP_0 IN ('SON','SOI','SOP')
                                                                        GROUP BY so.BPCORD_0, so.BPCNAM_0
                                                                        ORDER BY [QtyOrdered] DESC, [Partner];").ToList();
 
