@@ -165,16 +165,20 @@
                                     <div id="asdFlick" class="boxStyleKey">
                                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                             <ContentTemplate>
-                                                <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
+                                              <span> <asp:Label ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY"  CssClass="lblChartTitle" />
+                                               <span> <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" /></span>
                                                 <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
                                     <div id="Div2" class="boxStyleKey">
-                                        <asp:Label ID="Label1" runat="server" Text="910" CssClass="CenterLabel1" />
+                                       
                                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                             <ContentTemplate>
+                                                <span> <asp:Label ID="Label1" runat="server" Text="QTY ORDERED BY CATEGORY"  CssClass="lblChartTitle" />
+                                               <span> <asp:Label ID="Label17" runat="server" Text="100" CssClass="CenterLabel1" /></span>
                                                 <asp:Literal ID="ltrOrderhold" runat="server"></asp:Literal>
+                                               
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>

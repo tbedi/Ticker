@@ -30,18 +30,14 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 300,
+                    Height = 270,
                     Width = 370,
                     ZoomType = ZoomTypes.Xy,
                 })
                 .SetTitle(new Title 
-                    { 
-                        Text = "ORDER CANCELED TODAY", 
-                        Align = HorizontalAligns.Left,
-                        VerticalAlign = VerticalAligns.Bottom,
-                        Style = "color: '#FFF'",
-                        Margin=5,
-                        Floating=true,
+                    {
+                        
+                        Text = "", 
                     })
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %'; }" })
                 .SetPlotOptions(new PlotOptions
@@ -93,17 +89,14 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 300,
+                    Height = 270,
                     Width = 370,
                     ZoomType = ZoomTypes.Xy,
                 })
                 .SetTitle(new Title
                 {
-                    Text = "ORDER ON HOLD",
-                    Align = HorizontalAligns.Left,
-                    VerticalAlign = VerticalAligns.Bottom,
-                    Style = "color: '#FFF'",
-                    Floating = true,
+                    Text = ""
+                   
                 })
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ this.percentage +' %'; }" })
                 .SetPlotOptions(new PlotOptions
