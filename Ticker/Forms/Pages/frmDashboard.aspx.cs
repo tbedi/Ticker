@@ -18,11 +18,13 @@ namespace Ticker.Forms.Pages
     public partial class frmDashboard : System.Web.UI.Page
     {
         public static Thread thAjax;
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
-            ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
-        }
+
+       public BI.BIOrder bOrder = new BI.BIOrder();
+
+       protected void Page_Load(object sender, EventArgs e)
+       {
+           Call();
+       }
 
         [System.Web.Services.WebMethod]
         [System.Web.Script.Services.ScriptMethod(ResponseFormat = ResponseFormat.Json)]
@@ -44,8 +46,7 @@ namespace Ticker.Forms.Pages
                 {
                     thAjax = new Thread(new ThreadStart(() =>
                         {
-                            ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
-                            ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
+                            Call();
                         }));
                     thAjax.IsBackground = true;
                     thAjax.Start();
@@ -55,12 +56,20 @@ namespace Ticker.Forms.Pages
             {
                 thAjax = new Thread(new ThreadStart(() =>
                           {
-                              ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
-                              ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
+                              Call();
+                             
                           }));
                 thAjax.IsBackground = true;
                 thAjax.Start();
             }
+        }
+
+        private void Call()
+        {
+            ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
+
+            ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
+            lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
         }
     }
 }

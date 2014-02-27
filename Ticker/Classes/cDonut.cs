@@ -30,16 +30,17 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 200,
-                    Width = 270,
+                    Height = 300,
+                    Width = 370,
                     ZoomType = ZoomTypes.Xy,
                 })
                 .SetTitle(new Title 
                     { 
                         Text = "ORDER CANCELED TODAY", 
                         Align = HorizontalAligns.Left,
-                        VerticalAlign = VerticalAligns.Top,
+                        VerticalAlign = VerticalAligns.Bottom,
                         Style = "color: '#FFF'",
+                        Margin=5,
                         Floating=true,
                     })
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %'; }" })
@@ -49,14 +50,14 @@ namespace Ticker.Classes
                     {
                         AllowPointSelect = true,
                         InnerSize = new PercentageOrPixel(60, true),
-                        Cursor = Cursors.Pointer,
-                        Size = new PercentageOrPixel(80, true),
+                        Cursor = Cursors.Auto,
+                        Size = new PercentageOrPixel(90, true),
                         DataLabels = new PlotOptionsPieDataLabels
                         {
-                            Distance = 0,
-                            Color = ColorTranslator.FromHtml("#232222"),
-                            ConnectorColor = ColorTranslator.FromHtml("#808080"),
-                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage); }"
+                            Distance = 5,
+                            Color = ColorTranslator.FromHtml("#fffff"),
+                            ConnectorColor = ColorTranslator.FromHtml("#fffff"),
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
                         },
                         Point = new PlotOptionsPiePoint
                         {
@@ -92,15 +93,15 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 200,
-                    Width = 270,
+                    Height = 300,
+                    Width = 370,
                     ZoomType = ZoomTypes.Xy,
                 })
                 .SetTitle(new Title
                 {
                     Text = "ORDER ON HOLD",
                     Align = HorizontalAligns.Left,
-                    VerticalAlign = VerticalAligns.Top,
+                    VerticalAlign = VerticalAligns.Bottom,
                     Style = "color: '#FFF'",
                     Floating = true,
                 })
@@ -111,13 +112,13 @@ namespace Ticker.Classes
                     {
                         AllowPointSelect = true,
                         InnerSize = new PercentageOrPixel(60, true),
-                        Cursor = Cursors.Pointer,
-                        Size = new PercentageOrPixel(80, true),
+                        Cursor = Cursors.Auto,
+                        Size = new PercentageOrPixel(90, true),
                         DataLabels = new PlotOptionsPieDataLabels
                         {
-                            Distance = 0,
+                            Distance = 5,
                             Color = ColorTranslator.FromHtml("#232222"),
-                            ConnectorColor = ColorTranslator.FromHtml("#808080"),
+                            ConnectorColor = ColorTranslator.FromHtml("#fffff"),
                             Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+this.percentage; }"
                         },
                         Point = new PlotOptionsPiePoint

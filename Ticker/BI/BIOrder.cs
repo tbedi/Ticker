@@ -11,7 +11,7 @@ namespace Ticker.BI
     public  class BIOrder
     {
         cmdClass order = new cmdClass();
-
+        public static double TotalCount { get; private set; }
         public List<OrderDTO> GetOrder()
         {
             List<OrderDTO> lsod = new List<OrderDTO>();
@@ -19,21 +19,27 @@ namespace Ticker.BI
             {
                 //List<OrderDTO>
                 lsod = order.GetCategoryOrder();
-                double Toatal = 0;
+                double _TotalCount = 0;
                 foreach (var item in lsod)
                 {
-                    Toatal = Toatal + item.QtyOrdered;
+                    _TotalCount = _TotalCount + item.QtyOrdered;
                 }
                 foreach (var items in lsod)
                 {
-                    items.QtyOrdered = Math.Round(((items.QtyOrdered / Toatal) * 100), 2);
+                    items.QtyOrdered = Math.Round(((items.QtyOrdered / _TotalCount) * 100), 2);
                 }
+                BIOrder.TotalCount = _TotalCount;
               // object[] ls = lsod.ToPieChartSeries();
             }
             catch (Exception)
             {
             }
             return lsod;
+        }
+
+        public double GetTotalOrder()
+        {
+            return TotalCount;
         }
     }
 }

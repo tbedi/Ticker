@@ -6,21 +6,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
     <script src="../../Themes/js/highcharts.src.js"></script>
-    <%--<script type="text/javascript">
-        $(document).ready(function Donutchart() {
-            $.ajax({
-                type: "POST",
-                contenttype: "application",
-
-
-                });
-        });
-            
-    </script>--%>
     <table class="maintbl">
-        <tr>
-            <td colspan="4">&nbsp;</td>
-        </tr>
         <tr>
             <td style="vertical-align: bottom;">
                 <div id="dvBoxLeftTop" class="leftSideBox">
@@ -44,10 +30,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class="smallBox"></div>
                         </td>
                         <td>
-                            <div class="smallBox"></div>
                         </td>
                     </tr>
 
@@ -84,7 +68,7 @@
                                     <tr>
                                         <td>
                                             <div class="ShipmentInfoDiv">
-                                                <p>
+                                                <p >
                                                     <asp:Label ID="Label8" runat="server" Text="In process" CssClass="lblShipmentSubtitle" />
                                                 </p>
                                                 <asp:Label ID="Label9" runat="server" Text="000" CssClass="lblShipmentNumber" />
@@ -172,9 +156,9 @@
                             <td>
                                 <div>
                                     <div id="asdFlick" class="boxStyleKey">
-                                        <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
                                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                             <ContentTemplate>
+                                                <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
                                                 <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
