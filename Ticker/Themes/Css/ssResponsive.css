@@ -22,7 +22,7 @@ td {
 }
 .CenterLabel1 {
     position:absolute;
-    margin-left:-160px;
+    margin-left:-170px;
     margin-top:150px;
     color:#5fc0fe;
     /*color:#093b5c;*/
@@ -45,7 +45,7 @@ td {
 }
 .BottomChartBOx {
     background: #0e0e0e;
-    width: 440px;
+    width: 470px;
     margin: 5px;
     height: 200px;
     float: left;
@@ -76,7 +76,7 @@ td {
 }
 .divOrderDetails {
     background:rgba(0, 122, 204, 0.76);
-    width:200px;
+    width:170px;
     height:310px;
     font-family:Arial,Verdana;
     
@@ -94,19 +94,20 @@ td {
 .lblShipmentNumber {
     color:whitesmoke;
     font-size:70px;
-    font-weight:bold;
+    font-weight:100;
     font-family:Arial, Verdana, Candara ;
     text-align:right;
     
 }
 .lblShipmentSubtitle {
     text-align:left;
-     color:whitesmoke;
-    font-size:25px;
+     color:#282828;
+    font-size:20px;
     font-family:Arial,Verdana;
 }
 p {
     margin:0;
+    text-align:left
 }
 .lblChartTitle{
     font-weight:bold;

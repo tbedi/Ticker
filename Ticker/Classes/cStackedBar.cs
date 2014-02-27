@@ -25,7 +25,7 @@ namespace Ticker.Classes
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 440,
+                 Width = 470,
                  Height = 200,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
@@ -69,13 +69,14 @@ namespace Ticker.Classes
              {
                  Column = new PlotOptionsColumn
                      {
-                         PointWidth = 30,
+                         PointWidth = 40,
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
                                  Enabled = true,
-                                 Rotation = -90,
                                  Color = ColorTranslator.FromHtml("#fff"),
-                                 Align = HorizontalAligns.Right,
+                                 Align = HorizontalAligns.Center,
+                                 VerticalAlign = VerticalAligns.Middle,
+                                 Y = -5
                              }
                      }
              })
@@ -92,8 +93,8 @@ namespace Ticker.Classes
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 440,
-                 Height = 200,
+                 Width = 405,
+                 Height = 400,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
@@ -139,15 +140,16 @@ namespace Ticker.Classes
                      DataLabels = new PlotOptionsColumnDataLabels
                      {
                          Enabled = true,
-                         Rotation = -90,
                          Color = ColorTranslator.FromHtml("#fff"),
-                         Align = HorizontalAligns.Right,
+                         Align = HorizontalAligns.Center,
+                         VerticalAlign = VerticalAligns.Middle,
+                         Y = -5
                      }
                  }
              })
              .SetSeries(new[]
                        {
-                           new Series { Name = "Partners", Data = new Data(lsTopPartners.ToTop5ParnerObject()) ,Color=System.Drawing.Color.Brown },
+                           new Series { Name = "Partners", Data = new Data(lsTopPartners.ToTop5ParnerObject()) ,Color=System.Drawing.Color.FromArgb(1,80, 150, 18) },
                        });
             return chart;
         }
