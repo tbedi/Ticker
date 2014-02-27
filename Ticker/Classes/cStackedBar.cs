@@ -18,7 +18,7 @@ namespace Ticker.Classes
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 480,
+                 Width = 470,
                  Height = 200,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
@@ -29,17 +29,29 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                  })
-             })
-             .SetTitle(new Title { Text = "Stacked column chart" })
-             .SetXAxis(new XAxis
+             }).SetCredits(new Credits
              {
-                 Categories = new[] { "Champ 1", "Champ 2", "Champ 3", "Champ 4", "Champ 5", "Champ 6" }
+                 Href = "http://www.kraususa.com/",
+                 Text = "kraus USA Inc."
              })
-
+             .SetTitle(new Title 
+                            {
+                                Text = "TOP 5 SKU ORDERED",
+                                Style="color: '#fff'"
+                            }
+                       )
+             .SetXAxis(new XAxis
+                 {
+                     Categories = new[] { "PU-10CH", "KBU21", "KPF300", "KSD20", "KPF-1612"}
+                })
+            .SetYAxis(new YAxis
+                {
+                    Title = new YAxisTitle{ Text= "Quantity",Style="color: '#fff'"}
+                })
 
               .SetLegend(new Legend
                   {
-                      Enabled = true,
+                      Enabled = false,
                       BackgroundColor = new BackColorOrGradient(System.Drawing.Color.Transparent),
                       Align = HorizontalAligns.Right,
                       VerticalAlign = VerticalAligns.Middle,
@@ -49,22 +61,19 @@ namespace Ticker.Classes
              {
                  Column = new PlotOptionsColumn
                      {
-                         Stacking = Stackings.Normal,
                          PointWidth = 30,
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
-                                 Enabled = false,
+                                 Enabled = true,
                                  Rotation = -90,
-                                 Color = ColorTranslator.FromHtml("#fffff"),
+                                 Color = ColorTranslator.FromHtml("#fff"),
                                  Align = HorizontalAligns.Right,
                              }
                      }
              })
              .SetSeries(new[]
                        {
-                           new Series { Name = "Audio", Data = new Data(new object[] { 17, 10, 10, 10,12,8 })  },
-                           //new Series { Name = "Video", Data = new Data(new object[] { 15, 5, 3, 3,5,8 }) },
-                           new Series { Name = "Peripheral", Data = new Data(new object[] { 6, 16, 16, 16,5,16 }) }
+                           new Series { Name = "Quantity", Data = new Data(new object[] { 17, 10, 10, 10,12 })  },
                        });
             return chart;
         }

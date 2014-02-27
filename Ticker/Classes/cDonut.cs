@@ -30,9 +30,14 @@ namespace Ticker.Classes
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 270,
-                    Width = 370,
+                    Height = 370,
+                    Width = 470,
                     ZoomType = ZoomTypes.Xy,
+                    
+                }).SetCredits( new Credits
+                {
+                    Href = "http://www.kraususa.com/",
+                    Text="kraus USA Inc."
                 })
                 .SetTitle(new Title 
                     {
@@ -92,6 +97,10 @@ namespace Ticker.Classes
                     Height = 270,
                     Width = 370,
                     ZoomType = ZoomTypes.Xy,
+                }).SetCredits(new Credits
+                {
+                    Href = "http://www.kraususa.com/",
+                    Text = "kraus USA Inc."
                 })
                 .SetTitle(new Title
                 {
