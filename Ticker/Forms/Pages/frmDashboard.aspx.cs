@@ -76,7 +76,6 @@ namespace Ticker.Forms.Pages
 
             ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
             litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
-            ltrStackedColumn.Text = cStackedBar.GetStackedBar().ToHtmlString();
 
             ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
             litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
