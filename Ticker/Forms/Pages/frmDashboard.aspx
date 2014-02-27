@@ -13,6 +13,7 @@
                     <%--<asp:Label ID="lblDate" runat="server" Text="14" ForeColor="#cccccc" Font-Size="50" />--%>
                     <asp:UpdatePanel ID="upPanel" runat="server">
                         <ContentTemplate>
+                             <asp:Label ID="lblregularorder" runat="server" Text="Regular Order Quantity" CssClass="lblChartTitle" />
                             <asp:Literal ID="ltrRegularOrder" runat="server"></asp:Literal>
                         </ContentTemplate>
                     </asp:UpdatePanel>
@@ -26,10 +27,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="text-align:center;">
                             <div class="smallBox">
-                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle"></asp:Label>
-                                <asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle"> </asp:Label>
+                                <p>
+                                    <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle"></asp:Label>
+                                </p>
+                               <div style="margin-top:30px"><asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" > </asp:Label></div> 
                             </div>
                         </td>
                         <td>
@@ -147,8 +150,13 @@
                 <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)">
                     <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                         <ContentTemplate>
+                             <asp:Label ID="lblpart" runat="server" Text="Part Order Quantity" CssClass="lblChartTitle" />
                             <asp:Literal ID="litPartOrderQuantity" runat="server"></asp:Literal>
-                            <asp:Label ID="lblError" runat="server"></asp:Label>
+                            <p>
+                                <div style="margin-top:30px">
+                                    <asp:Label ID="lblError" runat="server" CssClass="lblShipmentSubtitle"></asp:Label>
+                                </div>
+                            </p>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
