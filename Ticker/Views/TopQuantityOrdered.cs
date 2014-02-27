@@ -9,6 +9,6 @@ namespace Ticker.Views
     {
         public string  ProductID { get; set; }
         public string  SKU { get; set; }
-        public float QtyOrdered { get; set; }
+        public double QtyOrdered { get; set; }
     }
 }

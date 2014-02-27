@@ -42,5 +42,54 @@ namespace Ticker.Classes
 
             return returnObject.ToArray();
         }
+
+        public static String[] ToCatagorysListFromPartner(this List<TopPartnerDTO> Partner)
+        {
+            String[] returnObject = new String[Partner.Count() - 1];
+
+            for (int i = 0; i < Partner.Count()-1; i++)
+            {
+                returnObject[i] = Partner[i].Partner.ToString();
+            }
+
+            return returnObject;
+        }
+
+        public static String[] ToCatagorysListFromSKU(this List<TopQuantityOrdered> Quantity)
+        {
+            String[] returnObject = new String[Quantity.Count() - 1];
+
+            for (int i = 0; i < Quantity.Count()-1; i++)
+            {
+                returnObject[i] = Quantity[i].SKU.ToString();
+            }
+
+            return returnObject;
+        }
+
+
+
+        public static object[] ToTop5ParnerObject(this List<TopPartnerDTO> lsPartner)
+        {
+            object[] returnObject = new object[lsPartner.Count() - 1];
+
+            for (int i = 0; i < lsPartner.Count()-1; i++)
+            {
+                returnObject[i] = Convert.ToInt32(lsPartner[i].QtyOrdered);
+            }
+
+            return returnObject;
+        }
+        public static object[] ToTop5SKUObject(this List<TopQuantityOrdered> lsTopQuantityOrdered)
+        {
+            object[] returnObject = new object[lsTopQuantityOrdered.Count() - 1];
+
+            for (int i = 0; i < lsTopQuantityOrdered.Count()-1; i++)
+            {
+                returnObject[i] = Convert.ToInt32(lsTopQuantityOrdered[i].QtyOrdered);
+            }
+
+            return returnObject;
+        }
     }
 }

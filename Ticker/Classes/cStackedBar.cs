@@ -7,11 +7,18 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
+using Ticker.BI;
+using Ticker.Classes;
 
 namespace Ticker.Classes
 {
     public class cStackedBar
     {
+        public static BIOrder bOrder = new BIOrder();
+        public static DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
+
+        public static List<Views.TopQuantityOrdered>  lsTopSKUQty= cmd.GetTop5SkuQuantityOrder();
+        public static List<Views.TopPartnerDTO> lsTopPartners = cmd.GetTop5ParnerOrder();
         public static Highcharts GetTop_5_SKU_By_Ordered()
         {
             Highcharts chart = new Highcharts("StackedColumn")
@@ -42,7 +49,8 @@ namespace Ticker.Classes
                        )
              .SetXAxis(new XAxis
                  {
-                     Categories = new String[] { "PU-10CH", "KBU21", "KPF300", "KSD20", "KPF-1612"}
+
+                     Categories = lsTopSKUQty.ToCatagorysListFromSKU(),
                 })
             .SetYAxis(new YAxis
                 {
@@ -73,7 +81,7 @@ namespace Ticker.Classes
              })
              .SetSeries(new[]
                        {
-                           new Series { Name = "Quantity", Data = new Data(new object[] { 17, 10, 10, 10,12 })  },
+                           new Series { Name = "Quantity", Data =new Data( lsTopSKUQty.ToTop5SKUObject())  },
                        });
             return chart;
         }
@@ -108,7 +116,7 @@ namespace Ticker.Classes
                        )
              .SetXAxis(new XAxis
              {
-                 Categories = new String[] { "BUILD.COM", "EXpressDecor", "HomeDepot", "Amazon", "asdvs" }
+                 Categories = lsTopPartners.ToCatagorysListFromPartner()
              })
             .SetYAxis(new YAxis
             {
@@ -139,7 +147,7 @@ namespace Ticker.Classes
              })
              .SetSeries(new[]
                        {
-                           new Series { Name = "Partners", Data = new Data(new object[] { 17, 5, 15, 10,13 }) ,Color=System.Drawing.Color.Brown },
+                           new Series { Name = "Partners", Data = new Data(lsTopPartners.ToTop5ParnerObject()) ,Color=System.Drawing.Color.Brown },
                        });
             return chart;
         }

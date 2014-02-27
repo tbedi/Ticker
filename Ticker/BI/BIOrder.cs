@@ -109,5 +109,8 @@ namespace Ticker.BI
         {
             return TotalCount;
         }
+
+        
+
     }
 }
