@@ -70,6 +70,8 @@ namespace Ticker.Forms.Pages
 
             ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
             lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
+
+            ltrStackedColumn.Text = cStackedBar.GetStackedBar().ToHtmlString();
         }
     }
 }

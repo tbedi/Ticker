@@ -144,7 +144,13 @@
                 <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)"></div>
             </td>
             <td style="vertical-align: bottom">
-                <div class="leftSideBox" style="width:480px; float: left; "></div>
+                <div class="leftSideBox" style="width: 480px; float: left;">
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                        <ContentTemplate>
+                            <asp:Literal ID="ltrStackedColumn" runat="server"></asp:Literal>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
             </td>
             <td>&nbsp;</td>
         </tr>
