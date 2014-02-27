@@ -10,7 +10,12 @@
         <tr>
             <td style="vertical-align: bottom;">
                 <div id="dvBoxLeftTop" class="leftSideBox">
-                    <asp:Label ID="lblDate" runat="server" Text="14" ForeColor="#cccccc" Font-Size="50" />
+                    <%--<asp:Label ID="lblDate" runat="server" Text="14" ForeColor="#cccccc" Font-Size="50" />--%>
+                    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                        <ContentTemplate>
+                            <asp:Literal ID="ltrRegularOrder" runat="server"></asp:Literal>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
             </td>
             <td style="width: 30%;" rowspan="2">
@@ -136,7 +141,13 @@
         </tr>
         <tr>
             <td style="vertical-align: top; float: left;">
-                <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)"></div>
+                <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)">
+                    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                        <ContentTemplate>
+                            <asp:Literal ID="litPartOrderQuantity" runat="server"></asp:Literal>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
             </td>
             <td>&nbsp;</td>
         </tr>
