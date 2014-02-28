@@ -58,13 +58,10 @@ namespace Ticker.Forms.Pages
 
         private void Call()
         {
-<<<<<<< HEAD
             if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
-=======
             FillInternal_Ticker();
 
-            if (bOrder.lsQuantityOrderCategory.Count > 0)
->>>>>>> a69858103edb18dd752a56792e127b2bff11936d
+            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
             {
                 ltrChart.Text = cDonut.OrderCanceledDonut(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
                 lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder())).ToString();
@@ -125,15 +122,15 @@ namespace Ticker.Forms.Pages
             try
             {
                 string newShipment = "http://internal.kraususa.net/result.php?type=new";
-                bOrder.WebReasponce(newShipment, lblNewSHipmentCount);
+                cGlobal.Border.WebReasponce(newShipment, lblNewSHipmentCount);
                 String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
-                bOrder.WebReasponce(SYSInProcess, lblSysInProcess);
+                cGlobal.Border.WebReasponce(SYSInProcess, lblSysInProcess);
                 String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
-                bOrder.WebReasponce(SYSShipped, lblSYSShipped);
+                cGlobal.Border.WebReasponce(SYSShipped, lblSYSShipped);
                 String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
-                bOrder.WebReasponce(PWInProcess, lblPWInProcess);
+                cGlobal.Border.WebReasponce(PWInProcess, lblPWInProcess);
                 String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
-                bOrder.WebReasponce(PWShipped, lblPWShipped);
+                cGlobal.Border.WebReasponce(PWShipped, lblPWShipped);
 
             }
             catch (Exception)
