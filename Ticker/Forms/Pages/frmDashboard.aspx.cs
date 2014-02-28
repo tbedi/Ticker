@@ -90,7 +90,9 @@ namespace Ticker.Forms.Pages
             //}
 
             lblHoldOrder.Text =bOrder.GetHold().ToString();
-            lblship.Text =Convert.ToInt32(bOrder.GetShippedpercentage()).ToString();
+            int ShippingInt = 0;
+            int.TryParse( bOrder.GetShippedpercentage().ToString(), out ShippingInt);
+            lblship.Text = ShippingInt.ToString();
 
         }
     }
