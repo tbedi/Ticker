@@ -7,7 +7,7 @@ using DotNet.Highcharts.Enums;
 using DotNet.Highcharts.Helpers;
 using DotNet.Highcharts.Options;
 using System.Drawing;
-namespace Ticker.Classes
+namespace Ticker.Charts
 {
     public class cPichart 
     {

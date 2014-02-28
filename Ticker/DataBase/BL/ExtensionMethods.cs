@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Ticker.Views;
 
-namespace Ticker.Classes
+namespace Ticker.DataBase.BL
 {
     public static class ExtensionMethods
     {

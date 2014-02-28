@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Ticker.Classes;
+using Ticker.Charts;
 
 namespace Ticker.Forms.Pages
 {

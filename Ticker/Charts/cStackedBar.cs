@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
-using Ticker.BL;
-using Ticker.Classes;
+using Ticker.DataBase.BL;
+using Ticker.Charts;
 
-namespace Ticker.Classes
+namespace Ticker.Charts
 {
     public class cStackedBar
     {

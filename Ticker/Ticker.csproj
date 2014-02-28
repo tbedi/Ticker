@@ -83,11 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\BL\blOrder.cs" />
-    <Compile Include="Classes\cDonut.cs" />
-    <Compile Include="Classes\cGuage.cs" />
-    <Compile Include="Classes\cPichart.cs" />
-    <Compile Include="Classes\cStackedBar.cs" />
-    <Compile Include="Classes\ExtensionMethods.cs" />
+    <Compile Include="Charts\cDonut.cs" />
+    <Compile Include="Charts\cGuage.cs" />
+    <Compile Include="Charts\cPichart.cs" />
+    <Compile Include="Charts\cStackedBar.cs" />
+    <Compile Include="DataBase\BL\ExtensionMethods.cs" />
     <Compile Include="DataBase\Command\cmdClass.cs" />
     <Compile Include="DataBase\EntityModel.Designer.cs">
       <AutoGen>True</AutoGen>

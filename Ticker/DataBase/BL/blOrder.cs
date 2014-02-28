@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Ticker.DataBase.Command;
-using Ticker.Classes;
+using Ticker.Charts;
 using Ticker.Views;
 
-namespace Ticker.BL
+namespace Ticker.DataBase.BL
 {
     public  class blOrder
     {

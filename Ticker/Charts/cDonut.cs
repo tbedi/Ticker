@@ -7,9 +7,10 @@ using DotNet.Highcharts.Enums;
 using DotNet.Highcharts.Helpers;
 using DotNet.Highcharts.Options;
 using System.Drawing;
-using Ticker.BL;
+using Ticker.DataBase;
+using Ticker.DataBase.BL;
 
-namespace Ticker.Classes
+namespace Ticker.Charts
 {
     public static class cDonut
     {

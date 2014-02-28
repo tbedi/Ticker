@@ -12,14 +12,16 @@ using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Ticker.Classes;
+using Ticker.Charts;
+using Ticker.DataBase.BL;
+
 namespace Ticker.Forms.Pages
 {
     public partial class frmDashboard : System.Web.UI.Page
     {
         public static Thread thAjax;
 
-       public BL.blOrder bOrder = new BL.blOrder();
+       public blOrder bOrder = new blOrder();
 
        protected void Page_Load(object sender, EventArgs e)
        {
