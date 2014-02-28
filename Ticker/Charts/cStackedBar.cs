@@ -45,7 +45,7 @@ namespace Ticker.Charts
              })
              .SetTitle(new Title 
                             {
-                                Text = "TOP 5 SKU ORDERED",
+                                Text = "TOP SKU ORDERED",
                                 Style="color: '#fff'"
                             }
                        )
@@ -113,7 +113,7 @@ namespace Ticker.Charts
              })
              .SetTitle(new Title
              {
-                 Text = "TOP 5 PARTNER BY SKU QUANTITY ",
+                 Text = "TOP PARTNER BY SKU QUANTITY ",
                  Style = "color: '#fff'"
              }
                        )

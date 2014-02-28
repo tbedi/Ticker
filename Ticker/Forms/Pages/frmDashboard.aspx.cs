@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Threading;
 using System.Web;
 using System.Web.Script.Services;
@@ -25,20 +27,10 @@ namespace Ticker.Forms.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             Call();
         }
 
-        [System.Web.Services.WebMethod]
-        [System.Web.Script.Services.ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static void apply()
-        {
-
-        }
-
-        protected void tmrAjax_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         protected void tmrAjaxOrderOnCold_Tick(object sender, EventArgs e)
         {
@@ -68,6 +60,8 @@ namespace Ticker.Forms.Pages
 
         private void Call()
         {
+            FillInternal_Ticker();
+
             if (bOrder.lsQuantityOrderCategory.Count > 0)
             {
                 ltrChart.Text = cDonut.OrderCanceledDonut(bOrder.lsQuantityOrderCategory).ToHtmlString();
@@ -122,5 +116,29 @@ namespace Ticker.Forms.Pages
             int.TryParse(bOrder.lsshipped.ToString(), out ShippingInt);
             lblship.Text = ShippingInt.ToString();
         }
+
+        private void FillInternal_Ticker()
+        {
+            try
+            {
+                string newShipment = "http://internal.kraususa.net/result.php?type=new";
+                bOrder.WebReasponce(newShipment, lblNewSHipmentCount);
+                String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
+                bOrder.WebReasponce(SYSInProcess, lblSysInProcess);
+                String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
+                bOrder.WebReasponce(SYSShipped, lblSYSShipped);
+                String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
+                bOrder.WebReasponce(PWInProcess, lblPWInProcess);
+                String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
+                bOrder.WebReasponce(PWShipped, lblPWShipped);
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+
+
     }
 }
