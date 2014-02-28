@@ -13,10 +13,11 @@ namespace Ticker.Classes
 {
     public static class cDonut
     {
-       public static BIOrder b = new BIOrder();
+        public static BIOrder b = new BIOrder();
+      
         public static Highcharts OrderCanceledDonut()
         {
-           
+
             Highcharts chart = new Highcharts("chart")
                 .InitChart(new Chart
                 {
@@ -33,16 +34,16 @@ namespace Ticker.Classes
                     Height = 370,
                     Width = 470,
                     ZoomType = ZoomTypes.Xy,
-                    
-                }).SetCredits( new Credits
+
+                }).SetCredits(new Credits
                 {
                     Href = "http://www.kraususa.com/",
-                    Text="kraus USA Inc."
+                    Text = "kraus USA Inc."
                 })
-                .SetTitle(new Title 
+                .SetTitle(new Title
                     {
-                        
-                        Text = "", 
+
+                        Text = "",
                     })
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %'; }" })
                 .SetPlotOptions(new PlotOptions
@@ -79,6 +80,7 @@ namespace Ticker.Classes
                 });
             return chart;
         }
+        
         public static Highcharts OrderHoldDonut()
         {
             Highcharts chart = new Highcharts("charta")
@@ -105,7 +107,7 @@ namespace Ticker.Classes
                 .SetTitle(new Title
                 {
                     Text = ""
-                   
+
                 })
                 .SetTooltip(new Tooltip { Formatter = "function() { return '<b style=\" fontsize:15px\">'+ this.point.name +'</b>: '+ this.percentage +' %'; }" })
                 .SetPlotOptions(new PlotOptions
@@ -209,6 +211,7 @@ namespace Ticker.Classes
                 });
             return chart;
         }
+        
         public static Highcharts PartOrderQuantity()
         {
 

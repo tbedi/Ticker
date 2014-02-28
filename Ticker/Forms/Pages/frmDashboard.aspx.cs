@@ -67,33 +67,16 @@ namespace Ticker.Forms.Pages
         private void Call()
         {
             ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
-
-            //ltrOrderhold.Text = cDonut.OrderHoldDonut().ToHtmlString();
             lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
-
             ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered().ToHtmlString();
             ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered().ToHtmlString();
-
             ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
-           // litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
-
-           // ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
-
-            //if (cDonut.PartOrderQuantity().ToHtmlString()==null)
-            //{
-                litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
-                lblError.Visible = false;
-            //}
-            //else
-            //{
-              //  lblError.Text = "Record Not Found";
-            //}
-
-            lblHoldOrder.Text =bOrder.GetHold().ToString();
+            litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
+            lblError.Visible = false;
+            lblHoldOrder.Text = bOrder.GetHold().ToString();
             int ShippingInt = 0;
-            int.TryParse( bOrder.GetShippedpercentage().ToString(), out ShippingInt);
+            int.TryParse(bOrder.GetShippedpercentage().ToString(), out ShippingInt);
             lblship.Text = ShippingInt.ToString();
-
         }
     }
 }
