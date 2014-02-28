@@ -6,12 +6,19 @@ using Ticker.DataBase.Command;
 using Ticker.Classes;
 using Ticker.Views;
 
-namespace Ticker.BI
+namespace Ticker.BL
 {
-    public  class BIOrder
+    public  class blOrder
     {
         cmdClass order = new cmdClass();
+        
         public static double TotalCount { get; private set; }
+
+        public blOrder()
+        {
+            TotalCount = 0;
+        }
+
         public List<OrderDTO> GetQuantityOrderCat()
         {
             List<OrderDTO> lsod = new List<OrderDTO>();
@@ -28,7 +35,7 @@ namespace Ticker.BI
                 {
                     items.QtyOrdered = Math.Round(((items.QtyOrdered / _TotalCount) * 100), 2);
                 }
-                BIOrder.TotalCount = _TotalCount;
+                blOrder.TotalCount = _TotalCount;
               // object[] ls = lsod.ToPieChartSeries();
             }
             catch (Exception)
@@ -42,19 +49,20 @@ namespace Ticker.BI
             List<RegularOrderDTO> lsod = new List<RegularOrderDTO>();
             try
             {
-                //List<OrderDTO>
                 lsod = order.GetRegularQuantityOrdred();
-                double _TotalCount = 0;
-                foreach (var item in lsod)
+                if (lsod.Count > 0)
                 {
-                    _TotalCount = _TotalCount + item.NoofRegularOrders;
+                    double _TotalCount = 0;
+                    foreach (var item in lsod)
+                    {
+                        _TotalCount = _TotalCount + item.NoofRegularOrders;
+                    }
+                    foreach (var items in lsod)
+                    {
+                        items.NoofRegularOrders = Math.Round(((items.NoofRegularOrders / _TotalCount) * 100), 2);
+                    }
+                    blOrder.TotalCount = _TotalCount;
                 }
-                foreach (var items in lsod)
-                {
-                    items.NoofRegularOrders = Math.Round(((items.NoofRegularOrders / _TotalCount) * 100), 2);
-                }
-                BIOrder.TotalCount = _TotalCount;
-                // object[] ls = lsod.ToPieChartSeries();
             }
             catch (Exception)
             {
@@ -66,7 +74,6 @@ namespace Ticker.BI
             List<PartOrderDTO> lsod = new List<PartOrderDTO>();
             try
             {
-                //List<OrderDTO>
                 lsod = order.GetPartQuantityOrdered();
                 double _TotalCount = 0;
                 if (lsod.Count>0)
@@ -79,10 +86,9 @@ namespace Ticker.BI
                     {
                         items.NoofPartsOrders = Math.Round(((items.NoofPartsOrders / _TotalCount) * 100), 2);
                     }
-                    BIOrder.TotalCount = _TotalCount;
+                    blOrder.TotalCount = _TotalCount;
                 }
               
-                // object[] ls = lsod.ToPieChartSeries();
             }
             catch (Exception)
             {

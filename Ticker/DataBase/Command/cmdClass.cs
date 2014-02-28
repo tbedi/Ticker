@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Ticker.DataBase;
 using Ticker.Views;
-using Ticker.BI;
+using Ticker.BL;
 
 namespace Ticker.DataBase.Command
 {

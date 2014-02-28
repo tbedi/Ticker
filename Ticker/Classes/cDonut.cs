@@ -7,13 +7,13 @@ using DotNet.Highcharts.Enums;
 using DotNet.Highcharts.Helpers;
 using DotNet.Highcharts.Options;
 using System.Drawing;
-using Ticker.BI;
+using Ticker.BL;
 
 namespace Ticker.Classes
 {
     public static class cDonut
     {
-        public static BIOrder b = new BIOrder();
+        public static blOrder b = new blOrder();
       
         public static Highcharts OrderCanceledDonut()
         {

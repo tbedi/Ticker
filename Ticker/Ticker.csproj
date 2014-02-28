@@ -82,7 +82,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase\BI\BIOrder.cs" />
+    <Compile Include="DataBase\BL\blOrder.cs" />
     <Compile Include="Classes\cDonut.cs" />
     <Compile Include="Classes\cGuage.cs" />
     <Compile Include="Classes\cPichart.cs" />

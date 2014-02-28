@@ -19,7 +19,7 @@ namespace Ticker.Forms.Pages
     {
         public static Thread thAjax;
 
-       public BI.BIOrder bOrder = new BI.BIOrder();
+       public BL.blOrder bOrder = new BL.blOrder();
 
        protected void Page_Load(object sender, EventArgs e)
        {

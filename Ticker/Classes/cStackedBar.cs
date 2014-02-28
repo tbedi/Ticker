@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
-using Ticker.BI;
+using Ticker.BL;
 using Ticker.Classes;
 
 namespace Ticker.Classes
 {
     public class cStackedBar
     {
-        public static BIOrder bOrder = new BIOrder();
+        public static blOrder bOrder = new blOrder();
         public static DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
 
         public static List<Views.TopQuantityOrdered>  lsTopSKUQty= cmd.GetTop5SkuQuantityOrder();
