@@ -58,19 +58,13 @@ namespace Ticker.Forms.Pages
 
         private void Call()
         {
-            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
+            //CREATE NEW Object calls database..
+            cGlobal.Border = new blOrder();
+
             FillInternal_Ticker();
 
-            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
-            {
-                ltrChart.Text = cDonut.OrderCanceledDonut(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
-                lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder())).ToString();
-            }
-            else
-            {
-                lblNewOrderNH.Text = "No Data";
-            }
-            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
+
+            if (cGlobal.Border.lstopQuantityorder.Count > 0)
                 ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
 
             if (cGlobal.Border.lstopPartner.Count > 0)
@@ -114,7 +108,17 @@ namespace Ticker.Forms.Pages
             int ShippingInt = 0;
             string Ship= Math.Round( cGlobal.Border.GetShippedpercentage(cGlobal.Border.lsshipped),0).ToString();
             int.TryParse(Ship, out ShippingInt);
-            lblship.Text = ShippingInt.ToString();
+            lblship.Text = ShippingInt.ToString() + "%";
+            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
+            {
+                lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder(cGlobal.Border.lsQuantityOrderCategory))).ToString();
+                ltrChart.Text = cDonut.OrderCanceledDonut(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
+               
+            }
+            else
+            {
+                lblNewOrderNH.Text = "No Data";
+            }
         }
 
         private void FillInternal_Ticker()

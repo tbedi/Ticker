@@ -7,6 +7,6 @@ namespace Ticker.DataBase.BL
 {
     public static class cGlobal
     {
-        public static blOrder Border = new blOrder();
+        public static blOrder Border { get; set; }
     }
 }

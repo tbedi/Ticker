@@ -36,7 +36,7 @@
                                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                     <ContentTemplate>
 
-                                        <div style="text-align: left;">
+                                        <div style="text-align: right;">
                                             <asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
                                         </div>
                                         <div style="text-align: left;">
@@ -47,15 +47,15 @@
                             </div>
                         </td>
                         <td>
-                            <div class="smallBox">
+                            <div class="smallBox" style="background:#97560f">
                                 <asp:UpdatePanel ID="UpdatePanel6" runat="server">
                                     <ContentTemplate>
 
-                                        <div style="text-align: left;">
+                                        <div style="text-align: right;">
                                             <asp:Label runat="server" ID="lblship" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
                                         </div>
                                         <div style="text-align: left;">
-                                            <asp:Label runat="server" ID="lblShipped" Text="Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                                            <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
                                         </div>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -88,7 +88,7 @@
                         <td colspan="2" style="text-align: center;">
                             <asp:UpdatePanel ID="UpdatePanel7" runat="server">
                                 <ContentTemplate>
-                                    <div class="ShipmentInfoDiv">
+                                    <div class="ShipmentInfoDiv" style="background:rgba(0, 122, 204, 0.76);">
 
                                         <asp:Label ID="lblNewSHipmentCount" runat="server" Text="000" CssClass="lblShipmentNumber" />
                                         <p>
@@ -190,7 +190,7 @@
                         </td>
                     </tr>
                 </table>
-                <div id="Div2" class="leftSideBox" style="width: 90%; height: 90px; margin-left: 5px; background: #fff;"></div>
+                <div id="Div2" class="leftSideBox" style="width: 90%; height: 90px; margin-left: 5px; background:rgba(0, 0, 0, 0.00);"></div>
             </td>
             <td rowspan="2" style="vertical-align: bottom;">
                 <div class="BottomChartBOx" style="float: left; background: rgba(50, 192, 202, 0.53); width: 405px; height: 400px;">
@@ -233,7 +233,7 @@
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
                                 </div>
-                                <div id="Div3" class="leftSideBox" style="width: 40%; height: 200px; margin-left: 5px; margin-top: 5px; background: rgba(18, 112, 66, 0.85); float: left;"></div>
+                                <div id="Div3" class="leftSideBox" style="width: 40%; height: 200px; margin-left: 5px; margin-top: 5px; background:rgba(0, 0, 0, 0.00); float: left;"></div>
 
                             </td>
                         </tr>

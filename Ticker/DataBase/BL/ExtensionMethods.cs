@@ -20,7 +20,7 @@ namespace Ticker.DataBase.BL
             return returnObject.ToArray();
         }
 
-        public static object[] RegularOrder(this List<RegularOrderDTO> data)
+        public static object[] ToPichartRegularOrder(this List<RegularOrderDTO> data)
         {
             var returnObject = new List<object>();
 
@@ -31,7 +31,7 @@ namespace Ticker.DataBase.BL
 
             return returnObject.ToArray();
         }
-        public static object[] PartOrder(this List<PartOrderDTO> data)
+        public static object[] TOPiChartPartOrder(this List<PartOrderDTO> data)
         {
             var returnObject = new List<object>();
 

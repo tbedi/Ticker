@@ -15,7 +15,7 @@ namespace Ticker.DataBase.BL
     {
       private static cmdClass order = new cmdClass();
         
-        public static double TotalCount { get; private set; }
+       
 
         public  List<OrderDTO> lsQuantityOrderCategory = order.GetQuantityOrderedCategory();
 
@@ -33,76 +33,79 @@ namespace Ticker.DataBase.BL
 
         public blOrder()
         {
-            TotalCount = 0;
         }
 
-        public List<OrderDTO> GetQuantityOrderCat(List<OrderDTO> lsQuantityOrderCategory)
+        public List<OrderDTO> GetQuantityOrderCat(List<OrderDTO> lsQuantityOrderCat)
         {
+            List<OrderDTO> lsQuantityOrderCatTemp = new List<OrderDTO>();
             try
             {
+                lsQuantityOrderCatTemp = lsQuantityOrderCat;
+
                 double _TotalCount = 0;
-                foreach (var item in lsQuantityOrderCategory)
+                foreach (var item in lsQuantityOrderCatTemp)
                 {
                     _TotalCount = _TotalCount + item.QtyOrdered;
                 }
-                foreach (var items in lsQuantityOrderCategory)
+                foreach (var items in lsQuantityOrderCatTemp)
                 {
                     items.QtyOrdered = Math.Round(((items.QtyOrdered / _TotalCount) * 100), 2);
                 }
-                blOrder.TotalCount = _TotalCount;
             }
             catch (Exception)
             {
             }
-            return lsQuantityOrderCategory;
+            return lsQuantityOrderCatTemp;
         }
 
         public List<RegularOrderDTO> GetRegularOrderQuantity(List<RegularOrderDTO> lsRegularOrder)
         {
+            List<RegularOrderDTO> lsRegularOrderTemp = new List<RegularOrderDTO>();
             try
             {
-                if (lsRegularOrder.Count > 0)
+                lsRegularOrderTemp = lsRegularOrder;
+                if (lsRegularOrderTemp.Count > 0)
                 {
                     double _TotalCount = 0;
-                    foreach (var item in lsRegularOrder)
+                    foreach (var item in lsRegularOrderTemp)
                     {
                         _TotalCount = _TotalCount + item.NoofRegularOrders;
                     }
-                    foreach (var items in lsRegularOrder)
+                    foreach (var items in lsRegularOrderTemp)
                     {
                         items.NoofRegularOrders = Math.Round(((items.NoofRegularOrders / _TotalCount) * 100), 2);
                     }
-                    blOrder.TotalCount = _TotalCount;
                 }
             }
             catch (Exception)
             {
             }
-            return lsRegularOrder;
+            return lsRegularOrderTemp;
         }
         public List<PartOrderDTO> GetPartOrderQuantity(List<PartOrderDTO> lsPartOrder)
         {
+            List<PartOrderDTO> lsPartOrderTemp = new List<PartOrderDTO>();
             try
             {
+                lsPartOrderTemp = lsPartOrder;
                 double _TotalCount = 0;
-                if (lsPartOrder.Count > 0)
+                if (lsPartOrderTemp.Count > 0)
                 {
-                    foreach (var item in lsPartOrder)
+                    foreach (var item in lsPartOrderTemp)
                     {
                         _TotalCount = _TotalCount + item.NoofPartsOrders;
                     }
-                    foreach (var items in lsPartOrder)
+                    foreach (var items in lsPartOrderTemp)
                     {
                         items.NoofPartsOrders = Math.Round(((items.NoofPartsOrders / _TotalCount) * 100), 2);
                     }
-                    blOrder.TotalCount = _TotalCount;
                 }
               
             }
             catch (Exception)
             {
             }
-            return lsPartOrder;
+            return lsPartOrderTemp;
         
         }
 
@@ -135,9 +138,14 @@ namespace Ticker.DataBase.BL
             return hold;
         }
 
-        public double GetTotalOrder()
+        public double GetTotalOrder(List<OrderDTO> lsQuantityOrderCategory)
         {
-            return TotalCount;
+            double _TotalCount = 0;
+            foreach (var item in lsQuantityOrderCategory)
+            {
+                _TotalCount = _TotalCount + item.QtyOrdered;
+            }
+            return _TotalCount;
         }
 
         public List<TopQuantityOrdered> GetTop5QuantityOrder(List<TopQuantityOrdered> lstopQuantityorder)

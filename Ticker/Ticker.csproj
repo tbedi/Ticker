@@ -87,6 +87,7 @@
     <Compile Include="Charts\cGuage.cs" />
     <Compile Include="Charts\cPichart.cs" />
     <Compile Include="Charts\cStackedBar.cs" />
+    <Compile Include="DataBase\BL\cGlobal.cs" />
     <Compile Include="DataBase\BL\ExtensionMethods.cs" />
     <Compile Include="DataBase\Command\cmdClass.cs" />
     <Compile Include="DataBase\EntityModel.Designer.cs">
@@ -174,7 +175,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>false</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>62229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
