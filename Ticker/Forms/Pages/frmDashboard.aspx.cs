@@ -21,23 +21,23 @@ namespace Ticker.Forms.Pages
     {
         public static Thread thAjax;
 
-       public blOrder bOrder = new blOrder();
+        public blOrder bOrder = new blOrder();
 
-       protected void Page_Load(object sender, EventArgs e)
-       {
-           Call();
-       }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Call();
+        }
 
         [System.Web.Services.WebMethod]
         [System.Web.Script.Services.ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static void apply()
         {
-           
+
         }
 
         protected void tmrAjax_Tick(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void tmrAjaxOrderOnCold_Tick(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Ticker.Forms.Pages
                 thAjax = new Thread(new ThreadStart(() =>
                           {
                               Call();
-                             
+
                           }));
                 thAjax.IsBackground = true;
                 thAjax.Start();
@@ -68,16 +68,58 @@ namespace Ticker.Forms.Pages
 
         private void Call()
         {
-            ltrChart.Text = cDonut.OrderCanceledDonut().ToHtmlString();
-            lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
-            ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered().ToHtmlString();
-            ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered().ToHtmlString();
-            ltrRegularOrder.Text = cDonut.RegularOrder().ToHtmlString();
-            litPartOrderQuantity.Text = cDonut.PartOrderQuantity().ToHtmlString();
-            lblError.Visible = false;
-            lblHoldOrder.Text = bOrder.GetHold().ToString();
+            if (bOrder.lsQuantityOrderCategory.Count > 0)
+            {
+                ltrChart.Text = cDonut.OrderCanceledDonut(bOrder.lsQuantityOrderCategory).ToHtmlString();
+                lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
+            }
+            else
+            {
+                lblNewOrderNH.Text = "No Data";
+            }
+            if (bOrder.lsQuantityOrderCategory.Count > 0)
+                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(bOrder.lstopQuantityorder).ToHtmlString();
+
+            if (bOrder.lstopPartner.Count > 0)
+                ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered(bOrder.lstopPartner).ToHtmlString();
+
+            Boolean _Rflag = false;
+            foreach (var item in bOrder.lsRegularOrder)
+            {
+                if (item.NoofRegularOrders > 0)
+                    _Rflag = true;
+            }
+            if (_Rflag)
+            {
+                ltrRegularOrder.Text = cDonut.RegularOrder(bOrder.lsRegularOrder).ToHtmlString();
+                lblErrorRegular.Visible = false;
+            }
+            else
+            {
+                lblErrorRegular.Visible = true;
+                lblErrorRegular.Text = "Record Not Found.";
+            }
+
+            Boolean _flag = false;
+            foreach (var item in bOrder.lsPartOrder)
+            {
+                if (item.NoofPartsOrders > 0)
+                    _flag = true;
+            }
+            if (_flag)
+            {
+                litPartOrderQuantity.Text = cDonut.PartOrderQuantity(bOrder.lsPartOrder).ToHtmlString();
+                lblError.Visible = false;
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "Record Not Found.";
+            }
+
+            lblHoldOrder.Text = bOrder.HoldOrder.ToString();
             int ShippingInt = 0;
-            int.TryParse(bOrder.GetShippedpercentage().ToString(), out ShippingInt);
+            int.TryParse(bOrder.lsshipped.ToString(), out ShippingInt);
             lblship.Text = ShippingInt.ToString();
         }
     }

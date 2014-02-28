@@ -9,14 +9,15 @@ using DotNet.Highcharts.Options;
 using System.Drawing;
 using Ticker.DataBase;
 using Ticker.DataBase.BL;
+using Ticker.Views;
 
 namespace Ticker.Charts
 {
     public static class cDonut
     {
         public static blOrder b = new blOrder();
-      
-        public static Highcharts OrderCanceledDonut()
+
+        public static Highcharts OrderCanceledDonut(List<OrderDTO> lsQuantityOrderCategory)
         {
 
             Highcharts chart = new Highcharts("chart")
@@ -77,7 +78,7 @@ namespace Ticker.Charts
                 {
                     Type = ChartTypes.Pie,
                     Name = "Browser share",
-                    Data = new Data(b.GetQuantityOrderCat().ToPieChartSeries())
+                    Data = new Data(b.GetQuantityOrderCat(lsQuantityOrderCategory).ToPieChartSeries())
                 });
             return chart;
         }
@@ -152,7 +153,7 @@ namespace Ticker.Charts
             return chart;
         }
 
-        public static Highcharts RegularOrder()
+        public static Highcharts RegularOrder(List<RegularOrderDTO> lsRegularOrder)
         {
 
             Highcharts chart = new Highcharts("chartRegular")
@@ -208,12 +209,12 @@ namespace Ticker.Charts
                 {
                     Type = ChartTypes.Pie,
                     Name = "Browser share",
-                    Data = new Data(b.GetRegularOrderQuantity().RegularOrder())
+                    Data = new Data(b.GetRegularOrderQuantity(lsRegularOrder).RegularOrder())
                 });
             return chart;
         }
-        
-        public static Highcharts PartOrderQuantity()
+
+        public static Highcharts PartOrderQuantity(List<PartOrderDTO> lsPartOrder)
         {
 
             Highcharts chart = new Highcharts("chartParts")
@@ -269,7 +270,7 @@ namespace Ticker.Charts
                 {
                     Type = ChartTypes.Pie,
                     Name = "Browser share",
-                    Data = new Data(b.GetPartOrderQuantity().PartOrder())
+                    Data = new Data(b.GetPartOrderQuantity(lsPartOrder).PartOrder())
                 });
             return chart;
         }

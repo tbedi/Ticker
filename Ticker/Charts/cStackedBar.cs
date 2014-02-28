@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web;
 using Ticker.DataBase.BL;
 using Ticker.Charts;
+using Ticker.Views;
 
 namespace Ticker.Charts
 {
@@ -17,9 +18,10 @@ namespace Ticker.Charts
         public static blOrder bOrder = new blOrder();
         public static DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
 
-        public static List<Views.TopQuantityOrdered>  lsTopSKUQty= cmd.GetTop5SkuQuantityOrder();
-        public static List<Views.TopPartnerDTO> lsTopPartners = cmd.GetTop5ParnerOrder();
-        public static Highcharts GetTop_5_SKU_By_Ordered()
+        //public static List<Views.TopQuantityOrdered>  lsTopSKUQty= cmd.GetTop5SkuQuantityOrder();
+        //public static List<Views.TopPartnerDTO> lsTopPartners = cmd.GetTop5ParnerOrder();
+
+        public static Highcharts GetTop_5_SKU_By_Ordered(List<TopQuantityOrdered> lstopQuantityorder)
         {
             Highcharts chart = new Highcharts("StackedColumn")
              .InitChart(new Chart
@@ -50,7 +52,7 @@ namespace Ticker.Charts
              .SetXAxis(new XAxis
                  {
 
-                     Categories = lsTopSKUQty.ToCatagorysListFromSKU(),
+                     Categories = lstopQuantityorder.ToCatagorysListFromSKU(),
                 })
             .SetYAxis(new YAxis
                 {
@@ -82,12 +84,12 @@ namespace Ticker.Charts
              })
              .SetSeries(new[]
                        {
-                           new Series { Name = "Quantity", Data =new Data( lsTopSKUQty.ToTop5SKUObject())  },
+                           new Series { Name = "Quantity", Data =new Data( lstopQuantityorder.ToTop5SKUObject())  },
                        });
             return chart;
         }
 
-        public static Highcharts GetTop_5_Partner_By_Ordered()
+        public static Highcharts GetTop_5_Partner_By_Ordered(List<TopPartnerDTO> lstopPartner)
         {
             Highcharts chart = new Highcharts("StackedColumnPartner")
              .InitChart(new Chart
@@ -117,7 +119,7 @@ namespace Ticker.Charts
                        )
              .SetXAxis(new XAxis
              {
-                 Categories = lsTopPartners.ToCatagorysListFromPartner()
+                 Categories = lstopPartner.ToCatagorysListFromPartner()
              })
             .SetYAxis(new YAxis
             {
@@ -149,7 +151,7 @@ namespace Ticker.Charts
              })
              .SetSeries(new[]
                        {
-                           new Series { Name = "Partners", Data = new Data(lsTopPartners.ToTop5ParnerObject()) ,Color=System.Drawing.Color.FromArgb(1,80, 150, 18) },
+                           new Series { Name = "Partners", Data = new Data(lstopPartner.ToTop5ParnerObject()) ,Color=System.Drawing.Color.FromArgb(1,80, 150, 18) },
                        });
             return chart;
         }

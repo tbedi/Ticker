@@ -15,6 +15,11 @@
                         <ContentTemplate>
                              <asp:Label ID="lblregularorder" runat="server" Text="Regular Order" CssClass="lblChartTitle" />
                             <asp:Literal ID="ltrRegularOrder" runat="server"></asp:Literal>
+                            <p>
+                                <div style="margin-top:30px">
+                                    <asp:Label ID="lblErrorRegular" runat="server" CssClass="lblShipmentSubtitle" ForeColor="Red"></asp:Label>
+                                </div>
+                            </p>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
@@ -184,7 +189,7 @@
                             <asp:Literal ID="litPartOrderQuantity" runat="server"></asp:Literal>
                             <p>
                                 <div style="margin-top:30px">
-                                    <asp:Label ID="lblError" runat="server" CssClass="lblShipmentSubtitle"></asp:Label>
+                                    <asp:Label ID="lblError" runat="server" CssClass="lblShipmentSubtitle" ForeColor="Red"></asp:Label>
                                 </div>
                             </p>
                         </ContentTemplate>
