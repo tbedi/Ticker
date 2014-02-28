@@ -21,8 +21,6 @@ namespace Ticker.Forms.Pages
     {
         public static Thread thAjax;
 
-        public blOrder bOrder = new blOrder();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Call();
@@ -68,30 +66,30 @@ namespace Ticker.Forms.Pages
 
         private void Call()
         {
-            if (bOrder.lsQuantityOrderCategory.Count > 0)
+            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
             {
-                ltrChart.Text = cDonut.OrderCanceledDonut(bOrder.lsQuantityOrderCategory).ToHtmlString();
-                lblNewOrderNH.Text = (Convert.ToInt32(bOrder.GetTotalOrder())).ToString();
+                ltrChart.Text = cDonut.OrderCanceledDonut(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
+                lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder())).ToString();
             }
             else
             {
                 lblNewOrderNH.Text = "No Data";
             }
-            if (bOrder.lsQuantityOrderCategory.Count > 0)
-                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(bOrder.lstopQuantityorder).ToHtmlString();
+            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
+                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
 
-            if (bOrder.lstopPartner.Count > 0)
-                ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered(bOrder.lstopPartner).ToHtmlString();
+            if (cGlobal.Border.lstopPartner.Count > 0)
+                ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered(cGlobal.Border.lstopPartner).ToHtmlString();
 
             Boolean _Rflag = false;
-            foreach (var item in bOrder.lsRegularOrder)
+            foreach (var item in cGlobal.Border.lsRegularOrder)
             {
                 if (item.NoofRegularOrders > 0)
                     _Rflag = true;
             }
             if (_Rflag)
             {
-                ltrRegularOrder.Text = cDonut.RegularOrder(bOrder.lsRegularOrder).ToHtmlString();
+                ltrRegularOrder.Text = cDonut.RegularOrder(cGlobal.Border.lsRegularOrder).ToHtmlString();
                 lblErrorRegular.Visible = false;
             }
             else
@@ -101,14 +99,14 @@ namespace Ticker.Forms.Pages
             }
 
             Boolean _flag = false;
-            foreach (var item in bOrder.lsPartOrder)
+            foreach (var item in cGlobal.Border.lsPartOrder)
             {
                 if (item.NoofPartsOrders > 0)
                     _flag = true;
             }
             if (_flag)
             {
-                litPartOrderQuantity.Text = cDonut.PartOrderQuantity(bOrder.lsPartOrder).ToHtmlString();
+                litPartOrderQuantity.Text = cDonut.PartOrderQuantity(cGlobal.Border.lsPartOrder).ToHtmlString();
                 lblError.Visible = false;
             }
             else
@@ -117,9 +115,10 @@ namespace Ticker.Forms.Pages
                 lblError.Text = "Record Not Found.";
             }
 
-            lblHoldOrder.Text = bOrder.HoldOrder.ToString();
+            lblHoldOrder.Text = cGlobal.Border.HoldOrder.ToString();
             int ShippingInt = 0;
-            int.TryParse(bOrder.lsshipped.ToString(), out ShippingInt);
+            string Ship= Math.Round( cGlobal.Border.GetShippedpercentage(cGlobal.Border.lsshipped),0).ToString();
+            int.TryParse(Ship, out ShippingInt);
             lblship.Text = ShippingInt.ToString();
         }
     }

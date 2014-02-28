@@ -24,8 +24,6 @@ namespace Ticker.DataBase.BL
 
         public List<TopPartnerDTO> lstopPartner = order.GetTop5ParnerOrder();
 
-
-
         public List<double> lsshipped = order.GetShipped();
 
         public int HoldOrder = order.GetNoOfHoldOrders();

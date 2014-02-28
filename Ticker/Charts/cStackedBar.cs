@@ -15,12 +15,6 @@ namespace Ticker.Charts
 {
     public class cStackedBar
     {
-        public static blOrder bOrder = new blOrder();
-        public static DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
-
-        //public static List<Views.TopQuantityOrdered>  lsTopSKUQty= cmd.GetTop5SkuQuantityOrder();
-        //public static List<Views.TopPartnerDTO> lsTopPartners = cmd.GetTop5ParnerOrder();
-
         public static Highcharts GetTop_5_SKU_By_Ordered(List<TopQuantityOrdered> lstopQuantityorder)
         {
             Highcharts chart = new Highcharts("StackedColumn")
