@@ -5,6 +5,9 @@ using System.Web;
 using Ticker.DataBase.Command;
 using Ticker.Charts;
 using Ticker.Views;
+using System.Web.UI.WebControls;
+using System.Net;
+using System.Text;
 
 namespace Ticker.DataBase.BL
 {
@@ -145,6 +148,28 @@ namespace Ticker.DataBase.BL
         public List<TopPartnerDTO> GetTop5Partner(List<TopPartnerDTO> lstopPartner)
         {
             return lstopPartner;
+        }
+
+        public string WebReasponce( String URL, Label lbl)
+        {
+            string _return = "0";
+            try
+            {
+                // Create a new WebClient instance.
+                WebClient myWebClient = new WebClient();
+                // Download the Web resource and save it into a data buffer.
+                byte[] myDataBuffer = myWebClient.DownloadData(URL);
+                // Display the downloaded data.
+                string download = Encoding.ASCII.GetString(myDataBuffer);
+                
+                lbl.Text = download.ToString();
+                myWebClient.Dispose();
+            }
+            catch (Exception)
+            {
+                lbl.Text = "Error!";
+            }
+            return _return;
         }
     }
 }
