@@ -1,8 +1,4 @@
-﻿using DotNet.Highcharts;
-using DotNet.Highcharts.Enums;
-using DotNet.Highcharts.Helpers;
-using DotNet.Highcharts.Options;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,6 +6,10 @@ using System.Web;
 using Ticker.DataBase.BL;
 using Ticker.Charts;
 using Ticker.Views;
+using DotNet.Highcharts;
+using DotNet.Highcharts.Enums;
+using DotNet.Highcharts.Helpers;
+using DotNet.Highcharts.Options;
 
 namespace Ticker.Charts
 {
@@ -37,20 +37,20 @@ namespace Ticker.Charts
                  Href = "http://www.kraususa.com/",
                  Text = "kraus USA Inc."
              })
-             .SetTitle(new Title 
+             .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED",
-                                Style="color: '#fff'"
+                                Style = "color: '#fff'"
                             }
                        )
              .SetXAxis(new XAxis
                  {
 
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU(),
-                })
+                 })
             .SetYAxis(new YAxis
                 {
-                    Title = new YAxisTitle{ Text= "Quantity",Style="color: '#fff'"}
+                    Title = new YAxisTitle { Text = "Quantity", Style = "color: '#fff'" }
                 })
 
               .SetLegend(new Legend
@@ -76,6 +76,7 @@ namespace Ticker.Charts
                              }
                      }
              })
+
              .SetSeries(new[]
                        {
                            new Series { Name = "Quantity", Data =new Data( lstopQuantityorder.ToTop5SKUObject())  },
@@ -90,7 +91,7 @@ namespace Ticker.Charts
              {
                  DefaultSeriesType = ChartTypes.Column,
                  Width = 405,
-                 Height = 400,
+                 Height = 500,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },

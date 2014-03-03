@@ -6,6 +6,9 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
     <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
     <script src="../../Themes/js/highcharts.src.js"></script>
+    <script src="../../Themes/js/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script src="../../Themes/js/jquery-2.0.2.js"></script>
     <table class="maintbl">
         <tr>
             <td style="vertical-align: bottom;">
@@ -24,45 +27,6 @@
                 </div>
             </td>
             <td style="width: 30%;" rowspan="2">
-                <table style="width: 100%">
-                    <tr>
-                        <td colspan="2">
-                            <asp:Label ID="Label2" runat="server" Text="ORDER DETAILS" Font-Size="X-Large" ForeColor="#ffffff" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="smallBox">
-                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                    <ContentTemplate>
-
-                                        <div style="text-align: right;">
-                                            <asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
-                                        </div>
-                                        <div style="text-align: left;">
-                                            <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
-                                        </div>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="smallBox" style="background:#97560f">
-                                <asp:UpdatePanel ID="UpdatePanel6" runat="server">
-                                    <ContentTemplate>
-
-                                        <div style="text-align: right;">
-                                            <asp:Label runat="server" ID="lblship" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
-                                        </div>
-                                        <div style="text-align: left;">
-                                            <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
-                                        </div>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
                 <div id="asdFlick" class="boxStyleKey">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
@@ -74,8 +38,13 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
-
-
+                <div class="BottomChartBOx" style="float: left;">
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                        <ContentTemplate>
+                            <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
             </td>
             <td rowspan="2" style="vertical-align: top;">
                 <table id="tblOrderDetails" style="width: 78%; float: left;">
@@ -86,18 +55,17 @@
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: center;">
-                            <asp:UpdatePanel ID="UpdatePanel7" runat="server">
-                                <ContentTemplate>
-                                    <div class="ShipmentInfoDiv" style="background:rgba(0, 122, 204, 0.76);">
-
+                            <div class="ShipmentInfoDiv" style="background: rgba(0, 122, 204, 0.76);">
+                                <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                                    <ContentTemplate>
                                         <asp:Label ID="lblNewSHipmentCount" runat="server" Text="000" CssClass="lblShipmentNumber" />
+                                        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                         <p>
-                                            <asp:Label ID="Label6" runat="server" Text="New Shipment" CssClass="lblShipmentSubtitle" />
+                                            <asp:Label ID="Label6" runat="server" CssClass="lblShipmentSubtitle" Text="New Shipment" />
                                         </p>
-                                    </div>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -190,10 +158,37 @@
                         </td>
                     </tr>
                 </table>
-                <div id="Div2" class="leftSideBox" style="width: 90%; height: 90px; margin-left: 5px; background:rgba(0, 0, 0, 0.00);"></div>
+                <%--<div id="Div2" class="leftSideBox" style="width: 90%; height: 90px; margin-left: 5px; background:rgba(0, 0, 0, 0.00);">--%>
+                <div class="smallBox" style="background: #97560f">
+                    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                        <ContentTemplate>
+
+                            <div style="text-align: right;">
+                                <asp:Label runat="server" ID="lblship" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
+                            </div>
+                            <div style="text-align: left;">
+                                <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <div class="smallBox">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+
+                            <div style="text-align: right;">
+                                <asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
+                            </div>
+                            <div style="text-align: left;">
+                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                <%--</div>--%>
             </td>
             <td rowspan="2" style="vertical-align: bottom;">
-                <div class="BottomChartBOx" style="float: left; background: rgba(50, 192, 202, 0.53); width: 405px; height: 400px;">
+                <div class="BottomChartBOx" style="float: left; background: rgba(50, 192, 202, 0.53); width: 405px; height: 600px;">
                     <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                         <ContentTemplate>
                             <asp:Literal ID="ltrStackedColumnTop5Partner" runat="server"></asp:Literal>
@@ -219,20 +214,14 @@
                 </div>
             </td>
         </tr>
-        <tr>
+        <%--    <tr>
             <td>&nbsp;</td>
             <td colspan="2">
                 <div id="dvMain" class="HomeDivKey">
                     <table style="width: 100%">
                         <tr>
                             <td>
-                                <div class="BottomChartBOx" style="float: left;">
-                                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
-                                        <ContentTemplate>
-                                            <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
-                                </div>
+                                
                                 <div id="Div3" class="leftSideBox" style="width: 40%; height: 200px; margin-left: 5px; margin-top: 5px; background:rgba(0, 0, 0, 0.00); float: left;"></div>
 
                             </td>
@@ -242,8 +231,8 @@
                 </div>
             </td>
             <td>&nbsp;</td>
-        </tr>
+        </tr>--%>
     </table>
     <asp:Timer ID="tmrAjaxOrderOnCold" runat="server" Interval="30000" OnTick="tmrAjaxOrderOnCold_Tick"></asp:Timer>
-    
+
 </asp:Content>

@@ -14,85 +14,85 @@ namespace Ticker.Charts
     {
         public static Highcharts GetGuage()
         {
-            Highcharts chart = new Highcharts("chart")
+            Highcharts chart = new Highcharts("chartgauge")
                .InitChart(new Chart
                {
-                   Width=500,
+                   Width = 200,
+                   Height = 200,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
                    PlotBorderWidth = 0,
                    PlotShadow = false
-               })
-               .SetTitle(new Title { Text = "Speedometer" })
+               }).SetCredits(new Credits { Enabled = false })
+               .SetTitle(new Title { Text = "" })
                .SetPane(new Pane
                {
-                   StartAngle = -150,
-                   EndAngle = 150,
+                   StartAngle = -100,
+                   EndAngle = 100,
                    Background = new[]
                             {
                                 new BackgroundObject
                                     {
                                         BackgroundColor = new BackColorOrGradient(new Gradient
                                             {
-                                                LinearGradient = new[] { 0, 0, 0, 1 },
-                                                Stops = new object[,] { { 0, "#FFF" }, { 1, "#333" } }
+                                                LinearGradient = new[] { 0, 0, 0, 400 },
+                                                Stops = new object[,]
+                                                    {
+                                                        { 0, Color.FromArgb(13, 255, 255, 255) },
+                                                        { 1, Color.FromArgb(13, 255, 255, 255) }
+                                                    }
                                             }),
                                         BorderWidth = new PercentageOrPixel(0),
-                                        OuterRadius = new PercentageOrPixel(109, true)
+                                       OuterRadius = new PercentageOrPixel(109, true)
                                     },
-                                new BackgroundObject
-                                    {
-                                        BackgroundColor = new BackColorOrGradient(new Gradient
-                                            {
-                                                LinearGradient = new[] { 0, 0, 0, 1 },
-                                                Stops = new object[,] { { 0, "#333" }, { 1, "#FFF" } }
-                                            }),
-                                        BorderWidth = new PercentageOrPixel(1),
-                                        OuterRadius = new PercentageOrPixel(107, true)
-                                    },
-                                new BackgroundObject(),
-                                new BackgroundObject
-                                    {
-                                        BackgroundColor = new BackColorOrGradient(ColorTranslator.FromHtml("#DDD")),
-                                        BorderWidth = new PercentageOrPixel(0),
-                                        OuterRadius = new PercentageOrPixel(105, true),
-                                        InnerRadius = new PercentageOrPixel(103, true)
-                                    }
                             }
+               }).SetPlotOptions(new PlotOptions
+               {
+                   Gauge = new PlotOptionsGauge
+                   {
+                       DataLabels = new PlotOptionsGaugeDataLabels
+                       {
+                           Y = -25,
+                           Style = "fontWeight:'bold',fontSize: '60px' ,color: '#007acc'",
+                           BorderWidth=0
+                    
+                       }
+                   }
                })
                .SetYAxis(new YAxis
                {
                    Min = 0,
-                   Max = 200,
+                   Max = 500,
 
                    //MinorTickInterval = "auto",
-                   MinorTickWidth = 1,
+                   MinorTickWidth = 0,
                    MinorTickLength = 10,
                    MinorTickPosition = TickPositions.Inside,
-                   MinorTickColor = ColorTranslator.FromHtml("#666"),
-                   TickPixelInterval = 30,
+                   MinorTickColor = ColorTranslator.FromHtml("#fff"),
+                   TickPixelInterval = 35,
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
-                   TickLength = 10,
-                   TickColor = ColorTranslator.FromHtml("#666"),
+                   TickLength = 30,
+                   TickColor = ColorTranslator.FromHtml("#007acc"),
                    Labels = new YAxisLabels
                    {
                        Step = 2,
-                       //Rotation = "auto"
+                       Distance = 10
                    },
-                   Title = new YAxisTitle { Text = "km/h" },
+                   Title = new YAxisTitle { Text = "" },
                    PlotBands = new[]
                             {
-                                new YAxisPlotBands { From = 0, To = 120, Color = ColorTranslator.FromHtml("#55BF3B") },
-                                new YAxisPlotBands { From = 120, To = 160, Color = ColorTranslator.FromHtml("#DDDF0D") },
-                                new YAxisPlotBands { From = 160, To = 200, Color = ColorTranslator.FromHtml("#DF5353") }
-                            }
+                                new YAxisPlotBands { From = 0, To = 500, Color = ColorTranslator.FromHtml("#007acc"), Thickness =new PercentageOrPixel (30,true)},
+                                
+                            },
                })
                .SetSeries(new Series
                {
-                   Name = "Speed",
-                   Data = new Data(new object[] { 80 })
+                   Name = "New",
+                   Data = new Data(new object[] { 80 }),
+
+
                });
 
             return chart;
