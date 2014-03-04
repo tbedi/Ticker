@@ -12,7 +12,7 @@ namespace Ticker.Forms.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ltrChart.Text = cGuage.GetGuage().ToHtmlString();
+            //ltrChart.Text = cGuage.GetGuage().ToHtmlString();
            // ltrChart.Text = cDonut.ExampleDonut().ToHtmlString();
         }
     }

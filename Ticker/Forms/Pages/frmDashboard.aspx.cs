@@ -25,35 +25,15 @@ namespace Ticker.Forms.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            Call();
+            if (!IsPostBack)
+               Call();
+
         }
 
 
         protected void tmrAjaxOrderOnCold_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                if (!thAjax.IsAlive)
-                {
-                    thAjax = new Thread(new ThreadStart(() =>
-                        {
-                            Call();
-                        }));
-                    thAjax.IsBackground = true;
-                    thAjax.Start();
-                }
-            }
-            catch (Exception)
-            {
-                thAjax = new Thread(new ThreadStart(() =>
-                          {
-                              Call();
-
-                          }));
-                thAjax.IsBackground = true;
-                thAjax.Start();
-            }
+            Call();
         }
 
         private void Call()
@@ -126,15 +106,17 @@ namespace Ticker.Forms.Pages
             try
             {
                 string newShipment = "http://internal.kraususa.net/result.php?type=new";
-                cGlobal.Border.WebReasponce(newShipment, lblNewSHipmentCount);
+                Literal1.Text = cGuage.GetNewShipmentGuage(Convert.ToInt32(cGlobal.Border.WebReasponce(newShipment))).ToHtmlString();
+
                 String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
-                cGlobal.Border.WebReasponce(SYSInProcess, lblSysInProcess);
+                ltrInProcessSOS.Text = cGuage.GetGreenSYS(Convert.ToInt32(cGlobal.Border.WebReasponce(SYSInProcess))).ToHtmlString();
                 String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
-                cGlobal.Border.WebReasponce(SYSShipped, lblSYSShipped);
+                ltrShippedSYS.Text =cGuage.GetPurplSYS(Convert.ToInt32(cGlobal.Border.WebReasponce(SYSShipped))).ToHtmlString();
+
                 String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
-                cGlobal.Border.WebReasponce(PWInProcess, lblPWInProcess);
+                ltrInprocessNyWH.Text = cGuage.GetGreenWT((Convert.ToInt32(cGlobal.Border.WebReasponce(PWInProcess)))).ToHtmlString();
                 String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
-                cGlobal.Border.WebReasponce(PWShipped, lblPWShipped);
+                ltrShippedNYWH.Text = cGuage.GetPurplWT((Convert.ToInt32(cGlobal.Border.WebReasponce(PWShipped)))).ToHtmlString();
 
             }
             catch (Exception)

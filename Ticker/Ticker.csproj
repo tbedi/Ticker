@@ -72,6 +72,8 @@
     <Content Include="Forms\Pages\frmGuage.aspx" />
     <Content Include="Forms\Pages\frmStackedBar.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
+    <Content Include="Themes\Images\Down.png" />
+    <Content Include="Themes\Images\up.png" />
     <Content Include="Themes\js\highcharts-more.js" />
     <Content Include="Themes\js\highcharts-more.src.js" />
     <Content Include="Themes\js\highcharts.js" />
@@ -158,9 +160,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
