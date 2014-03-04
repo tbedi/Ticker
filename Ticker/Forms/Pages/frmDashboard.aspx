@@ -59,7 +59,7 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
-                <div class="smallBox">
+                <div class="smallBox" style="margin-left:10px">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                         <ContentTemplate>
 
@@ -87,7 +87,7 @@
                                     <ContentTemplate>
                                         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                         <p class="leftSideBoxChartp">
-                                            <asp:Label ID="Label6" runat="server" Text="New Shipment" ForeColor="#cccccc" />
+                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#cccccc" />
                                         </p>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
