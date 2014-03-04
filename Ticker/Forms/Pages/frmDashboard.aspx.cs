@@ -26,7 +26,6 @@ namespace Ticker.Forms.Pages
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-                Literal1.Text = cGuage.GetGuage().ToHtmlString();
                Call();
 
         }
@@ -107,15 +106,17 @@ namespace Ticker.Forms.Pages
             try
             {
                 string newShipment = "http://internal.kraususa.net/result.php?type=new";
-                lblNewSHipmentCount.Text = cGlobal.Border.WebReasponce(newShipment);
+                Literal1.Text = cGuage.GetNewShipmentGuage(Convert.ToInt32(cGlobal.Border.WebReasponce(newShipment))).ToHtmlString();
+
                 String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
-                lblSysInProcess.Text = cGlobal.Border.WebReasponce(SYSInProcess);
+                ltrInProcessSOS.Text = cGuage.GetGreenSYS(Convert.ToInt32(cGlobal.Border.WebReasponce(SYSInProcess))).ToHtmlString();
                 String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
-                lblSYSShipped.Text = cGlobal.Border.WebReasponce(SYSShipped);
+                ltrShippedSYS.Text =cGuage.GetPurplSYS(Convert.ToInt32(cGlobal.Border.WebReasponce(SYSShipped))).ToHtmlString();
+
                 String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
-                lblPWInProcess.Text = cGlobal.Border.WebReasponce(PWInProcess);
+                ltrInprocessNyWH.Text = cGuage.GetGreenWT((Convert.ToInt32(cGlobal.Border.WebReasponce(PWInProcess)))).ToHtmlString();
                 String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
-                lblPWShipped.Text = cGlobal.Border.WebReasponce(PWShipped);
+                ltrShippedNYWH.Text = cGuage.GetPurplWT((Convert.ToInt32(cGlobal.Border.WebReasponce(PWShipped)))).ToHtmlString();
 
             }
             catch (Exception)
