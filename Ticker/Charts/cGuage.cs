@@ -17,7 +17,7 @@ namespace Ticker.Charts
             Highcharts chart = new Highcharts("chartgauge")
                .InitChart(new Chart
                {
-                   Width = 600,
+                   Width = 500,
                    Height = 250,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
@@ -81,7 +81,7 @@ namespace Ticker.Charts
                .SetYAxis(new YAxis
                {
                    Min = 0,
-                   Max = 750,
+                   Max = 600,
 
                    //MinorTickInterval = "auto",
                    MinorTickWidth = 0,
@@ -110,7 +110,7 @@ namespace Ticker.Charts
                             {
                                 new YAxisPlotBands 
                                 {
-                                    From = 0, To = 750, 
+                                    From = 0, To = 600, 
                                     Color = ColorTranslator.FromHtml("#007acc"), 
                                     Thickness =new PercentageOrPixel (200,true), 
                                     InnerRadius = new PercentageOrPixel(130, true)
@@ -155,7 +155,7 @@ namespace Ticker.Charts
             Highcharts chart = new Highcharts("chartgaugeGreenSYS")
                .InitChart(new Chart
                {
-                   Width = 300,
+                   Width = 250,
                    Height = 200,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
@@ -291,7 +291,7 @@ namespace Ticker.Charts
             Highcharts chart = new Highcharts("chartgaugeGreenWT")
                .InitChart(new Chart
                {
-                   Width = 300,
+                   Width = 250,
                    Height = 200,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
@@ -434,7 +434,7 @@ namespace Ticker.Charts
             Highcharts chart = new Highcharts("chartgaugepprWT")
                .InitChart(new Chart
                {
-                   Width = 300,
+                   Width = 250,
                    Height = 200,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
@@ -574,7 +574,7 @@ namespace Ticker.Charts
             Highcharts chart = new Highcharts("chartgaugepprSYS")
                .InitChart(new Chart
                {
-                   Width = 300,
+                   Width = 250,
                    Height = 200,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,

@@ -22,7 +22,7 @@ namespace Ticker.Charts
              {
                  DefaultSeriesType = ChartTypes.Column,
                  Width = 370,
-                 Height = 230,
+                 Height = 330,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
@@ -91,7 +91,7 @@ namespace Ticker.Charts
              {
                  DefaultSeriesType = ChartTypes.Column,
                  Width = 405,
-                 Height = 550,
+                 Height = 500,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },

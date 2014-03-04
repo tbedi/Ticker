@@ -56,16 +56,16 @@ namespace Ticker.Forms.Pages
                 if (item.NoofRegularOrders > 0)
                     _Rflag = true;
             }
-            if (_Rflag)
-            {
-                ltrRegularOrder.Text = cDonut.RegularOrder(cGlobal.Border.lsRegularOrder).ToHtmlString();
-                lblErrorRegular.Visible = false;
-            }
-            else
-            {
-                lblErrorRegular.Visible = true;
-                lblErrorRegular.Text = "Record Not Found.";
-            }
+            //if (_Rflag)
+            //{
+            //    ltrRegularOrder.Text = cDonut.RegularOrder(cGlobal.Border.lsRegularOrder).ToHtmlString();
+            //    lblErrorRegular.Visible = false;
+            //}
+            //else
+            //{
+            //    lblErrorRegular.Visible = true;
+            //    lblErrorRegular.Text = "Record Not Found.";
+            //}
 
             Boolean _flag = false;
             foreach (var item in cGlobal.Border.lsPartOrder)
