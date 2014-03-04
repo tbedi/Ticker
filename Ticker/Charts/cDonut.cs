@@ -28,10 +28,10 @@ namespace Ticker.Charts
                     {
                         LinearGradient = new[] { 0, 0, 0, 400 },
                         Stops = new object[,]
-                  {
-                    { 0, Color.FromArgb(13, 255, 255, 255) },
-                    { 1, Color.FromArgb(13, 255, 255, 255) }
-                  }
+                            {
+                             { 0, Color.FromArgb(13, 255, 255, 255) },
+                             { 1, Color.FromArgb(13, 255, 255, 255) }
+                         }
                     }),
                     Height = 370,
                     Width = 470,

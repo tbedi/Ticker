@@ -14,9 +14,7 @@ namespace Ticker.DataBase.BL
     public  class blOrder
     {
       private static cmdClass order = new cmdClass();
-        
-       
-
+      
         public  List<OrderDTO> lsQuantityOrderCategory = order.GetQuantityOrderedCategory();
 
         public  List<RegularOrderDTO> lsRegularOrder = order.GetRegularQuantityOrdred();
@@ -158,7 +156,7 @@ namespace Ticker.DataBase.BL
             return lstopPartner;
         }
 
-        public string WebReasponce( String URL, Label lbl)
+        public string WebReasponce( String URL)
         {
             string _return = "0";
             try
@@ -168,14 +166,11 @@ namespace Ticker.DataBase.BL
                 // Download the Web resource and save it into a data buffer.
                 byte[] myDataBuffer = myWebClient.DownloadData(URL);
                 // Display the downloaded data.
-                string download = Encoding.ASCII.GetString(myDataBuffer);
-                
-                lbl.Text = download.ToString();
+                _return  = Encoding.ASCII.GetString(myDataBuffer);
                 myWebClient.Dispose();
             }
             catch (Exception)
             {
-                lbl.Text = "Error!";
             }
             return _return;
         }

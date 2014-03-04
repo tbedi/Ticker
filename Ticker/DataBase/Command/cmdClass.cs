@@ -251,5 +251,6 @@ namespace Ticker.DataBase.Command
             }
             return lsshipped;
         }
+
     }
 }
