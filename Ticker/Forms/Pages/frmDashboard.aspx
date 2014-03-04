@@ -70,22 +70,23 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td >
                             <div id="dvNywhDetails" style="float: right; width:200px">
                                 <table style="width: 100%">
                                     <tr>
                                         <td >
-                                            <asp:Label ID="Label3" runat="server" Text="SYOSSET" Font-Size="17" ForeColor="Black" />
+                                            <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="17" ForeColor="WhiteSmoke" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                         
+                                      <td>
                                             <asp:UpdatePanel ID="UpdatePanel8" runat="server">
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 200px; background:#0f7673">
                                                         <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label1" runat="server" Text="IN PROCESS" />
+                                                            <asp:Label ID="Label1" runat="server" Text="SYOSSET" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -93,14 +94,19 @@
 
                                         </td>
                                     </tr>
+                                     <tr>
+                                        <td >
+                                            <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="17" ForeColor="WhiteSmoke" />
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel10" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 200px; background:#171717;">
+                                                    <div class="ShipmentInfoDiv" style="width: 200px; background: #171717;">
                                                         <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                               <asp:Label ID="Label2" runat="server" Text="Shipped" ForeColor="WhiteSmoke" />
+                                                            <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="WhiteSmoke" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -115,23 +121,29 @@
                             <div id="Div2" style="float: right; width:200px">
                                 <table style="width: 100%">
                                     <tr>
-                                        <td >
-                                            <asp:Label ID="Label4" runat="server" Text="NYWH" Font-Size="17" ForeColor="Black" />
+                                        <td style="height:25px" >
+                                            <asp:Label ID="Label4" runat="server" Text=" " Font-Size="17" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel9" runat="server">
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 200px; background:#0f7673">
                                                         <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label5" runat="server" Text="IN PROCESS" />
+                                                            <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON"  Font-Size="Large"/>
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
 
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td style="height:25px" >
+
+                                            <asp:Label ID="Label10" runat="server" Text=" " Font-Size="17" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -141,13 +153,14 @@
                                                     <div class="ShipmentInfoDiv" style="width: 200px; background:#171717;">
                                                         <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                               <asp:Label ID="Label7" runat="server" Text="Shipped" ForeColor="WhiteSmoke" />
+                                                               <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON"  Font-Size="Large" ForeColor="WhiteSmoke"/>
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
                                         </td>
                                     </tr>
+                                    
                                 </table>
                             </div>
                         </td>
