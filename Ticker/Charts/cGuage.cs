@@ -17,7 +17,7 @@ namespace Ticker.Charts
             Highcharts chart = new Highcharts("chart")
                .InitChart(new Chart
                {
-                   Width=500,
+                   Width = 500,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -64,12 +64,12 @@ namespace Ticker.Charts
                .SetYAxis(new YAxis
                {
                    Min = 0,
-                   Max = 200,
+                   Max = 500,
 
                    //MinorTickInterval = "auto",
                    MinorTickWidth = 1,
                    MinorTickLength = 10,
-                   MinorTickPosition = TickPositions.Inside,
+                   MinorTickPosition = TickPositions.Outside,
                    MinorTickColor = ColorTranslator.FromHtml("#666"),
                    TickPixelInterval = 30,
                    TickWidth = 2,
@@ -78,25 +78,43 @@ namespace Ticker.Charts
                    TickColor = ColorTranslator.FromHtml("#666"),
                    Labels = new YAxisLabels
                    {
-                       Step = 2,
+                       Step = 5,
                        //Rotation = "auto"
                    },
                    Title = new YAxisTitle { Text = "km/h" },
                    PlotBands = new[]
                             {
-                                new YAxisPlotBands { From = 0, To = 120, Color = ColorTranslator.FromHtml("#55BF3B") },
-                                new YAxisPlotBands { From = 120, To = 160, Color = ColorTranslator.FromHtml("#DDDF0D") },
-                                new YAxisPlotBands { From = 160, To = 200, Color = ColorTranslator.FromHtml("#DF5353") }
+                                new YAxisPlotBands { From = 0, To = 500, Color = ColorTranslator.FromHtml("#55BF3B") },
+                                //new YAxisPlotBands { From = 120, To = 160, Color = ColorTranslator.FromHtml("#DDDF0D") },
+                                //new YAxisPlotBands { From = 160, To = 200, Color = ColorTranslator.FromHtml("#DF5353") }
                             }
                })
                .SetSeries(new Series
                {
                    Name = "Speed",
-                   Data = new Data(new object[] { 80 })
+                   Data = new Data(new object[] { 80 }),
+                   YAxis = "0",
+                   PlotOptionsGauge = new PlotOptionsGauge
+                   {
+                       Dial = new PlotOptionsGaugeDial
+                       {
+                           BackgroundColor = new BackColorOrGradient(new Gradient
+                           {
+                               LinearGradient = new[] { 0, 0, 0, 1 },
+                               Stops = new object[,] { { 0, "#55BF3B" }, { 1, "#55BF3B" } }
+                           })
+                       },
+                       Pivot=new PlotOptionsGaugePivot
+                       {
+                            BackgroundColor = new BackColorOrGradient(new Gradient
+                           {
+                               LinearGradient = new[] { 0, 0, 0, 1 },
+                               Stops = new object[,] { { 0, "#55BF3B" }, { 1, "#55BF3B" } }
+                           })
+                       }
+                   }
                });
-
             return chart;
-       
         }
     }
 }

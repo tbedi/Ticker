@@ -14,9 +14,7 @@ namespace Ticker.DataBase.BL
     public  class blOrder
     {
       private static cmdClass order = new cmdClass();
-        
-       
-
+      
         public  List<OrderDTO> lsQuantityOrderCategory = order.GetQuantityOrderedCategory();
 
         public  List<RegularOrderDTO> lsRegularOrder = order.GetRegularQuantityOrdred();
