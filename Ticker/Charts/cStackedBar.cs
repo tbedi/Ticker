@@ -108,7 +108,7 @@ namespace Ticker.Charts
              })
              .SetTitle(new Title
              {
-                 Text = "TOP PARTNER BY SKU QUANTITY ",
+                 Text = "TOP PARTNER BY SALES",
                  Style = "color: '#fff'"
              }
                        )
@@ -118,7 +118,7 @@ namespace Ticker.Charts
              })
             .SetYAxis(new YAxis
             {
-                Title = new YAxisTitle { Text = "SKU Quantity", Style = "color: '#eaeaea'" }
+                Title = new YAxisTitle { Text = "", Style = "color: '#eaeaea'" }
             })
 
               .SetLegend(new Legend
@@ -140,7 +140,8 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("#fff"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -5
+                         Y = -10,
+                         Formatter="function() {return  '$'+this.y}"
                      }
                  }
              })
