@@ -1,5 +1,5 @@
 ﻿body {
-      background: #494848;
+      background:rgba(128, 128, 128, 0.60); /*#494848;*/
     width: 100%;
     height: 780px;
     margin:0;
@@ -18,6 +18,7 @@ td {
     width: 100%;
     margin: 0px;
     font-family:Arial,Verdana;
+    
    
 }
 .CenterLabel1 {
@@ -38,6 +39,7 @@ td {
     width: 80px;
     vertical-align: middle;
     text-align: center;
+    
 }
 .boxStyleKey {
     background: rgba(128, 128, 128, 0.60);
@@ -102,7 +104,7 @@ td {
      /*border-radius:5px;*/
     background:#282828;
     width: 500px;
-    height: 250px;
+    height: 260px;
     font-family:Arial,Verdana;
     text-align: center;
     vertical-align: top;

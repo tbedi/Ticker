@@ -18,7 +18,7 @@ namespace Ticker.Charts
                .InitChart(new Chart
                {
                    Width = 500,
-                   Height = 250,
+                   Height = 260,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -252,7 +252,7 @@ namespace Ticker.Charts
                                     Color = ColorTranslator.FromHtml("#80a93b"), 
                                     Thickness =new PercentageOrPixel (200,true), 
                                     InnerRadius = new PercentageOrPixel(130, true)
-                                },
+                                }
                                 
                             },
                })
@@ -395,8 +395,7 @@ namespace Ticker.Charts
                                     Color = ColorTranslator.FromHtml("#80a93b"), 
                                     Thickness =new PercentageOrPixel (200,true), 
                                     InnerRadius = new PercentageOrPixel(130, true)
-                                },
-                                
+                                }
                             },
                })
                .SetSeries(new Series
