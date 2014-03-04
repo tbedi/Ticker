@@ -89,9 +89,11 @@
     <Compile Include="Charts\cGuage.cs" />
     <Compile Include="Charts\cPichart.cs" />
     <Compile Include="Charts\cStackedBar.cs" />
+    <Compile Include="DataBase\BL\blTicker.cs" />
     <Compile Include="DataBase\BL\cGlobal.cs" />
     <Compile Include="DataBase\BL\ExtensionMethods.cs" />
     <Compile Include="DataBase\Command\cmdClass.cs" />
+    <Compile Include="DataBase\Command\cmdTicker.cs" />
     <Compile Include="DataBase\EntityModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,7 +177,8 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
+          <UseIIS>false</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>62229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

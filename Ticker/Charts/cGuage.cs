@@ -355,20 +355,25 @@ namespace Ticker.Charts
                .SetYAxis(new YAxis
                {
                    Min = 0,
+
                    Max = 750,
+
 
                    //MinorTickInterval = "auto",
                    MinorTickWidth = 0,
                    MinorTickLength = 10,
+
                    MinorTickPosition = TickPositions.Inside,
                    MinorTickColor = ColorTranslator.FromHtml("#fff"),
                    TickPixelInterval = 20,
+
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
                    TickLength = 5,
                    TickColor = ColorTranslator.FromHtml("#80a93b"),
                    Labels = new YAxisLabels
                    {
+
                        Step = 3,
                        Distance = -20,
                        Style = "color: '#fff'"
@@ -379,9 +384,11 @@ namespace Ticker.Charts
                        Style = "fontSize: '30px' ,color: '#666'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
+
                    },
                    PlotBands = new[]
                             {
+
                                 new YAxisPlotBands 
                                 {
                                   From = 0, To = 750,
@@ -473,6 +480,7 @@ namespace Ticker.Charts
                                        OuterRadius = new PercentageOrPixel(0, true),
                                     }
                                    
+
                             }
                }).SetPlotOptions(new PlotOptions
                {
@@ -529,8 +537,10 @@ namespace Ticker.Charts
                })
                .SetSeries(new Series
                {
+
                    Name = "New",
                    Data = new Data(new object[] { DataValue }),
+
                    YAxis = "0",
                    PlotOptionsGauge = new PlotOptionsGauge
                    {
@@ -539,6 +549,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
+
                                Stops = new object[,] { { 0, "#5fc0fe" }, { 1, "#5fc0fe" } }
                            })
                        },
@@ -548,12 +559,13 @@ namespace Ticker.Charts
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
                                Stops = new object[,] { { 0, "#5fc0fe" }, { 1, "#5fc0fe" } }
+
                            })
                        }
                    }
                });
-
             return chart;
+
 
         }
        
@@ -689,6 +701,7 @@ namespace Ticker.Charts
                });
 
             return chart;
+
 
         }
       
