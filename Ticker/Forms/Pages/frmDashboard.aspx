@@ -26,7 +26,8 @@
                     </asp:UpdatePanel>
                 </div>
             </td>
-            <td style="width: 30%;" rowspan="2">
+            <td style="width: 30%; vertical-align:top" rowspan="2">
+                  <asp:Label ID="Label8" runat="server" Text="ORDER DETAIL" Font-Size="X-Large" ForeColor="#ffffff" />
                 <div id="asdFlick" class="boxStyleKey">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
