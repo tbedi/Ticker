@@ -21,7 +21,7 @@ namespace Ticker.Charts
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 470,
+                 Width = 370,
                  Height = 230,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {

@@ -71,7 +71,7 @@
                     </tr>
                     <tr>
                         <td >
-                            <div id="dvNywhDetails" style="float: right; width:200px">
+                            <div id="dvNywhDetails" style="float: right; width:300px">
                                 <table style="width: 100%">
                                     <tr>
                                         <td >
@@ -83,7 +83,7 @@
                                       <td>
                                             <asp:UpdatePanel ID="UpdatePanel8" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 200px; background:#0f7673">
+                                                    <div class="ShipmentInfoDiv" style="width: 300px; background:#0f7673">
                                                         <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label1" runat="server" Text="SYOSSET" />
@@ -103,7 +103,7 @@
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel10" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 200px; background: #171717;">
+                                                    <div class="ShipmentInfoDiv" style="width: 300px; background: #171717;">
                                                         <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="WhiteSmoke" />
@@ -118,7 +118,7 @@
                         </td>
 
                          <td>
-                            <div id="Div2" style="float: right; width:200px">
+                            <div id="Div2" style="float: right; width:300px">
                                 <table style="width: 100%">
                                     <tr>
                                         <td style="height:25px" >
@@ -129,7 +129,7 @@
                                          <td>
                                             <asp:UpdatePanel ID="UpdatePanel9" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 200px; background:#0f7673">
+                                                    <div class="ShipmentInfoDiv" style="width: 300px; background:#0f7673">
                                                         <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON"  Font-Size="Large"/>
@@ -150,7 +150,7 @@
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel11" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 200px; background:#171717;">
+                                                    <div class="ShipmentInfoDiv" style="width: 300px; background:#171717;">
                                                         <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON"  Font-Size="Large" ForeColor="WhiteSmoke"/>
