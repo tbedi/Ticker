@@ -196,13 +196,20 @@ namespace Ticker.DataBase.Command
             List<TopPartnerDTO> lspartner = new List<TopPartnerDTO>();
             try
             {
-                var partner = _x3v6.ExecuteStoreQuery<TopPartnerDTO>(@"SELECT top 5 so.BPCORD_0 [PartnerID],so.BPCNAM_0 [Partner],cast(SUM(soq.QTY_0) as float) [QtyOrdered]
-                                                                       FROM PRODUCTION.SORDER so INNER JOIN PRODUCTION.SORDERQ soq ON soq.SOHNUM_0 = so.SOHNUM_0 INNER JOIN
-                                                                       PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7 
-                                                                       WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                       AND so.SOHTYP_0 IN ('SON','SOI','SOP')
-                                                                       GROUP BY so.BPCORD_0, so.BPCNAM_0
-                                                                       ORDER BY [QtyOrdered] DESC, [Partner];").ToList();
+                var partner = _x3v6.ExecuteStoreQuery<TopPartnerDTO>(@"SELECT top 5 so.BPCORD_0 [PartnerID],so.BPCNAM_0 [Partner],
+                                                                        cast(sum(sop.NETPRI_0 * soq.QTY_0) as float) [QtyOrdered]
+                                                                        FROM
+                                                                        PRODUCTION.SORDER so
+                                                                        INNER JOIN
+                                                                        PRODUCTION.SORDERQ soq
+                                                                        ON soq.SOHNUM_0 = so.SOHNUM_0
+                                                                        INNER JOIN
+                                                                        PRODUCTION.SORDERP sop
+                                                                        ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7
+                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                        AND so.SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                        GROUP BY so.BPCORD_0, so.BPCNAM_0
+                                                                        ORDER BY [QtyOrdered] DESC, [Partner]; ").ToList();
 
                 if (partner.Count() > 0)
                 {

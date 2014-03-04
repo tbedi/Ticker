@@ -23,6 +23,8 @@ namespace Ticker.Forms.Pages
     {
         public static Thread thAjax;
 
+        blTicker _ticker = new blTicker();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -105,18 +107,24 @@ namespace Ticker.Forms.Pages
         {
             try
             {
-                string newShipment = "http://internal.kraususa.net/result.php?type=new";
-                Literal1.Text = cGuage.GetNewShipmentGuage(Convert.ToInt32(cGlobal.Border.WebReasponce(newShipment))).ToHtmlString();
+                //string newShipment = "http://internal.kraususa.net/result.php?type=new";
 
-                String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
-                ltrInProcessSOS.Text = cGuage.GetGreenSYS(Convert.ToInt32(cGlobal.Border.WebReasponce(SYSInProcess))).ToHtmlString();
-                String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
-                ltrShippedSYS.Text =cGuage.GetPurplSYS(Convert.ToInt32(cGlobal.Border.WebReasponce(SYSShipped))).ToHtmlString();
+                List<int> lsneworder=_ticker.GetNewOrder();
+                Literal1.Text = cGuage.GetNewShipmentGuage(Convert.ToInt32(lsneworder[0].ToString())).ToHtmlString();
 
-                String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
-                ltrInprocessNyWH.Text = cGuage.GetGreenWT((Convert.ToInt32(cGlobal.Border.WebReasponce(PWInProcess)))).ToHtmlString();
-                String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
-                ltrShippedNYWH.Text = cGuage.GetPurplWT((Convert.ToInt32(cGlobal.Border.WebReasponce(PWShipped)))).ToHtmlString();
+                List<int> lsNYWTHship = _ticker.GetNYWHShippedTicker();
+                //String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
+                ltrInProcessSOS.Text = cGuage.GetGreenSYS(Convert.ToInt32(lsNYWTHship[0].ToString())).ToHtmlString();
+
+                
+                //String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
+                ltrShippedSYS.Text = cGuage.GetPurplSYS(Convert.ToInt32(_ticker.GetNYWTShippedTicker()[0].ToString())).ToHtmlString();
+
+                //String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
+
+                ltrInprocessNyWH.Text = cGuage.GetGreenWT((Convert.ToInt32(_ticker.GetNYWHProcessingTicker()[0].ToString()))).ToHtmlString();
+                //String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
+                ltrShippedNYWH.Text = cGuage.GetPurplWT((Convert.ToInt32(_ticker.GetNYWHShippedTicker()[0].ToString()))).ToHtmlString();
 
             }
             catch (Exception)

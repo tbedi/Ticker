@@ -14,17 +14,9 @@ namespace Ticker.DataBase.Command
             List<int> lsNewOreder = new List<int>();
             try
             {
-                var neworder = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(*) [Shipped]
-                                                                    FROM
-                                                                    PRODUCTION.SDELIVERY 
-                                                                    WHERE CAST(SHIDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE)
-                                                                    AND CFMFLG_0 = 2
-                                                                    UNION ALL
-                                                                    SELECT
-                                                                    COUNT(*)
-                                                                    FROM
-                                                                    PRODUCTION.SDELIVERY
-                                                                    WHERE CAST(CREDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE)").ToList();
+                var neworder = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(*) FROM PRODUCTION.SORDER
+                                                                WHERE ORDSTA_0 = 1 AND DLVSTA_0 = 1 AND XB_HLDSTA_0 <> 3
+                                                                AND SOHTYP_0 IN ('SON','SOP')").ToList();
 
                 if (neworder.Count() > 0)
                 {
@@ -131,7 +123,7 @@ namespace Ticker.DataBase.Command
                                                                         and sh.CFMFLG_0 = 1
                                                                         and stock.LOC_0 = 'NYWH'
                                                                         group by sh.SDHNUM_0
-                                                                        ) ").ToList();
+                                                                        ) as a").ToList();
 
                 if (NYWHProccessing.Count() > 0)
                 {
@@ -172,7 +164,7 @@ namespace Ticker.DataBase.Command
                                                                         and DLVSTA_0 = 3
                                                                         and sh.CFMFLG_0 = 1
                                                                         and stock.LOC_0 = 'NYWT'
-                                                                        group by sh.SDHNUM_0) ").ToList();
+                                                                        group by sh.SDHNUM_0) as b ").ToList();
 
                 if (NYWTProccessing.Count() > 0)
                 {
