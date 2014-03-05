@@ -13,26 +13,64 @@ namespace Ticker.DataBase.BL
 {
     public  class blOrder
     {
+        //Create Object of cmdclass.
       private static cmdClass order = new cmdClass();
       
+        /// <summary>
+        /// Assign GetQuantityOrderedCategory to List of OrderDTO lsQuantityOrderCategory
+        /// </summary>
         public  List<OrderDTO> lsQuantityOrderCategory = order.GetQuantityOrderedCategory();
 
+        /// <summary>
+        /// Assign GetRegularQuantityOrdred to List of RegularDTO lsRegularOrder
+        /// </summary>
         public  List<RegularOrderDTO> lsRegularOrder = order.GetRegularQuantityOrdred();
 
+        /// <summary>
+        /// Assign GetPartQuantityOrdered Method to list of PartorderDTO lsPartOrerDTO. 
+        /// </summary>
         public List<PartOrderDTO> lsPartOrder = order.GetPartQuantityOrdered();
 
+        /// <summary>
+        /// Assign GetTop5SkuQuantityOrder Method to list of topQuantityOrdered lstopQuantityorder.
+        /// </summary>
         public List<TopQuantityOrdered> lstopQuantityorder = order.GetTop5SkuQuantityOrder();
 
-        public List<TopPartnerDTO> lstopPartner = order.GetTop5ParnerOrder();
+        /// <summary>
+        /// Assign GetTop5ParnerOrder method to list of TopPartnerDTO lstopPartner.
+        /// </summary>
+        public List<TopPartnerDTO> lstopPartner = order.GetTop5ParnerSale();
 
+        /// <summary>
+        /// Assign GetTop5ParnerByOrder method to list of TopPartnerDTO lstopPartnerByOrder.
+        /// </summary>
+        public List<TopPartnerDTO> lstopPartnerByOrder = order.GetTop5ParnerByOrder();
+
+        /// <summary>
+        /// Assign GetShipped method to list of Double lsshipped.
+        /// </summary>
         public List<double> lsshipped = order.GetShipped();
 
+        /// <summary>
+        /// Assign GetNoOfHoldOrders method to int HoldOrder.
+        /// </summary>
         public int HoldOrder = order.GetNoOfHoldOrders();
 
+        /// <summary>
+        /// Blank Constructore.
+        /// </summary>
         public blOrder()
         {
         }
-
+        /// <summary>
+        /// This is method is for GetQuantity Category list with calculation. 
+        /// </summary>
+        /// <param name="lsQuantityOrderCat">
+        /// OrderDTO is pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return List of OrderDTO lsQuantityOrderCatTemp.
+        /// </returns>
         public List<OrderDTO> GetQuantityOrderCat(List<OrderDTO> lsQuantityOrderCat)
         {
             List<OrderDTO> lsQuantityOrderCatTemp = new List<OrderDTO>();
@@ -55,7 +93,15 @@ namespace Ticker.DataBase.BL
             }
             return lsQuantityOrderCatTemp;
         }
-
+        /// <summary>
+        /// This Method is for get Redular order list with Caculation
+        /// </summary>
+        /// <param name="lsRegularOrder">
+        /// Pass list of Regular order.
+        /// </param>
+        /// <returns>
+        /// Return List of Regular Order.
+        /// </returns>
         public List<RegularOrderDTO> GetRegularOrderQuantity(List<RegularOrderDTO> lsRegularOrder)
         {
             List<RegularOrderDTO> lsRegularOrderTemp = new List<RegularOrderDTO>();
@@ -80,6 +126,14 @@ namespace Ticker.DataBase.BL
             }
             return lsRegularOrderTemp;
         }
+
+        /// <summary>
+        /// This Method is for get Part Order List with Calculation.
+        /// </summary>
+        /// <param name="lsPartOrder">
+        /// Pass list of PartorderDTO as parameter.
+        /// </param>
+        /// <returns></returns>
         public List<PartOrderDTO> GetPartOrderQuantity(List<PartOrderDTO> lsPartOrder)
         {
             List<PartOrderDTO> lsPartOrderTemp = new List<PartOrderDTO>();
@@ -106,7 +160,15 @@ namespace Ticker.DataBase.BL
             return lsPartOrderTemp;
         
         }
-
+        /// <summary>
+        /// Get Shipped Percentage No.
+        /// </summary>
+        /// <param name="lsshipped">
+        /// pass list of shipped as parameter.
+        /// </param>
+        /// <returns>
+        /// return double Value.
+        /// </returns>
         public double GetShippedpercentage(List<double> lsshipped)
         {
             double _TotalCount = 0;
@@ -123,6 +185,13 @@ namespace Ticker.DataBase.BL
             return _TotalCount;
         }
 
+        /// <summary>
+        /// Get Hold Order.
+        /// </summary>
+        /// <param name="HoldOrder"></param>
+        /// <returns>
+        /// Return Integer Value.
+        /// </returns>
         public int GetHold(int HoldOrder)
         {
             int hold = 0;
@@ -136,6 +205,15 @@ namespace Ticker.DataBase.BL
             return hold;
         }
 
+        /// <summary>
+        /// Get Total order Category.
+        /// </summary>
+        /// <param name="lsQuantityOrderCategory">
+        /// List of OrderDTO Pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return List.
+        /// </returns>
         public double GetTotalOrder(List<OrderDTO> lsQuantityOrderCategory)
         {
             double _TotalCount = 0;
@@ -146,14 +224,34 @@ namespace Ticker.DataBase.BL
             return _TotalCount;
         }
 
+        /// <summary>
+        /// Get top 5 Quantity Order.
+        /// </summary>
+        /// <param name="lstopQuantityorder"></param>
+        /// <returns></returns>
         public List<TopQuantityOrdered> GetTop5QuantityOrder(List<TopQuantityOrdered> lstopQuantityorder)
         {
             return lstopQuantityorder;
         }
 
+        /// <summary>
+        /// Get Top 5 Partner Sales order.
+        /// </summary>
+        /// <param name="lstopPartner"></param>
+        /// <returns></returns>
         public List<TopPartnerDTO> GetTop5Partner(List<TopPartnerDTO> lstopPartner)
         {
             return lstopPartner;
+        }
+
+        /// <summary>
+        /// Get Top 5 Partner order.
+        /// </summary>
+        /// <param name="lstopPartner"></param>
+        /// <returns></returns>
+        public List<TopPartnerDTO> GetTop5Partner(List<TopPartnerDTO> lstopPartner)
+        {
+            return lstopPartnerByOrder;
         }
 
         public string WebReasponce( String URL)

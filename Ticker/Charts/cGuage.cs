@@ -447,6 +447,11 @@ namespace Ticker.Charts
 
         }
         
+        /// <summary>
+        /// This Method is for Guage of NYWH Shipped.
+        /// </summary>
+        /// <param name="DataValue"></param>
+        /// <returns></returns>
         public static Highcharts GetPurplWT(int DataValue)
         {
             Highcharts chart = new Highcharts("chartgaugepprWT")
@@ -587,6 +592,11 @@ namespace Ticker.Charts
 
         }
        
+        /// <summary>
+        /// This Method is for Gauge of NYWT Shipped.
+        /// </summary>
+        /// <param name="DataValue"></param>
+        /// <returns></returns>
         public static Highcharts GetPurplSYS(int DataValue)
         {
             Highcharts chart = new Highcharts("chartgaugepprSYS")

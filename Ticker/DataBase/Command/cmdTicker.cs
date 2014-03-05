@@ -9,6 +9,12 @@ namespace Ticker.DataBase.Command
     {
         x3v6Entities _x3v6 = new x3v6Entities();
 
+        /// <summary>
+        /// This Method is for Get New Order.
+        /// </summary>
+        /// <returns>
+        /// Return List of Integer of Single Value of New Order.
+        /// </returns>
         public List<int> GetNewOrder()
         {
             List<int> lsNewOreder = new List<int>();
@@ -34,6 +40,12 @@ namespace Ticker.DataBase.Command
         
         }
 
+        /// <summary>
+        /// This Method is for get NYWH shipped Quantity.
+        /// </summary>
+        /// <returns>
+        /// Return List of Integer of Single Value of NYWH shipped Quantity.
+        /// </returns>
         public List<int> GetNYWHShipped()
         {
             List<int> lsshipped = new List<int>();
@@ -66,6 +78,12 @@ namespace Ticker.DataBase.Command
             return lsshipped;
         }
 
+        /// <summary>
+        /// This Method is for get NYWT Shipped Quantity.
+        /// </summary>
+        /// <returns>
+        /// Return List of Integer of Single Value of NYWT shipped Quantity.
+        /// </returns>
         public List<int> GetNYWTShipped()
         {
             List<int> lsshipped = new List<int>();
@@ -98,6 +116,12 @@ namespace Ticker.DataBase.Command
             return lsshipped;
         }
 
+        /// <summary>
+        /// This Method is for Get NYWH Processing Quantity.
+        /// </summary>
+        /// <returns>
+        /// Return list of Integer of Single Value of NYWH Processing Quantity.
+        /// </returns>
         public List<int> GetNYWHProccessing()
         {
             List<int> lsProccessing = new List<int>();
@@ -140,6 +164,12 @@ namespace Ticker.DataBase.Command
             return lsProccessing;
         }
 
+        /// <summary>
+        /// This Method id for Get NYWTProcessing Quantity.
+        /// </summary>
+        /// <returns>
+        /// Return list of Integer of Single Value of NYWH Processing Quantity.
+        /// </returns>
         public List<int> GetNYWTProccessing()
         {
             List<int> lsProccess = new List<int>();
