@@ -1,5 +1,5 @@
 ﻿body {
-    background: rgba(128, 128, 128, 0.60); /*#494848;*/
+    background: whiteSmoke; /*#494848;*/
     width: 100%;
     height: 780px;
     margin: 0;
@@ -22,7 +22,7 @@ td {
     position:absolute;
     margin-left:-400px;
     margin-top:-10px;
-    color:#5fc0fe;
+    color:#661CCD;
     /*color:#093b5c;*/
     font-size:50px;
     font-weight:bold;
@@ -40,7 +40,8 @@ td {
     
 }
 .boxStyleKey {
-    background:#494848;
+    background:white;
+    border:solid thin black;
     height:360px;
     width: 500px;
     margin:5px;
@@ -50,7 +51,8 @@ td {
     transition: all 1s ;
 }
 .BottomChartBOx {
-    background: #0e0e0e;
+    background: white;
+       border:solid thin black;
     width: 500px;
     margin: 5px;
     height: 365px;
@@ -62,6 +64,7 @@ td {
 .leftSideBox {
     background: rgba(128, 128, 128, 0.60);
     height: 200px;
+       border:solid thin black;
     width: 250px;
     float: left;
     margin-left: 10px;
@@ -71,8 +74,9 @@ td {
     
 }
 .smallBox {
-    background: #5e0090;
+    background: #898686;
     height: 88px;
+       border:solid thin black;
     width: 248px;
     float: left;
     margin: 0px;
@@ -91,6 +95,7 @@ td {
     /*border-radius:5px;*/
     background:rgba(255, 255, 255, 0.40);
     width: 100%;
+       border:solid thin black;
     height: 170px;
     font-family:Arial,Verdana;
     text-align: center;
@@ -100,8 +105,9 @@ td {
 
 .ShipmentNewDiv {
      /*border-radius:5px;*/
-    background:#282828;
+    background:white;
     margin-left:3px;
+       border:solid thin black;
     width: 500px;
     height: 230px;
     font-family:Arial,Verdana;
@@ -113,7 +119,8 @@ td {
     margin: 5px;
     font-family: Arial,Verdana;
     float: left;
-    background: #0e0e0e;
+    background: white;
+       border:solid thin black;
     width: 500px;
     height: 365px;
     -webkit-transition: all 1s;
@@ -147,11 +154,11 @@ p {
 }
 .lblChartTitle{
     font-size: 22px ;
-    color:whitesmoke;
+    color:Black;
     font-family:Arial,Verdana;
 }
 .gapdiv {
     height:100%;
     width:4px;
-    background:#898686;
+    background:#f1be44;
 }

@@ -29,7 +29,7 @@
                 </div>--%>
             </td>
             <td style="width: 30%; vertical-align: top">
-                <asp:Label ID="Label8" runat="server" Text="Order Details" Font-Size="X-Large" ForeColor="#ffffff" />
+                <asp:Label ID="Label8" runat="server" Text="Order Details" Font-Size="X-Large" ForeColor="Black" />
                 <div id="asdFlick" class="boxStyleKey">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
@@ -55,7 +55,7 @@
                 <table id="tblOrderDetails" style="width: 78%; float: left;">
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="lblOrderHeader" runat="server" Text="Order Processing" Font-Size="X-Large" ForeColor="#ffffff" />
+                            <asp:Label ID="lblOrderHeader" runat="server" Text="Order Processing" Font-Size="X-Large" ForeColor="Black" />
                         </td>
                     </tr>
                     <tr>
@@ -65,7 +65,7 @@
                                     <ContentTemplate>
                                         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                         <p class="leftSideBoxChartp">
-                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#cccccc" Font-Size="35px"  />
+                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="Black" Font-Size="35px"  />
                                         </p>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -78,7 +78,7 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="17" ForeColor="WhiteSmoke" />
+                                            <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="17" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -86,7 +86,7 @@
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel8" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: #0f7673">
+                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: white">
                                                         <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label1" runat="server" Text="SYOSSET" />
@@ -99,14 +99,14 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="17" ForeColor="WhiteSmoke" />
+                                            <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="17" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel10" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: #171717;">
+                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="WhiteSmoke" />
@@ -118,12 +118,12 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                             <div class="smallBox" style="background: #97560f">
+                                             <div class="smallBox" style="background:Gray">
                     <asp:UpdatePanel ID="UpdatePanel6" runat="server">
                         <ContentTemplate>
 
                             <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblship" ForeColor="#5fc0fe" Text="074" Font-Size="40"> </asp:Label>
+                                <asp:Label runat="server" ID="lblship" ForeColor="Black" Text="074" Font-Size="40"> </asp:Label>
                             </div>
                             <div style="text-align: left;">
                                 <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
@@ -150,7 +150,7 @@
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel9" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: #0f7673">
+                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: White">
                                                         <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" Font-Size="Large" />
@@ -171,7 +171,7 @@
                                         <td>
                                             <asp:UpdatePanel ID="UpdatePanel11" runat="server">
                                                 <ContentTemplate>
-                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: #171717;">
+                                                    <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
                                                             <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="WhiteSmoke" />
@@ -188,7 +188,7 @@
                         <ContentTemplate>
 
                             <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblHoldOrder"  ForeColor="#5fc0fe" Text="074" Font-Size="40"> </asp:Label>
+                                <asp:Label runat="server" ID="lblHoldOrder"  ForeColor="Black" Text="074" Font-Size="40"> </asp:Label>
                             </div>
                             <div style="text-align: left;">
                                 <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
@@ -208,7 +208,7 @@
             <td class="gapdiv">
                 &nbsp</td>
             <td style="vertical-align: top;">
-                <asp:Label ID="Label11" runat="server" Text="Partner Performance" Font-Size="X-Large" ForeColor="#ffffff" />
+                <asp:Label ID="Label11" runat="server" Text="Partner Performance" Font-Size="X-Large" ForeColor="Black" />
                 <div class="leftSideBoxChart">
                     <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                         <ContentTemplate>

@@ -49,18 +49,18 @@ namespace Ticker.Charts
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
-                                Style = "color: '#fff'"
+                                Style = "color: '#0000'"
                             }
                        )
              .SetXAxis(new XAxis
                  {
-                     Labels = new XAxisLabels { Style = "color: '#fff'" },
+                     Labels = new XAxisLabels { Style = "color: 'Gray'" },
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU()
                  })
             .SetYAxis(new YAxis
                 {
-                    Labels = new YAxisLabels { Style = "color: '#fff'" },
-                    Title = new YAxisTitle { Text = "", Style = "color: '#fff'" }
+                    Labels = new YAxisLabels { Style = "color: 'Gray'" },
+                    Title = new YAxisTitle { Text = "", Style = "color: 'Gray'" }
                 })
 
               .SetLegend(new Legend
@@ -79,7 +79,7 @@ namespace Ticker.Charts
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
                                  Enabled = true,
-                                 Color = ColorTranslator.FromHtml("#fff"),
+                                 Color = ColorTranslator.FromHtml("Gray"),
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
                                  Y = -5
@@ -89,7 +89,7 @@ namespace Ticker.Charts
 
              .SetSeries(new[]
                        {
-                           new Series { Name = "Quantity", Data =new Data( lstopQuantityorder.ToTop5SKUObject())  },
+                           new Series { Name = "Quantity", Data =new Data( lstopQuantityorder.ToTop5SKUObject()) , Color= ColorTranslator.FromHtml("#C6F331") },
                        });
             return chart;
         }
@@ -105,6 +105,7 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_Partner_By_Sales(List<TopPartnerDTO> lstopPartner)
         {
+
             Highcharts chart = new Highcharts("StackedColumnPartner")
              .InitChart(new Chart
              {
@@ -128,18 +129,18 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNER BY SALES",
-                 Style = "color: '#fff'"
+                 Style = "color: 'Gray'"
              }
                        )
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartner.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style="color: '#fff'"}
+                 Labels = new XAxisLabels { Style = "color: 'Gray'" }
              })
             .SetYAxis(new YAxis
             {
                 Title = new YAxisTitle { Text = "", Style = "color: 'whitesmoke'" },
-                Labels = new YAxisLabels { Style="color: '#fff'"}
+                Labels = new YAxisLabels { Style = "color: 'Gray'" }
             })
 
               .SetLegend(new Legend
@@ -158,18 +159,48 @@ namespace Ticker.Charts
                      DataLabels = new PlotOptionsColumnDataLabels
                      {
                          Enabled = true,
-                         Color = ColorTranslator.FromHtml("#fff"),
+                         Color = ColorTranslator.FromHtml("Gray"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -10,
+                         Y = -5,
                          Formatter = "function() {return  '$'+this.y}"
                      }
                  }
              })
              .SetSeries(new[]
-                       {
-                           new Series { Name = "Partners", Data = new Data(lstopPartner.ToTop5ParnerObject())  },
-                       });
+                {
+                    new Series { Name = "Partners", Data = new Data(lstopPartner.ToTop5ParnerObject()), Color=ColorTranslator.FromHtml("#F38630"), },
+                })
+                .SetOptions(new GlobalOptions
+                {
+                    Colors = new Color[]
+                    {
+                        ColorTranslator.FromHtml("#69C8F3"),
+                        ColorTranslator.FromHtml("#E0E4CC"),
+                        ColorTranslator.FromHtml("#69D2E7"),
+                        ColorTranslator.FromHtml("#661CCD"),
+                        ColorTranslator.FromHtml("#ED561B"),
+                        ColorTranslator.FromHtml("#DF7EE6"),
+                        ColorTranslator.FromHtml("#C79EF5"),
+                        ColorTranslator.FromHtml("#98C1F2"),
+                        ColorTranslator.FromHtml("#96EAF0"),
+                        ColorTranslator.FromHtml("#96F0CD"),
+                        ColorTranslator.FromHtml("#BDE996"),
+                        ColorTranslator.FromHtml("#EEF6B3"),
+                        ColorTranslator.FromHtml("#EED4BE"),
+                        ColorTranslator.FromHtml("#F28563"),
+                        ColorTranslator.FromHtml("#DB1FD2"),
+                        ColorTranslator.FromHtml("#F7464A"),
+                        ColorTranslator.FromHtml("#E2EAE9"),
+                        ColorTranslator.FromHtml("#D4CCC5"),
+                        ColorTranslator.FromHtml("#949FB1"),
+                        ColorTranslator.FromHtml("#4D5360"),
+                        ColorTranslator.FromHtml("#2DDD68"),
+                        //ColorTranslator.FromHtml("#"),
+                        //ColorTranslator.FromHtml("#"),
+
+                    }
+                });
             return chart;
         }
 
@@ -207,18 +238,18 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNER BY ORDER",
-                 Style = "color: '#fff'"
+                 Style = "color: 'Gray'"
              }
                        )
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: '#fff'" }
+                 Labels = new XAxisLabels { Style = "color: 'Gray'" }
              })
             .SetYAxis(new YAxis
             {
                 Title = new YAxisTitle { Text = "", Style = "color: 'whitesmoke'" },
-                Labels = new YAxisLabels { Style = "color: '#fff'" }
+                Labels = new YAxisLabels { Style = "color: 'Gray'" }
             })
 
               .SetLegend(new Legend
@@ -237,7 +268,7 @@ namespace Ticker.Charts
                      DataLabels = new PlotOptionsColumnDataLabels
                      {
                          Enabled = true,
-                         Color = ColorTranslator.FromHtml("#fff"),
+                         Color = ColorTranslator.FromHtml("Gray"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -10,

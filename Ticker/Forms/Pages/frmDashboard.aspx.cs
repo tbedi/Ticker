@@ -57,12 +57,12 @@ namespace Ticker.Forms.Pages
             if (cGlobal.Border.lstopPartner.Count > 0)
                 ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Sales(cGlobal.Border.lstopPartner).ToHtmlString();
 
-            Boolean _Rflag = false;
-            foreach (var item in cGlobal.Border.lsRegularOrder)
-            {
-                if (item.NoofRegularOrders > 0)
-                    _Rflag = true;
-            }
+            //Boolean _Rflag = false;
+            //foreach (var item in cGlobal.Border.lsRegularOrder)
+            //{
+            //    if (item.NoofRegularOrders > 0)
+            //        _Rflag = true;
+            //}
             //if (_Rflag)
             //{
             //    ltrRegularOrder.Text = cDonut.RegularOrder(cGlobal.Border.lsRegularOrder).ToHtmlString();
@@ -74,13 +74,13 @@ namespace Ticker.Forms.Pages
             //    lblErrorRegular.Text = "Record Not Found.";
             //}
 
-            Boolean _flag = false;
-            foreach (var item in cGlobal.Border.lsPartOrder)
-            {
-                if (item.NoofPartsOrders > 0)
-                    _flag = true;
-            }
-            //if (_flag)
+            //Boolean _flag = false;
+            //foreach (var item in cGlobal.Border.lsPartOrder)
+            //{
+            //    if (item.NoofPartsOrders > 0)
+            //        _flag = true;
+            //}
+            ////if (_flag)
             //{
             //    litPartOrderQuantity.Visible = true;
             //    litPartOrderQuantity.Text = cDonut.PartOrderQuantity(cGlobal.Border.lsPartOrder).ToHtmlString();
@@ -101,7 +101,7 @@ namespace Ticker.Forms.Pages
             if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
             {
                 lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder(cGlobal.Border.lsQuantityOrderCategory))).ToString();
-                ltrChart.Text = cDonut.OrderCanceledDonut(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
+                ltrChart.Text = cDonut.OrderCategory(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
                
             }
             else
