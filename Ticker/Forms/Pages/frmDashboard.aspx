@@ -11,6 +11,8 @@
     <script src="../../Themes/js/jquery-2.0.2.js"></script>
     <table class="maintbl">
         <tr>
+            <td style="vertical-align: bottom; width: 10px;">
+                &nbsp</td>
             <td style="vertical-align: bottom;">
                 <%--    <div id="dvBoxLeftTop" class="leftSideBox">
                     <asp:UpdatePanel ID="upPanel" runat="server">
@@ -46,33 +48,9 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
-                <div class="smallBox" style="background: #97560f">
-                    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
-                        <ContentTemplate>
-
-                            <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblship" ForeColor="#5fc0fe" Text="074" Font-Size="45"> </asp:Label>
-                            </div>
-                            <div style="text-align: left;">
-                                <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
-                            </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
-                <div class="smallBox" style="margin-left:10px">
-                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                        <ContentTemplate>
-
-                            <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblHoldOrder"  ForeColor="#5fc0fe" Text="074" Font-Size="45"> </asp:Label>
-                            </div>
-                            <div style="text-align: left;">
-                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
-                            </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
             </td>
+            <td class="gapdiv">
+                &nbsp</td>
             <td style="vertical-align: top;">
                 <table id="tblOrderDetails" style="width: 78%; float: left;">
                     <tr>
@@ -87,7 +65,7 @@
                                     <ContentTemplate>
                                         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                         <p class="leftSideBoxChartp">
-                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#cccccc" />
+                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#cccccc" Font-Size="35px"  />
                                         </p>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -138,8 +116,26 @@
                                             </asp:UpdatePanel>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                             <div class="smallBox" style="background: #97560f">
+                    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                        <ContentTemplate>
+
+                            <div style="text-align: right;">
+                                <asp:Label runat="server" ID="lblship" ForeColor="#5fc0fe" Text="074" Font-Size="40"> </asp:Label>
+                            </div>
+                            <div style="text-align: left;">
+                                <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
+               
                         </td>
 
                         <td>
@@ -166,7 +162,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="height: 25px">
+                                        <td style="height: 27px">
 
                                             <asp:Label ID="Label10" runat="server" Text=" " Font-Size="17" ForeColor="Black" />
                                         </td>
@@ -185,14 +181,31 @@
                                             </asp:UpdatePanel>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="smallBox" >
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
 
+                            <div style="text-align: right;">
+                                <asp:Label runat="server" ID="lblHoldOrder"  ForeColor="#5fc0fe" Text="074" Font-Size="40"> </asp:Label>
+                            </div>
+                            <div style="text-align: left;">
+                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
+                
                         </td>
                     </tr>
                 </table>
             </td>
-            <td style="vertical-align: bottom; width: 50px;">
+            <td class="gapdiv">
                 &nbsp</td>
             <td style="vertical-align: top;">
                 <asp:Label ID="Label11" runat="server" Text="Partner Performance" Font-Size="X-Large" ForeColor="#ffffff" />
@@ -224,6 +237,8 @@
                     </asp:UpdatePanel>
                 </div>--%>
             </td>
+            <td style="vertical-align: bottom; width: 10px;">
+                &nbsp</td>
         </tr>
         <%--    <tr>
             <td>&nbsp;</td>

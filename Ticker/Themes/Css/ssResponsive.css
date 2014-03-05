@@ -20,8 +20,8 @@ td {
 }
 .CenterLabel1 {
     position:absolute;
-    margin-left:-460px;
-    margin-top:-50px;
+    margin-left:-400px;
+    margin-top:-10px;
     color:#5fc0fe;
     /*color:#093b5c;*/
     font-size:50px;
@@ -41,8 +41,8 @@ td {
 }
 .boxStyleKey {
     background:#494848;
-    height:300px;
-    width: 370px;
+    height:360px;
+    width: 500px;
     margin:5px;
     float:left;
     font-family:Arial,Verdana;
@@ -51,9 +51,9 @@ td {
 }
 .BottomChartBOx {
     background: #0e0e0e;
-    width: 370px;
+    width: 500px;
     margin: 5px;
-    height: 330px;
+    height: 365px;
     float: left;
     font-family:Arial,Verdana;
     -webkit-transition: all 1s;
@@ -72,10 +72,10 @@ td {
 }
 .smallBox {
     background: #5e0090;
-    height: 90px;
-    width: 180px;
+    height: 88px;
+    width: 248px;
     float: left;
-    margin: 2px;
+    margin: 0px;
     font-family:Arial,Verdana;
     -webkit-transition: all 1s;
     transition: all 1s;
@@ -91,7 +91,7 @@ td {
     /*border-radius:5px;*/
     background:rgba(255, 255, 255, 0.40);
     width: 100%;
-    height: 200px;
+    height: 170px;
     font-family:Arial,Verdana;
     text-align: center;
     vertical-align: top;
@@ -101,8 +101,9 @@ td {
 .ShipmentNewDiv {
      /*border-radius:5px;*/
     background:#282828;
+    margin-left:3px;
     width: 500px;
-    height: 260px;
+    height: 230px;
     font-family:Arial,Verdana;
     text-align: center;
     vertical-align: top;
@@ -113,7 +114,7 @@ td {
     font-family: Arial,Verdana;
     float: left;
     background: #0e0e0e;
-    width: 405px;
+    width: 500px;
     height: 365px;
     -webkit-transition: all 1s;
     transition: all 1s;
@@ -148,4 +149,9 @@ p {
     font-size: 22px ;
     color:whitesmoke;
     font-family:Arial,Verdana;
+}
+.gapdiv {
+    height:100%;
+    width:4px;
+    background:#898686;
 }
