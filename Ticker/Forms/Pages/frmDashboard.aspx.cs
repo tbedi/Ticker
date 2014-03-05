@@ -29,7 +29,6 @@ namespace Ticker.Forms.Pages
         {
             if (!IsPostBack)
                Call();
-
         }
 
 
@@ -38,6 +37,9 @@ namespace Ticker.Forms.Pages
             Call();
         }
 
+        /// <summary>
+        /// This Method is for Show All Values on The HighChart.
+        /// </summary>
         private void Call()
         {
             //CREATE NEW Object calls database..
@@ -108,6 +110,9 @@ namespace Ticker.Forms.Pages
             }
         }
 
+        /// <summary>
+        /// This Method is for Show Ticker Value on Guage.
+        /// </summary>
         private void FillInternal_Ticker()
         {
             try

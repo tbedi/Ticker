@@ -29,7 +29,7 @@ namespace Ticker.Charts
         public static Highcharts OrderCanceledDonut(List<OrderDTO> lsQuantityOrderCategory)
         {
             List<OrderDTO> CategotyDataFotChart = lsQuantityOrderCategory;
-           
+
 
             Highcharts chart = new Highcharts("chart")
                 .InitChart(new Chart
@@ -48,7 +48,8 @@ namespace Ticker.Charts
                     Width = 500,
                     ZoomType = ZoomTypes.Xy,
 
-                }).SetCredits(new Credits
+                })
+                .SetCredits(new Credits
                 {
                     Href = "http://www.kraususa.com/",
                     Text = "kraus USA Inc."
