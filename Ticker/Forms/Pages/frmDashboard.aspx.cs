@@ -77,13 +77,15 @@ namespace Ticker.Forms.Pages
             }
             if (_flag)
             {
+                litPartOrderQuantity.Visible = true;
                 litPartOrderQuantity.Text = cDonut.PartOrderQuantity(cGlobal.Border.lsPartOrder).ToHtmlString();
                 lblError.Visible = false;
             }
             else
             {
+                litPartOrderQuantity.Visible = false;
                 lblError.Visible = true;
-                lblError.Text = "Record Not Found.";
+                lblError.Text = "No part order available.";
             }
 
             lblHoldOrder.Text = cGlobal.Border.HoldOrder.ToString();

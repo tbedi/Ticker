@@ -1,10 +1,9 @@
 ﻿body {
-      background:rgba(128, 128, 128, 0.60); /*#494848;*/
+    background: rgba(128, 128, 128, 0.60); /*#494848;*/
     width: 100%;
     height: 780px;
-    margin:0;
-    font-family:Arial,Verdana;
-    
+    margin: 0;
+    font-family: Arial,Verdana;
 }
 
 td {
@@ -18,8 +17,6 @@ td {
     width: 100%;
     margin: 0px;
     font-family:Arial,Verdana;
-    
-   
 }
 .CenterLabel1 {
     position:absolute;
@@ -120,12 +117,12 @@ td {
     -webkit-transition: all 1s;
     transition: all 1s;
 }
-    .leftSideBoxChartp {
-        margin-top:-40px;
-        text-align:center;
-        font-family:Arial;
-        font-size:25px;
-    }
+.leftSideBoxChartp {
+    margin-top: -40px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 25px;
+}
 
 .lblShipmentNumber {
     color:whitesmoke;
