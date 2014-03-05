@@ -89,7 +89,7 @@ namespace Ticker.Charts
 
              .SetSeries(new[]
                        {
-                           new Series { Name = "Quantity", Data =new Data( lstopQuantityorder.ToTop5SKUObject()) , Color= ColorTranslator.FromHtml("#C6F331") },
+                           new Series { Name = "Quantity", Data =new Data( lstopQuantityorder.ToTop5SKUObject())  },
                        });
             return chart;
         }
@@ -169,13 +169,13 @@ namespace Ticker.Charts
              })
              .SetSeries(new[]
                 {
-                    new Series { Name = "Partners", Data = new Data(lstopPartner.ToTop5ParnerObject()), Color=ColorTranslator.FromHtml("#F38630"), },
+                    new Series { Name = "Partners", Data = new Data(lstopPartner.ToTop5ParnerObject())  },
                 })
                 .SetOptions(new GlobalOptions
                 {
                     Colors = new Color[]
                     {
-                        ColorTranslator.FromHtml("#69C8F3"),
+                        ColorTranslator.FromHtml("#F38630"),
                         ColorTranslator.FromHtml("#E0E4CC"),
                         ColorTranslator.FromHtml("#69D2E7"),
                         ColorTranslator.FromHtml("#661CCD"),

@@ -41,7 +41,6 @@ td {
 }
 .boxStyleKey {
     background:white;
-    border:solid thin black;
     height:360px;
     width: 500px;
     margin:5px;
@@ -52,7 +51,6 @@ td {
 }
 .BottomChartBOx {
     background: white;
-       border:solid thin black;
     width: 500px;
     margin: 5px;
     height: 365px;
@@ -64,7 +62,6 @@ td {
 .leftSideBox {
     background: rgba(128, 128, 128, 0.60);
     height: 200px;
-       border:solid thin black;
     width: 250px;
     float: left;
     margin-left: 10px;
@@ -76,7 +73,6 @@ td {
 .smallBox {
     background: #898686;
     height: 88px;
-       border:solid thin black;
     width: 248px;
     float: left;
     margin: 0px;
@@ -95,7 +91,6 @@ td {
     /*border-radius:5px;*/
     background:rgba(255, 255, 255, 0.40);
     width: 100%;
-       border:solid thin black;
     height: 170px;
     font-family:Arial,Verdana;
     text-align: center;
@@ -107,7 +102,6 @@ td {
      /*border-radius:5px;*/
     background:white;
     margin-left:3px;
-       border:solid thin black;
     width: 500px;
     height: 230px;
     font-family:Arial,Verdana;
@@ -120,7 +114,6 @@ td {
     font-family: Arial,Verdana;
     float: left;
     background: white;
-       border:solid thin black;
     width: 500px;
     height: 365px;
     -webkit-transition: all 1s;
@@ -160,5 +153,5 @@ p {
 .gapdiv {
     height:100%;
     width:4px;
-    background:#f1be44;
+    background:#898686;
 }
