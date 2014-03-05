@@ -203,7 +203,14 @@
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
-                <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)">
+                 <div class="leftSideBoxChart">
+                    <asp:UpdatePanel ID="UpdatePanel12" runat="server">
+                        <ContentTemplate>
+                            <asp:Literal ID="ltrTOPPartnerByOrder" runat="server"></asp:Literal>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+<%--                <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)">
                     <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                         <ContentTemplate>
                             <asp:Label ID="lblpart" runat="server" Text="Part Order" CssClass="lblChartTitle" />
@@ -215,7 +222,7 @@
                             </p>
                         </ContentTemplate>
                     </asp:UpdatePanel>
-                </div>
+                </div>--%>
             </td>
         </tr>
         <%--    <tr>

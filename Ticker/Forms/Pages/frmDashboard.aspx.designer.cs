@@ -346,40 +346,22 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Literal ltrStackedColumnTop5Partner;
         
         /// <summary>
-        /// UpdatePanel5 control.
+        /// UpdatePanel12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel5;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel12;
         
         /// <summary>
-        /// lblpart control.
+        /// ltrTOPPartnerByOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblpart;
-        
-        /// <summary>
-        /// litPartOrderQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litPartOrderQuantity;
-        
-        /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.Literal ltrTOPPartnerByOrder;
         
         /// <summary>
         /// tmrAjaxOrderOnCold control.

@@ -52,7 +52,7 @@ namespace Ticker.Forms.Pages
                 ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
 
             if (cGlobal.Border.lstopPartner.Count > 0)
-                ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Ordered(cGlobal.Border.lstopPartner).ToHtmlString();
+                ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Sales(cGlobal.Border.lstopPartner).ToHtmlString();
 
             Boolean _Rflag = false;
             foreach (var item in cGlobal.Border.lsRegularOrder)
@@ -77,18 +77,18 @@ namespace Ticker.Forms.Pages
                 if (item.NoofPartsOrders > 0)
                     _flag = true;
             }
-            if (_flag)
-            {
-                litPartOrderQuantity.Visible = true;
-                litPartOrderQuantity.Text = cDonut.PartOrderQuantity(cGlobal.Border.lsPartOrder).ToHtmlString();
-                lblError.Visible = false;
-            }
-            else
-            {
-                litPartOrderQuantity.Visible = false;
-                lblError.Visible = true;
-                lblError.Text = "No part order available.";
-            }
+            //if (_flag)
+            //{
+            //    litPartOrderQuantity.Visible = true;
+            //    litPartOrderQuantity.Text = cDonut.PartOrderQuantity(cGlobal.Border.lsPartOrder).ToHtmlString();
+            //    lblError.Visible = false;
+            //}
+            //else
+            //{
+            //    litPartOrderQuantity.Visible = false;
+            //    lblError.Visible = true;
+            //    lblError.Text = "No part order available.";
+            //}
 
             lblHoldOrder.Text = cGlobal.Border.HoldOrder.ToString();
             int ShippingInt = 0;

@@ -29,6 +29,7 @@ td {
     font-family:Arial,Verdana;
     top: 210px;
     left: 605px;
+    
 }
 
 .ImgeUpDown {
@@ -39,7 +40,7 @@ td {
     
 }
 .boxStyleKey {
-    background: rgba(128, 128, 128, 0.60);
+    background:#494848;
     height:300px;
     width: 370px;
     margin:5px;
@@ -111,9 +112,9 @@ td {
     margin: 5px;
     font-family: Arial,Verdana;
     float: left;
-    background: rgba(50, 192, 202, 0.53);
+    background: #0e0e0e;
     width: 405px;
-    height: 500px;
+    height: 365px;
     -webkit-transition: all 1s;
     transition: all 1s;
 }

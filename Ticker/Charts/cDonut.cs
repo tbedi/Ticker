@@ -145,9 +145,9 @@ namespace Ticker.Charts
                         DataLabels = new PlotOptionsPieDataLabels
                         {
                             Distance = 5,
-                            Color = ColorTranslator.FromHtml("#fffff"),
+                            Color = ColorTranslator.FromHtml("#f3f3f3"),
                             ConnectorColor = ColorTranslator.FromHtml("#fffff"),
-                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: <b style=\"color:#f3f3f3\">'+ Math.round(this.percentage)+'% </b>'; }"
                         },
                         Point = new PlotOptionsPiePoint
                         {
