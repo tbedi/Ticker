@@ -249,7 +249,7 @@ namespace Ticker.DataBase.BL
         /// </summary>
         /// <param name="lstopPartner"></param>
         /// <returns></returns>
-        public List<TopPartnerDTO> GetTop5Partner(List<TopPartnerDTO> lstopPartner)
+        public List<TopPartnerDTO> GetTop5PartnerByOrder(List<TopPartnerDTO> lstopPartner)
         {
             return lstopPartnerByOrder;
         }

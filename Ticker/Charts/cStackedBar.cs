@@ -172,5 +172,84 @@ namespace Ticker.Charts
                        });
             return chart;
         }
+
+        /// <summary>
+        /// This Method is Stacked Column for Toppartner sales.
+        /// </summary>
+        /// <param name="lstopPartner">
+        /// top PartnerDTO Pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return Chart.
+        /// </returns>
+        public static Highcharts GetTop_5_Partner_By_OrderCount(List<TopPartnerDTO> lstopPartnerByOrder)
+        {
+            Highcharts chart = new Highcharts("StackedColumnPartnerByorderCount")
+             .InitChart(new Chart
+             {
+                 DefaultSeriesType = ChartTypes.Column,
+                 Width = 405,
+                 Height = 365,
+                 BackgroundColor = new BackColorOrGradient(new Gradient
+                 {
+                     LinearGradient = new[] { 0, 0, 0, 400 },
+                     Stops = new object[,]
+                  {
+                    { 0, Color.FromArgb(13, 255, 255, 255) },
+                    { 1, Color.FromArgb(13, 255, 255, 255) }
+                  }
+                 })
+             }).SetCredits(new Credits
+             {
+                 Href = "http://www.kraususa.com/",
+                 Text = "kraus USA Inc."
+             })
+             .SetTitle(new Title
+             {
+                 Text = "TOP PARTNER BY ORDER",
+                 Style = "color: '#fff'"
+             }
+                       )
+             .SetXAxis(new XAxis
+             {
+                 Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
+                 Labels = new XAxisLabels { Style = "color: '#fff'" }
+             })
+            .SetYAxis(new YAxis
+            {
+                Title = new YAxisTitle { Text = "", Style = "color: 'whitesmoke'" },
+                Labels = new YAxisLabels { Style = "color: '#fff'" }
+            })
+
+              .SetLegend(new Legend
+              {
+                  Enabled = false,
+                  BackgroundColor = new BackColorOrGradient(System.Drawing.Color.Transparent),
+                  Align = HorizontalAligns.Right,
+                  VerticalAlign = VerticalAligns.Middle,
+                  Layout = Layouts.Vertical
+              })
+             .SetPlotOptions(new PlotOptions
+             {
+                 Column = new PlotOptionsColumn
+                 {
+                     PointWidth = 30,
+                     DataLabels = new PlotOptionsColumnDataLabels
+                     {
+                         Enabled = true,
+                         Color = ColorTranslator.FromHtml("#fff"),
+                         Align = HorizontalAligns.Center,
+                         VerticalAlign = VerticalAligns.Middle,
+                         Y = -10,
+                         Formatter = "function() {return  '$'+this.y}"
+                     }
+                 }
+             })
+             .SetSeries(new[]
+                       {
+                           new Series { Name = "Partners", Data = new Data(lstopPartnerByOrder.ToTop5ParnerObject())  },
+                       });
+            return chart;
+        }
     }
 }

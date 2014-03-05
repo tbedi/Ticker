@@ -46,7 +46,8 @@ namespace Ticker.Forms.Pages
             _ticker = new blTicker();
 
             FillInternal_Ticker();
-
+            if(cGlobal.Border.lstopPartnerByOrder.Count>0)
+            ltrTOPPartnerByOrder.Text = cStackedBar.GetTop_5_Partner_By_OrderCount(cGlobal.Border.lstopPartnerByOrder).ToHtmlString();
 
             if (cGlobal.Border.lstopQuantityorder.Count > 0)
                 ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
