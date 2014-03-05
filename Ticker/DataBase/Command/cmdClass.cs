@@ -314,7 +314,7 @@ namespace Ticker.DataBase.Command
             try
             {
                 var partner = _x3v6.ExecuteStoreQuery<TopPartnerDTO>(@"SELECT top 5 so.BPCORD_0 [PartnerID],so.BPCNAM_0 [Partner],
-                                                                        count(SOHNUM_0) [QtyOrdered]
+                                                                       cast(count(SOHNUM_0) as float) [QtyOrdered]
                                                                         FROM
                                                                         PRODUCTION.SORDER so
                                                                         WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
