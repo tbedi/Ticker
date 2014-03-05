@@ -27,7 +27,7 @@
                 </div>--%>
             </td>
             <td style="width: 30%; vertical-align: top">
-                <asp:Label ID="Label8" runat="server" Text="Order Details" Font-Size="X-Large" ForeColor="#ffffff" />
+                <asp:Label ID="Label8" runat="server" Text="Order Details" Font-Size="X-Large" ForeColor="Black" />
                 <div id="asdFlick" class="boxStyleKey">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
@@ -77,7 +77,7 @@
                 <table id="tblOrderDetails" style="width: 78%; float: left;">
                     <tr>
                         <td colspan="2">
-                            <asp:Label ID="lblOrderHeader" runat="server" Text="Order Processing" Font-Size="X-Large" ForeColor="#ffffff" />
+                            <asp:Label ID="lblOrderHeader" runat="server" Text="Order Processing" Font-Size="X-Large" ForeColor="Black" />
                         </td>
                     </tr>
                     <tr>
@@ -100,7 +100,7 @@
                                 <table style="width: 100%">
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="17" ForeColor="WhiteSmoke" />
+                                            <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="17" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -121,7 +121,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="17" ForeColor="WhiteSmoke" />
+                                            <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="17" ForeColor="Black" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -195,7 +195,7 @@
             <td style="vertical-align: bottom; width: 50px;">
                 &nbsp</td>
             <td style="vertical-align: top;">
-                <asp:Label ID="Label11" runat="server" Text="Partner Performance" Font-Size="X-Large" ForeColor="#ffffff" />
+                <asp:Label ID="Label11" runat="server" Text="Partner Performance" Font-Size="X-Large" ForeColor="Black" />
                 <div class="leftSideBoxChart">
                     <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                         <ContentTemplate>
