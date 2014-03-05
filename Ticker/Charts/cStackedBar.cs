@@ -15,6 +15,15 @@ namespace Ticker.Charts
 {
     public class cStackedBar
     {
+        /// <summary>
+        /// This Method is for Stacked Column of Top 5 SKU By order.
+        /// </summary>
+        /// <param name="lstopQuantityorder">
+        /// topQuantityOrderDTO Pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return Chart.
+        /// </returns>
         public static Highcharts GetTop_5_SKU_By_Ordered(List<TopQuantityOrdered> lstopQuantityorder)
         {
             Highcharts chart = new Highcharts("StackedColumn")
@@ -84,6 +93,15 @@ namespace Ticker.Charts
             return chart;
         }
 
+        /// <summary>
+        /// This Method is Stacked Column for Toppartner sales.
+        /// </summary>
+        /// <param name="lstopPartner">
+        /// top PartnerDTO Pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return Chart.
+        /// </returns>
         public static Highcharts GetTop_5_Partner_By_Ordered(List<TopPartnerDTO> lstopPartner)
         {
             Highcharts chart = new Highcharts("StackedColumnPartner")

@@ -23,7 +23,7 @@ namespace Ticker.Forms.Pages
     {
         public static Thread thAjax;
 
-        blTicker _ticker = new blTicker();
+        blTicker _ticker;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,6 +42,8 @@ namespace Ticker.Forms.Pages
         {
             //CREATE NEW Object calls database..
             cGlobal.Border = new blOrder();
+
+            _ticker = new blTicker();
 
             FillInternal_Ticker();
 
@@ -114,13 +116,13 @@ namespace Ticker.Forms.Pages
                 List<int> lsneworder=_ticker.GetNewOrder();
                 Literal1.Text = cGuage.GetNewShipmentGuage(Convert.ToInt32(lsneworder[0].ToString())).ToHtmlString();
 
-                List<int> lsNYWTHship = _ticker.GetNYWHShippedTicker();
+                List<int> lSYSProcess = _ticker.GetSYSProcessingTicker();
                 //String SYSInProcess = "http://internal.kraususa.net/result.php?type=processed_nywt";
-                ltrInProcessSOS.Text = cGuage.GetGreenSYS(Convert.ToInt32(lsNYWTHship[0].ToString())).ToHtmlString();
+                ltrInProcessSOS.Text = cGuage.GetGreenSYS(Convert.ToInt32(lSYSProcess[0].ToString())).ToHtmlString();
 
                 
                 //String SYSShipped = "http://internal.kraususa.net/result.php?type=shipped_nywt";
-                ltrShippedSYS.Text = cGuage.GetPurplSYS(Convert.ToInt32(_ticker.GetNYWTShippedTicker()[0].ToString())).ToHtmlString();
+                ltrShippedSYS.Text = cGuage.GetPurplSYS(Convert.ToInt32(_ticker.GetSYSShippedTicker()[0].ToString())).ToHtmlString();
 
                 //String PWInProcess = "http://internal.kraususa.net/result.php?type=processed";
 

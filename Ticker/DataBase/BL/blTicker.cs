@@ -14,11 +14,11 @@ namespace Ticker.DataBase.BL
 
         public List<int> lsNYWHShipped = _ticker.GetNYWHShipped();
 
-        public List<int> lsNYWTShipped = _ticker.GetNYWTShipped();
+        public List<int> lsSYSShipped = _ticker.GetNYWTShipped();
 
         public List<int> lsNYWHProccessing = _ticker.GetNYWHProccessing();
 
-        public List<int> lsNYWTProccessing = _ticker.GetNYWTProccessing();
+        public List<int> lsSYSProccessing = _ticker.GetNYWTProccessing();
 
         public List<int> GetNewOrder()
         {
@@ -30,9 +30,9 @@ namespace Ticker.DataBase.BL
             return lsNYWHShipped;
         }
 
-        public List<int> GetNYWTShippedTicker()
+        public List<int> GetSYSShippedTicker()
         {
-            return lsNYWTShipped;
+            return lsSYSShipped;
         }
 
         public List<int> GetNYWHProcessingTicker()
@@ -40,9 +40,9 @@ namespace Ticker.DataBase.BL
             return lsNYWHProccessing;
         }
 
-        public List<int> GetNYWTProcessingTicker()
+        public List<int> GetSYSProcessingTicker()
         {
-            return lsNYWTProccessing;
+            return lsSYSProccessing;
         }
 
 

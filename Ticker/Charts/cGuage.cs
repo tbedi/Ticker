@@ -12,6 +12,15 @@ namespace Ticker.Charts
 {
     public static class cGuage
     {
+        /// <summary>
+        /// This Method Is for Guage of NewOrder.
+        /// </summary>
+        /// <param name="DataValue">
+        /// Int neworder quantity pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return Chart.
+        /// </returns>
         public static Highcharts GetNewShipmentGuage( int DataValue )
         {
             Highcharts chart = new Highcharts("chartgauge")
@@ -150,6 +159,11 @@ namespace Ticker.Charts
        
         }
 
+        /// <summary>
+        /// This Method is for Guage for NYWT Process.
+        /// </summary>
+        /// <param name="DataValue"></param>
+        /// <returns></returns>
         public static Highcharts GetGreenSYS(int DataValue)
         {
             Highcharts chart = new Highcharts("chartgaugeGreenSYS")
@@ -286,6 +300,11 @@ namespace Ticker.Charts
 
         }
       
+        /// <summary>
+        /// This Method is for Guage for NYWH Process.
+        /// </summary>
+        /// <param name="DataValue"></param>
+        /// <returns></returns>
         public static Highcharts GetGreenWT(int DataValue)
         {
             Highcharts chart = new Highcharts("chartgaugeGreenWT")

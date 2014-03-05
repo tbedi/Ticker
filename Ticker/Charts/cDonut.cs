@@ -15,6 +15,17 @@ namespace Ticker.Charts
 {
     public static class cDonut
     {
+
+
+        /// <summary>
+        /// This method is for OrderCanceled Donut  
+        /// </summary>
+        /// <param name="lsQuantityOrderCategory">
+        /// List of Qauntity Category pass as parameter.
+        /// </param>
+        /// <returns>
+        /// return Chart.
+        /// </returns>
         public static Highcharts OrderCanceledDonut(List<OrderDTO> lsQuantityOrderCategory)
         {
             List<OrderDTO> CategotyDataFotChart = lsQuantityOrderCategory;
@@ -83,6 +94,15 @@ namespace Ticker.Charts
             return chart;
         }
         
+        /// <summary>
+        /// This Method is for Regular order Donut.
+        /// </summary>
+        /// <param name="lsRegularOrder">
+        /// Regular OrderDTO pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return HighChart.
+        /// </returns>
         public static Highcharts RegularOrder(List<RegularOrderDTO> lsRegularOrder)
         {
             List<RegularOrderDTO> ChartSriesData = lsRegularOrder;
@@ -149,6 +169,15 @@ namespace Ticker.Charts
             return chart;
         }
 
+        /// <summary>
+        /// This Method is for Partorder Donut.
+        /// </summary>
+        /// <param name="lsPartOrder">
+        /// Part orderDTO pass as parameter.
+        /// </param>
+        /// <returns>
+        /// Return Chart.
+        /// </returns>
         public static Highcharts PartOrderQuantity(List<PartOrderDTO> lsPartOrder)
         {
             List<PartOrderDTO> ChartSeriesData = lsPartOrder;
