@@ -81,7 +81,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#5fc0fe'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Gray'",
                            BorderWidth = 0
 
                        }
@@ -106,7 +106,7 @@ namespace Ticker.Charts
                    {
                        Step = 3,
                        Distance = -20,
-                       Style="color: '#fff'"
+                       Style="color: 'Gray'"
                    },
                    Title = new YAxisTitle
                    {
@@ -249,7 +249,7 @@ namespace Ticker.Charts
                    {
                        Step = 3,
                        Distance = -20,
-                       Style = "color: '#fff'"
+                       Style = "color: 'Gray'"
                    },
                    Title = new YAxisTitle
                    {
@@ -395,7 +395,7 @@ namespace Ticker.Charts
 
                        Step = 3,
                        Distance = -20,
-                       Style = "color: '#fff'"
+                       Style = "color: 'Gray'"
                    },
                    Title = new YAxisTitle
                    {
@@ -513,7 +513,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#fff'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Gray'",
                            BorderWidth = 0
 
                        }
@@ -657,7 +657,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#fff'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Gray'",
                            BorderWidth = 0
 
                        }

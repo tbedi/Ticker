@@ -26,7 +26,7 @@ namespace Ticker.Charts
         /// <returns>
         /// return Chart.
         /// </returns>
-        public static Highcharts OrderCanceledDonut(List<OrderDTO> lsQuantityOrderCategory)
+        public static Highcharts OrderCategory(List<OrderDTO> lsQuantityOrderCategory)
         {
             List<OrderDTO> CategotyDataFotChart = lsQuantityOrderCategory;
            
@@ -71,7 +71,7 @@ namespace Ticker.Charts
                         {
                             Distance = 5,
                             Color = ColorTranslator.FromHtml("#fffff"),
-                            ConnectorColor = ColorTranslator.FromHtml("#fffff"),
+                            ConnectorColor = ColorTranslator.FromHtml("#00000"),
                             Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
                         },
                         Point = new PlotOptionsPiePoint

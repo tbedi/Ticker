@@ -22,7 +22,7 @@ td {
     position:absolute;
     margin-left:-400px;
     margin-top:-10px;
-    color:#5fc0fe;
+    color:#661CCD;
     /*color:#093b5c;*/
     font-size:50px;
     font-weight:bold;
@@ -40,7 +40,7 @@ td {
     
 }
 .boxStyleKey {
-    background:#494848;
+    background:white;
     height:360px;
     width: 500px;
     margin:5px;
@@ -50,7 +50,7 @@ td {
     transition: all 1s ;
 }
 .BottomChartBOx {
-    background: #0e0e0e;
+    background: white;
     width: 500px;
     margin: 5px;
     height: 365px;
@@ -71,7 +71,7 @@ td {
     
 }
 .smallBox {
-    background: #5e0090;
+    background: #898686;
     height: 88px;
     width: 248px;
     float: left;
@@ -100,7 +100,7 @@ td {
 
 .ShipmentNewDiv {
      /*border-radius:5px;*/
-    background:#282828;
+    background:white;
     margin-left:3px;
     width: 500px;
     height: 230px;
@@ -113,7 +113,7 @@ td {
     margin: 5px;
     font-family: Arial,Verdana;
     float: left;
-    background: #0e0e0e;
+    background: white;
     width: 500px;
     height: 365px;
     -webkit-transition: all 1s;
@@ -147,7 +147,7 @@ p {
 }
 .lblChartTitle{
     font-size: 22px ;
-    color:whitesmoke;
+    color:Black;
     font-family:Arial,Verdana;
 }
 .gapdiv {
