@@ -27,7 +27,7 @@ namespace Ticker.Charts
                .InitChart(new Chart
                {
                    Width = 500,
-                   Height = 260,
+                   Height = 230,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -81,7 +81,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '50px' ,color: '#5fc0fe'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#5fc0fe'",
                            BorderWidth = 0
 
                        }
@@ -170,7 +170,7 @@ namespace Ticker.Charts
                .InitChart(new Chart
                {
                    Width = 250,
-                   Height = 200,
+                   Height = 170,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -224,7 +224,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '50px' ,color: 'Black'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Black'",
                            BorderWidth = 0
 
                        }
@@ -311,7 +311,7 @@ namespace Ticker.Charts
                .InitChart(new Chart
                {
                    Width = 250,
-                   Height = 200,
+                   Height = 170,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -365,7 +365,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '50px' ,color: 'Black'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Black'",
                            BorderWidth = 0
 
                        }
@@ -458,7 +458,7 @@ namespace Ticker.Charts
                .InitChart(new Chart
                {
                    Width = 250,
-                   Height = 200,
+                   Height = 170,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -513,7 +513,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '50px' ,color: '#fff'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#fff'",
                            BorderWidth = 0
 
                        }
@@ -603,7 +603,7 @@ namespace Ticker.Charts
                .InitChart(new Chart
                {
                    Width = 250,
-                   Height = 200,
+                   Height = 170,
                    Type = ChartTypes.Gauge,
                    PlotBackgroundColor = null,
                    PlotBackgroundImage = null,
@@ -657,7 +657,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '50px' ,color: '#fff'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#fff'",
                            BorderWidth = 0
 
                        }

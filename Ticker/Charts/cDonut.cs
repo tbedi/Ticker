@@ -44,8 +44,8 @@ namespace Ticker.Charts
                              { 1, Color.FromArgb(13, 255, 255, 255) }
                          }
                     }),
-                    Height = 270,
-                    Width = 370,
+                    Height = 330,
+                    Width = 500,
                     ZoomType = ZoomTypes.Xy,
 
                 }).SetCredits(new Credits

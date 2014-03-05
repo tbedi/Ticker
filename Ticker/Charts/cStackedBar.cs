@@ -30,8 +30,8 @@ namespace Ticker.Charts
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 370,
-                 Height = 330,
+                 Width = 500,
+                 Height = 365,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
@@ -95,7 +95,7 @@ namespace Ticker.Charts
         }
 
         /// <summary>
-        /// This Method is Stacked Column for Toppartner sales.
+        /// This Method is Stacked Column for Toppartner Orders.
         /// </summary>
         /// <param name="lstopPartner">
         /// top PartnerDTO Pass as parameter.
@@ -109,7 +109,7 @@ namespace Ticker.Charts
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 405,
+                 Width = 500,
                  Height = 365,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
@@ -188,7 +188,7 @@ namespace Ticker.Charts
              .InitChart(new Chart
              {
                  DefaultSeriesType = ChartTypes.Column,
-                 Width = 405,
+                 Width = 500,
                  Height = 365,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
@@ -241,7 +241,7 @@ namespace Ticker.Charts
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -10,
-                         Formatter = "function() {return  '$'+this.y}"
+                         //Formatter = "function() {return  '$'+this.y}"
                      }
                  }
              })
