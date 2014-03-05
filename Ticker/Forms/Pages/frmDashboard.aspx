@@ -51,7 +51,7 @@
                         <ContentTemplate>
 
                             <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblship" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
+                                <asp:Label runat="server" ID="lblship" ForeColor="#5fc0fe" Text="074" Font-Size="45"> </asp:Label>
                             </div>
                             <div style="text-align: left;">
                                 <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
@@ -64,7 +64,7 @@
                         <ContentTemplate>
 
                             <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblHoldOrder" CssClass="lblShipmentSubtitle" ForeColor="#5fc0fe" Text="074" Font-Size="55"> </asp:Label>
+                                <asp:Label runat="server" ID="lblHoldOrder"  ForeColor="#5fc0fe" Text="074" Font-Size="45"> </asp:Label>
                             </div>
                             <div style="text-align: left;">
                                 <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
