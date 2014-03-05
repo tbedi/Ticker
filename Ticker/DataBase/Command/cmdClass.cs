@@ -11,6 +11,12 @@ namespace Ticker.DataBase.Command
     {
         x3v6Entities _x3v6 = new x3v6Entities();
 
+        /// <summary>
+        /// This Method is for Get Quantity Order Category.
+        /// </summary>
+        /// <returns>
+        /// Return list of order category.
+        /// </returns>
         public List<OrderDTO> GetQuantityOrderedCategory()
         {
             List<OrderDTO> lsorder = new List<OrderDTO>();
@@ -39,6 +45,12 @@ namespace Ticker.DataBase.Command
             return lsorder;
         }
 
+        /// <summary>
+        /// This Method is for Get Regular Quantity Order.
+        /// </summary>
+        /// <returns>
+        /// List of Regular Quantity Order.
+        /// </returns>
         public List<RegularOrderDTO> GetRegularQuantityOrdred()
         {
             List<RegularOrderDTO> lsorder = new List<RegularOrderDTO>();
@@ -89,6 +101,12 @@ namespace Ticker.DataBase.Command
             return lsorder;
         }
 
+        /// <summary>
+        /// This Method Is used for Get Part Quantity Ordered.
+        /// </summary>
+        /// <returns>
+        /// Return List of PartQuantityOrder.
+        /// </returns>
         public List<PartOrderDTO> GetPartQuantityOrdered()
         {
             List<PartOrderDTO> lsorder = new List<PartOrderDTO>();
@@ -141,6 +159,12 @@ namespace Ticker.DataBase.Command
         
         }
 
+        /// <summary>
+        /// This Method Used for Get No. of HoldOreder.
+        /// </summary>
+        /// <returns>
+        /// Return Integer Value of Number of Hold Orders.
+        /// </returns>
         public int GetNoOfHoldOrders()
         {
             int Orders=0;
@@ -159,6 +183,12 @@ namespace Ticker.DataBase.Command
         
         }
 
+        /// <summary>
+        /// this Method is for Get Top 5 SKU Quantity Order.
+        /// </summary>
+        /// <returns>
+        /// Return List of Top e SKU Quntity Order. 
+        /// </returns>
         public List<TopQuantityOrdered> GetTop5SkuQuantityOrder()
         {
             List<TopQuantityOrdered> lstopquantity = new List<TopQuantityOrdered>();
@@ -191,7 +221,14 @@ namespace Ticker.DataBase.Command
             return lstopquantity;
         }
 
-        public List<TopPartnerDTO> GetTop5ParnerOrder()
+
+        /// <summary>
+        /// This Method is for Get Top 5 Partner sales Order.
+        /// </summary>
+        /// <returns>
+        /// Return list of Top 5 partner.
+        /// </returns>
+        public List<TopPartnerDTO> GetTop5ParnerSale()
         {
             List<TopPartnerDTO> lspartner = new List<TopPartnerDTO>();
             try
@@ -227,6 +264,12 @@ namespace Ticker.DataBase.Command
 
         }
 
+        /// <summary>
+        /// This Method for No. of Total Shipped.
+        /// </summary>
+        /// <returns>
+        /// Return list of double of no. of total shipped.
+        /// </returns>
         public List<double> GetShipped()
         {
             List<double> lsshipped = new List<double>();
@@ -259,5 +302,40 @@ namespace Ticker.DataBase.Command
             return lsshipped;
         }
 
+        /// <summary>
+        /// This Method is for Get Top 5 Partner Order.
+        /// </summary>
+        /// <returns>
+        /// Return list of Top 5 partner.
+        /// </returns>
+        public List<TopPartnerDTO> GetTop5ParnerByOrder()
+        {
+            List<TopPartnerDTO> lspartner = new List<TopPartnerDTO>();
+            try
+            {
+                var partner = _x3v6.ExecuteStoreQuery<TopPartnerDTO>(@"SELECT top 5 so.BPCORD_0 [PartnerID],so.BPCNAM_0 [Partner],
+                                                                        count(SOHNUM_0) [QtyOrdered]
+                                                                        FROM
+                                                                        PRODUCTION.SORDER so
+                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                        AND so.SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                        GROUP BY so.BPCORD_0, so.BPCNAM_0
+                                                                        ORDER BY [QtyOrdered] DESC, [Partner]; ").ToList();
+
+                if (partner.Count() > 0)
+                {
+                    foreach (var item in partner)
+                    {
+                        TopPartnerDTO partnertop = (TopPartnerDTO)item;
+                        lspartner.Add(partnertop);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return lspartner;
+
+        }
     }
 }
