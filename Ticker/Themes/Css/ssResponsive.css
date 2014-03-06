@@ -146,8 +146,10 @@ p {
     text-align:left
 }
 .lblChartTitle{
-    font-size: 22px ;
-    color:Black;
+    font-size: 17px ;
+    color:Gray;
+    text-align:center;
+    width:500px;
     font-family:Arial,Verdana;
 }
 .gapdiv {

@@ -49,7 +49,7 @@ namespace Ticker.Charts
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
-                                Style = "color: '#0000'"
+                                Style = "color: 'Gray'"
                             }
                        )
              .SetXAxis(new XAxis
@@ -79,13 +79,13 @@ namespace Ticker.Charts
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
                                  Enabled = true,
-                                 Color = ColorTranslator.FromHtml("Black"),
+                                 Color = ColorTranslator.FromHtml("#00000"),
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
                                  Y = -5
                              },
                          BorderWidth = 2,
-                         BorderColor = ColorTranslator.FromHtml("#FF7C00")
+                         BorderColor = ColorTranslator.FromHtml("#FF6B00")
                      }
              })
 
@@ -164,11 +164,11 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -5,
+                         Y = -11,
                          Formatter = "function() {return  '$'+this.y}"
                      },
                      BorderWidth = 2,
-                     BorderColor = ColorTranslator.FromHtml("#FF7C00")
+                     BorderColor = ColorTranslator.FromHtml("#FF6B00")
                  }
              })
              .SetSeries(new[]
@@ -279,7 +279,7 @@ namespace Ticker.Charts
                          //Formatter = "function() {return  '$'+this.y}"
                      },
                      BorderWidth=2,
-                     BorderColor = ColorTranslator.FromHtml("#FF7C00")
+                     BorderColor = ColorTranslator.FromHtml("#FF6B00")
                      //Color = ColorTranslator.FromHtml("#E94C4C"),
 
                  }
