@@ -20,8 +20,8 @@ td {
 }
 .CenterLabel1 {
     position:absolute;
-    margin-left:-400px;
-    margin-top:-10px;
+    margin-left:-370px;
+    margin-top:-9px;
     color:#661CCD;
     /*color:#093b5c;*/
     font-size:50px;
@@ -72,10 +72,10 @@ td {
 }
 .smallBox {
     background: #898686;
-    height: 88px;
+    height: 70px;
     width: 248px;
     float: left;
-    margin: 0px;
+    margin-top: 10px;
     font-family:Arial,Verdana;
     -webkit-transition: all 1s;
     transition: all 1s;

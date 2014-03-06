@@ -109,7 +109,7 @@
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="WhiteSmoke" />
+                                                            <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="Gray" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -118,19 +118,19 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                             <div class="smallBox" style="background:Gray">
-                    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
-                        <ContentTemplate>
+                                            <div class="smallBox" style="background: #c1c1c1">
+                                                <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                                                    <ContentTemplate>
 
-                            <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblship" ForeColor="Black" Text="074" Font-Size="40"> </asp:Label>
-                            </div>
-                            <div style="text-align: left;">
-                                <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
-                            </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
+                                                        <div style="text-align: right; width: 140px; float: right;">
+                                                            <asp:Label runat="server" ID="lblship" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                        </div>
+                                                        <div style="text-align: left; width: 150px">
+                                                            <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="true" Font-Size="15"></asp:Label>
+                                                        </div>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -174,7 +174,7 @@
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="WhiteSmoke" />
+                                                            <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="Gray" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -183,19 +183,19 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="smallBox" >
-                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                        <ContentTemplate>
+                                            <div class="smallBox" style="background:#c1c1c1">
+                                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                    <ContentTemplate>
 
-                            <div style="text-align: right;">
-                                <asp:Label runat="server" ID="lblHoldOrder"  ForeColor="Black" Text="074" Font-Size="40"> </asp:Label>
-                            </div>
-                            <div style="text-align: left;">
-                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
-                            </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </div>
+                                                        <div style="text-align: right; width: 100px; float: right;">
+                                                            <asp:Label runat="server" ID="lblHoldOrder" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                        </div>
+                                                        <div style="text-align: left; width:150px">
+                                                            <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="true" Font-Size="15"></asp:Label>
+                                                        </div>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
