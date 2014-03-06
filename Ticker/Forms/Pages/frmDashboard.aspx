@@ -65,7 +65,7 @@
                                     <ContentTemplate>
                                         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                         <p class="leftSideBoxChartp">
-                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="Black" Font-Size="35px"  />
+                                            <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#007acc" Font-Size="35px"  />
                                         </p>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -88,8 +88,8 @@
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: white">
                                                         <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
-                                                        <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label1" runat="server" Text="SYOSSET" />
+                                                        <p class="leftSideBoxChartp"> 
+                                                            <asp:Label ID="Label1" runat="server" Text="SYOSSET" ForeColor="#80a93b"/>
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -109,7 +109,7 @@
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="Gray" />
+                                                            <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="#5e0090" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -153,7 +153,7 @@
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White">
                                                         <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" Font-Size="Large" />
+                                                            <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#80a93b" Font-Size="Large" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>
@@ -174,7 +174,7 @@
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                         <p class="leftSideBoxChartp">
-                                                            <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="Gray" />
+                                                            <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#5e0090" />
                                                         </p>
                                                     </div>
                                                 </ContentTemplate>

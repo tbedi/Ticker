@@ -79,11 +79,13 @@ namespace Ticker.Charts
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
                                  Enabled = true,
-                                 Color = ColorTranslator.FromHtml("Gray"),
+                                 Color = ColorTranslator.FromHtml("Black"),
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
                                  Y = -5
-                             }
+                             },
+                         BorderWidth = 2,
+                         BorderColor = ColorTranslator.FromHtml("#FF7C00")
                      }
              })
 
@@ -159,12 +161,14 @@ namespace Ticker.Charts
                      DataLabels = new PlotOptionsColumnDataLabels
                      {
                          Enabled = true,
-                         Color = ColorTranslator.FromHtml("Gray"),
+                         Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -5,
                          Formatter = "function() {return  '$'+this.y}"
-                     }
+                     },
+                     BorderWidth = 2,
+                     BorderColor = ColorTranslator.FromHtml("#FF7C00")
                  }
              })
              .SetSeries(new[]
@@ -175,7 +179,8 @@ namespace Ticker.Charts
                 {
                     Colors = new Color[]
                     {
-                        ColorTranslator.FromHtml("#F38630"),
+                       // ColorTranslator.FromHtml("#F38630"),
+                       ColorTranslator.FromHtml("#FFA24A"),
                         ColorTranslator.FromHtml("#E0E4CC"),
                         ColorTranslator.FromHtml("#69D2E7"),
                         ColorTranslator.FromHtml("#661CCD"),
@@ -196,7 +201,7 @@ namespace Ticker.Charts
                         ColorTranslator.FromHtml("#949FB1"),
                         ColorTranslator.FromHtml("#4D5360"),
                         ColorTranslator.FromHtml("#2DDD68"),
-                        //ColorTranslator.FromHtml("#"),
+                        
                         //ColorTranslator.FromHtml("#"),
 
                     }
@@ -239,8 +244,7 @@ namespace Ticker.Charts
              {
                  Text = "TOP PARTNER BY ORDER",
                  Style = "color: 'Gray'"
-             }
-                       )
+             })
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
@@ -268,12 +272,16 @@ namespace Ticker.Charts
                      DataLabels = new PlotOptionsColumnDataLabels
                      {
                          Enabled = true,
-                         Color = ColorTranslator.FromHtml("Gray"),
+                         Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -10,
                          //Formatter = "function() {return  '$'+this.y}"
-                     }
+                     },
+                     BorderWidth=2,
+                     BorderColor = ColorTranslator.FromHtml("#FF7C00")
+                     //Color = ColorTranslator.FromHtml("#E94C4C"),
+
                  }
              })
              .SetSeries(new[]

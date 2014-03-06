@@ -79,9 +79,9 @@ namespace Ticker.Charts
                    {
                        DataLabels = new PlotOptionsGaugeDataLabels
                        {
-                           Y = 0,
+                           Y = 10,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Gray'",
+                           Style = "fontWeight:'bold',fontSize: '45px' ,color: '#007acc'",
                            BorderWidth = 0
 
                        }
@@ -224,7 +224,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Black'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#80a93b'",
                            BorderWidth = 0
 
                        }
@@ -282,7 +282,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#55BF3B" }, { 1, "#55BF3B" } }
+                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -290,7 +290,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#55BF3B" }, { 1, "#55BF3B" } }
+                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
                            })
                        }
                    }
@@ -365,7 +365,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Black'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#80a93b'",
                            BorderWidth = 0
 
                        }
@@ -400,7 +400,7 @@ namespace Ticker.Charts
                    Title = new YAxisTitle
                    {
                        Text = "",
-                       Style = "fontSize: '30px' ,color: '#666'",
+                       Style = "fontSize: '30px' ,color: '#80a93b'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
 
@@ -429,7 +429,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#55BF3B" }, { 1, "#55BF3B" } }
+                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -437,7 +437,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#55BF3B" }, { 1, "#55BF3B" } }
+                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
                            })
                        }
                    }
@@ -513,7 +513,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Gray'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#5e0090'",
                            BorderWidth = 0
 
                        }
@@ -533,7 +533,7 @@ namespace Ticker.Charts
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
                    TickLength = 5,
-                   TickColor = ColorTranslator.FromHtml("#007acc"),
+                   TickColor = ColorTranslator.FromHtml("#5e0090"),
                    Labels = new YAxisLabels
                    {
                        Step = 3,
@@ -573,7 +573,7 @@ namespace Ticker.Charts
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
 
-                               Stops = new object[,] { { 0, "#5fc0fe" }, { 1, "#5fc0fe" } }
+                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -581,7 +581,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#5fc0fe" }, { 1, "#5fc0fe" } }
+                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
 
                            })
                        }
@@ -657,7 +657,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: 'Gray'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#5e0090'",
                            BorderWidth = 0
 
                        }
@@ -677,7 +677,7 @@ namespace Ticker.Charts
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
                    TickLength = 5,
-                   TickColor = ColorTranslator.FromHtml("#007acc"),
+                   TickColor = ColorTranslator.FromHtml("#5e0090"),
                    Labels = new YAxisLabels
                    {
                        Step = 3,
@@ -714,7 +714,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#5fc0fe" }, { 1, "#5fc0fe" } }
+                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -722,7 +722,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#5fc0fe" }, { 1, "#5fc0fe" } }
+                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
                            })
                        }
                    }
