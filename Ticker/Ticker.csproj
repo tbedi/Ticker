@@ -155,6 +155,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\TickerPublish.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,7 +184,7 @@
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://192.168.5.26:777/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://192.168.5.26:777/</IISAppRootUrl>
+          <IISAppRootUrl>http://192.168.5.28:777/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
