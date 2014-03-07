@@ -118,15 +118,15 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="smallBox" style="background: #c1c1c1">
+                                            <div class="smallBox" style="background: white">
                                                 <asp:UpdatePanel ID="UpdatePanel6" runat="server">
                                                     <ContentTemplate>
 
-                                                        <div style="text-align: right; width: 140px; float: right;">
+                                                        <div style="text-align: right; width: 90px; float: right;">
                                                             <asp:Label runat="server" ID="lblship" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
                                                         </div>
                                                         <div style="text-align: left; width: 150px">
-                                                            <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                                                            <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
                                                         </div>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
@@ -183,15 +183,15 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <div class="smallBox" style="background:#c1c1c1">
+                                            <div class="smallBox" style="background:white">
                                                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                                     <ContentTemplate>
 
-                                                        <div style="text-align: right; width: 100px; float: right;">
-                                                            <asp:Label runat="server" ID="lblHoldOrder" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                        <div style="text-align: right; width: 90px; float: right;">
+                                                            <asp:Label runat="server" ID="lblHoldOrder" ForeColor="#ee0000" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
                                                         </div>
                                                         <div style="text-align: left; width:150px">
-                                                            <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" Font-Size="15"></asp:Label>
+                                                            <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#ee0000" Font-Size="15"></asp:Label>
                                                         </div>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
