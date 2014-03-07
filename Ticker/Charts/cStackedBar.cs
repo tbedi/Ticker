@@ -49,18 +49,19 @@ namespace Ticker.Charts
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
-                                Style = "color: 'Gray'"
+                                Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                                
                             }
                        )
              .SetXAxis(new XAxis
                  {
-                     Labels = new XAxisLabels { Style = "color: 'Gray'" },
+                     Labels = new XAxisLabels { Style = "color: 'Black',fontBold: 'true',fontSize: '14px'" },
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU()
                  })
             .SetYAxis(new YAxis
                 {
-                    Labels = new YAxisLabels { Style = "color: 'Gray'" },
-                    Title = new YAxisTitle { Text = "", Style = "color: 'Gray'" }
+                    Labels = new YAxisLabels { Style = "color: 'Black'" },
+                    Title = new YAxisTitle { Text = "", Style = "color: 'Black',fontBold: 'true'" }
                 })
 
               .SetLegend(new Legend
@@ -79,10 +80,11 @@ namespace Ticker.Charts
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
                                  Enabled = true,
-                                 Color = ColorTranslator.FromHtml("#00000"),
+                                 Color = ColorTranslator.FromHtml("#000000"),
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
-                                 Y = -5
+                                 Y = -5,
+                                 Style="fontSize: '14px'"
                              },
                          BorderWidth = 2,
                          BorderColor = ColorTranslator.FromHtml("#FF6B00")
@@ -131,18 +133,18 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNER BY SALES",
-                 Style = "color: 'Gray'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
              }
                        )
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartner.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Gray'" }
+                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '14px'" }
              })
             .SetYAxis(new YAxis
             {
-                Title = new YAxisTitle { Text = "", Style = "color: 'whitesmoke'" },
-                Labels = new YAxisLabels { Style = "color: 'Gray'" }
+                Title = new YAxisTitle { Text = "", Style = "color: 'Black'" },
+                Labels = new YAxisLabels { Style = "color: 'Black'" }
             })
 
               .SetLegend(new Legend
@@ -165,7 +167,8 @@ namespace Ticker.Charts
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -11,
-                         Formatter = "function() {return  '$'+this.y}"
+                         Formatter = "function() {return  '$'+this.y}",
+                         Style = "fontSize: '14px'"
                      },
                      BorderWidth = 2,
                      BorderColor = ColorTranslator.FromHtml("#FF6B00")
@@ -243,17 +246,17 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNER BY ORDER",
-                 Style = "color: 'Gray'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
              })
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Gray'" }
+                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '14px'" }
              })
             .SetYAxis(new YAxis
             {
-                Title = new YAxisTitle { Text = "", Style = "color: 'whitesmoke'" },
-                Labels = new YAxisLabels { Style = "color: 'Gray'" }
+                Title = new YAxisTitle { Text = "", Style = "color: 'Black'" },
+                Labels = new YAxisLabels { Style = "color: 'Black'" }
             })
 
               .SetLegend(new Legend
@@ -276,6 +279,7 @@ namespace Ticker.Charts
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -10,
+                         Style = "fontSize: '14px'"
                          //Formatter = "function() {return  '$'+this.y}"
                      },
                      BorderWidth=2,
