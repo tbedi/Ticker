@@ -132,7 +132,7 @@ namespace Ticker.Charts
              })
              .SetTitle(new Title
              {
-                 Text = "TOP PARTNER BY SALES",
+                 Text = "TOP PARTNERS BY SALES",
                  Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
              }
                        )
@@ -245,7 +245,7 @@ namespace Ticker.Charts
              })
              .SetTitle(new Title
              {
-                 Text = "TOP PARTNER BY ORDER",
+                 Text = "TOP PARTNERS BY # OF ORDER",
                  Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
              })
              .SetXAxis(new XAxis

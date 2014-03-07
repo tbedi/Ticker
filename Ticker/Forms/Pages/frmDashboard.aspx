@@ -34,7 +34,7 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <span>
-                                <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle" Font-Bold="true" ForeColor="Black" />
+                                <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle"  ForeColor="Black" Font-Size="25px" />
                                 <span>
                                     <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" /></span>
                                 <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
