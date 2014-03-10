@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Ticker.DataBase;
 using Ticker.Views;
-
+using Ticker.DataBase.BL;
 namespace Ticker.DataBase.Command
 {
     public class cmdClass
@@ -35,8 +35,8 @@ namespace Ticker.DataBase.Command
                 {
                     foreach (var item in Catorder)
                     {
-                        OrderDTO order = (OrderDTO)item;
-                        lsorder.Add(order);
+                            OrderDTO order = (OrderDTO)item;
+                            lsorder.Add(order); 
                     }
                 }
             }

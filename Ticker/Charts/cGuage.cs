@@ -104,6 +104,7 @@ namespace Ticker.Charts
                    TickColor = ColorTranslator.FromHtml("#007acc"),
                    Labels = new YAxisLabels
                    {
+                       Enabled=false,
                        Step = 3,
                        Distance = -15,
                        Style = "color: 'Gray' ,fontSize: '8px'"
@@ -261,7 +262,7 @@ namespace Ticker.Charts
                    TickColor = ColorTranslator.FromHtml("#80a93b"),
                    Labels = new YAxisLabels
                    {
-                       Step = 3,
+                       Enabled=false,
                        Distance = -15,
                        Style = "color: 'Gray' ,fontSize: '8px'"
                    },
@@ -420,7 +421,7 @@ namespace Ticker.Charts
                    TickColor = ColorTranslator.FromHtml("#80a93b"),
                    Labels = new YAxisLabels
                    {
-
+                       Enabled=false,
                        Step = 3,
                        Distance = -15,
                        Style = "color: 'Gray' ,fontSize: '8px'"
@@ -578,6 +579,8 @@ namespace Ticker.Charts
                    TickColor = ColorTranslator.FromHtml("#5e0090"),
                    Labels = new YAxisLabels
                    {
+
+                       Enabled = false,
                        Step = 3,
                        Distance = -15,
                        Style = "color: 'Gray' ,fontSize: '8px'"
@@ -737,6 +740,7 @@ namespace Ticker.Charts
                    TickColor = ColorTranslator.FromHtml("#5e0090"),
                    Labels = new YAxisLabels
                    {
+                       Enabled=false,
                        Step = 3,
                        Distance = -15,
                        Style = "color: 'Gray' ,fontSize: '8px'"

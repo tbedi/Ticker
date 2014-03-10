@@ -17,20 +17,17 @@ namespace Ticker.Forms.Pages
         {
             if (!IsPostBack)
             {
-                DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
-                List<OrderDTO> lsOrderCount = new List<OrderDTO>();
-                lsOrderCount = cmd.GetQuantityOrderedCategory();
-                if (lsOrderCount.Count > 0)
-                {
-
-                    lblNewOrderNH.Text = (Convert.ToInt32(lsOrderCount.ToTotalOrderCount())).ToString();
-
-                    ltrChart.Text = cDonut.OrderCategory(lsOrderCount).ToHtmlString();
-                }
+                FillDonut();
             }
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            FillDonut();
+        }
+
+
+        public void FillDonut()
         {
             DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
             List<OrderDTO> lsOrderCount = new List<OrderDTO>();
@@ -40,7 +37,7 @@ namespace Ticker.Forms.Pages
 
                 lblNewOrderNH.Text = (Convert.ToInt32(lsOrderCount.ToTotalOrderCount())).ToString();
 
-                ltrChart.Text = cDonut.OrderCategory(lsOrderCount).ToHtmlString();
+                ltrChart.Text = cDonut.OrderCategory(lsOrderCount.RemoveLessThenZero()).ToHtmlString();
             }
         }
     }
