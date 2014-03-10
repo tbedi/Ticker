@@ -51,63 +51,27 @@ namespace Ticker.Forms.Pages
             if(cGlobal.Border.lstopPartnerByOrder.Count>0)
             ltrTOPPartnerByOrder.Text = cStackedBar.GetTop_5_Partner_By_OrderCount(cGlobal.Border.lstopPartnerByOrder).ToHtmlString();
 
-            if (cGlobal.Border.lstopQuantityorder.Count > 0)
-                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
+            //if (cGlobal.Border.lstopQuantityorder.Count > 0)
+            //    ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
 
             if (cGlobal.Border.lstopPartner.Count > 0)
                 ltrStackedColumnTop5Partner.Text = cStackedBar.GetTop_5_Partner_By_Sales(cGlobal.Border.lstopPartner).ToHtmlString();
-
-            //Boolean _Rflag = false;
-            //foreach (var item in cGlobal.Border.lsRegularOrder)
-            //{
-            //    if (item.NoofRegularOrders > 0)
-            //        _Rflag = true;
-            //}
-            //if (_Rflag)
-            //{
-            //    ltrRegularOrder.Text = cDonut.RegularOrder(cGlobal.Border.lsRegularOrder).ToHtmlString();
-            //    lblErrorRegular.Visible = false;
-            //}
-            //else
-            //{
-            //    lblErrorRegular.Visible = true;
-            //    lblErrorRegular.Text = "Record Not Found.";
-            //}
-
-            //Boolean _flag = false;
-            //foreach (var item in cGlobal.Border.lsPartOrder)
-            //{
-            //    if (item.NoofPartsOrders > 0)
-            //        _flag = true;
-            //}
-            ////if (_flag)
-            //{
-            //    litPartOrderQuantity.Visible = true;
-            //    litPartOrderQuantity.Text = cDonut.PartOrderQuantity(cGlobal.Border.lsPartOrder).ToHtmlString();
-            //    lblError.Visible = false;
-            //}
-            //else
-            //{
-            //    litPartOrderQuantity.Visible = false;
-            //    lblError.Visible = true;
-            //    lblError.Text = "No part order available.";
-            //}
 
             lblHoldOrder.Text = cGlobal.Border.HoldOrder.ToString();
             int ShippingInt = 0;
             string Ship= Math.Round( cGlobal.Border.GetShippedpercentage(cGlobal.Border.lsshipped),0).ToString();
             int.TryParse(Ship, out ShippingInt);
             lblship.Text = ShippingInt.ToString() + "%";
-            if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
-            {
-                lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder(cGlobal.Border.lsQuantityOrderCategory))).ToString();
-                ltrChart.Text = cDonut.OrderCategory(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
+            //if (cGlobal.Border.lsQuantityOrderCategory.Count > 0)
+            //{
+            //    lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder(cGlobal.Border.lsQuantityOrderCategory))).ToString();
+            //    ltrChart.Text = cDonut.OrderCategory(cGlobal.Border.lsQuantityOrderCategory).ToHtmlString();
                
-            }
-            else
-            {
-                lblNewOrderNH.Text = "No Data";
-            }
+            //}
+            //else
+            //{
+            //    lblNewOrderNH.Text = "No Data";
+            //}
         }
 
         /// <summary>
@@ -140,6 +104,38 @@ namespace Ticker.Forms.Pages
             catch (Exception)
             {
             }
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+         //   DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
+
+         //   //  lblNewOrderNH.Text = (Convert.ToInt32(cGlobal.Border.GetTotalOrder(cGlobal.Border.lsQuantityOrderCategory))).ToString();
+
+         //   // ltrChart.Text = cDonut.OrderCategory(cmd.GetQuantityOrderedCategory()).ToHtmlString();
+
+         //   String Script = cDonut.OrderCategory(cmd.GetQuantityOrderedCategory()).ToHtmlString();
+         //   String S1 = Script.Replace("$(document).ready(function() ", "function mainDonut()");
+         //   String S2 = S1.Replace("});" + Environment.NewLine + "</script>", "} " + Environment.NewLine + "</script>");
+         //   ltrChart.Text = S2;
+         //   ScriptManager.RegisterStartupScript(Timer1, Timer1.GetType(), "scriptname", "mainDonut();", true);
+         //   //Page.ClientScript.RegisterStartupScript(this.GetType(), "mainDonut", "mainDonut();", true);
+         //  // UpdatePanel1.Update();  
+         ////   ScriptManager.RegisterStartupScript(this, Page.GetType(), "mainDonuts", "mainDonut();", true);
+         ////   UpdatePanel1.Update();  
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+           // DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
+           // String Script = cDonut.OrderCategory(cmd.GetQuantityOrderedCategory()).ToHtmlString();
+           // String S1 = Script.Replace("$(document).ready(function() ", "function mainDonut()");
+           // String S2 = S1.Replace("});" + Environment.NewLine + "</script>", "} " + Environment.NewLine + "</script>");
+           // ltrChart.Text = S2;
+           //// ScriptManager.RegisterStartupScript(this, Page.GetType(), "mainDonut", "mainDonut()", true);
+           // //Page.ClientScript.RegisterStartupScript(this.GetType(), "mainDonut", "mainDonut();", true);
+           
+           // UpdatePanel1.Update();
         }
 
 

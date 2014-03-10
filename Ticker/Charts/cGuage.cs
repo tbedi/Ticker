@@ -90,7 +90,7 @@ namespace Ticker.Charts
                .SetYAxis(new YAxis
                {
                    Min = 0,
-                   Max = 600,
+                   Max = 750,
 
                    //MinorTickInterval = "auto",
                    MinorTickWidth = 0,

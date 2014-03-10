@@ -87,7 +87,8 @@ namespace Ticker.Charts
                                  Style="fontSize: '14px'"
                              },
                          BorderWidth = 2,
-                         BorderColor = ColorTranslator.FromHtml("#FF6B00")
+                         BorderColor = ColorTranslator.FromHtml("#FF6B00"),
+                         Color = ColorTranslator.FromHtml("#FFA24A")
                      }
              })
 

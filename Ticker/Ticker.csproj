@@ -67,10 +67,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Forms\Pages\ajxCalls.aspx" />
+    <Content Include="Forms\Pages\frmCategoryDonut.aspx" />
     <Content Include="Forms\Pages\frmDashboard.aspx" />
-    <Content Include="Forms\Pages\frmGuage.aspx" />
-    <Content Include="Forms\Pages\frmStackedBar.aspx" />
+    <Content Include="Forms\Pages\frmTopSKUs.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
     <Content Include="Themes\Images\Down.png" />
     <Content Include="Themes\Images\up.png" />
@@ -107,12 +106,12 @@
     <Compile Include="Forms\MasterForms\mstMain.Master.designer.cs">
       <DependentUpon>mstMain.Master</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pages\ajxCalls.aspx.cs">
-      <DependentUpon>ajxCalls.aspx</DependentUpon>
+    <Compile Include="Forms\Pages\frmCategoryDonut.aspx.cs">
+      <DependentUpon>frmCategoryDonut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forms\Pages\ajxCalls.aspx.designer.cs">
-      <DependentUpon>ajxCalls.aspx</DependentUpon>
+    <Compile Include="Forms\Pages\frmCategoryDonut.aspx.designer.cs">
+      <DependentUpon>frmCategoryDonut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pages\frmDashboard.aspx.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
@@ -121,19 +120,12 @@
     <Compile Include="Forms\Pages\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Pages\frmGuage.aspx.cs">
-      <DependentUpon>frmGuage.aspx</DependentUpon>
+    <Compile Include="Forms\Pages\frmTopSKUs.aspx.cs">
+      <DependentUpon>frmTopSKUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forms\Pages\frmGuage.aspx.designer.cs">
-      <DependentUpon>frmGuage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Pages\frmStackedBar.aspx.cs">
-      <DependentUpon>frmStackedBar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Forms\Pages\frmStackedBar.aspx.designer.cs">
-      <DependentUpon>frmStackedBar.aspx</DependentUpon>
+    <Compile Include="Forms\Pages\frmTopSKUs.aspx.designer.cs">
+      <DependentUpon>frmTopSKUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataBase\Views\HoldOrder.cs" />

@@ -15,7 +15,7 @@
                 &nbsp</td>
             <td style="vertical-align: bottom;">
                 <%--    <div id="dvBoxLeftTop" class="leftSideBox">
-                    <asp:UpdatePanel ID="upPanel" runat="server">
+                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="upPanel" runat="server">
                         <ContentTemplate>
                             <asp:Label ID="lblregularorder" runat="server" Text="Regular Order" CssClass="lblChartTitle" />
                             <asp:Literal ID="ltrRegularOrder" runat="server"></asp:Literal>
@@ -33,18 +33,23 @@
                 <div id="asdFlick" class="boxStyleKey">
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
+                            <iframe id="iDonutTopLeft" src="frmCategoryDonut.aspx" style="overflow:hidden;width:500px;height:360px; border:thin solid whiteSmoke;"></iframe>
+                            <%--<asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
                             <span>
-                                <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle"  ForeColor="Black" Font-Size="25px" />
+                                <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" />
                                 <span>
                                     <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" /></span>
                                 <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+                                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" OnClientClick="mainDonut()" />--%>
                         </ContentTemplate>
-                    </asp:UpdatePanel>
+                    </asp:UpdatePanel> 
+                    
                 </div>
                 <div class="BottomChartBOx" style="float: left;">
-                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel3" runat="server">
                         <ContentTemplate>
-                            <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>
+                            <iframe id="iTopSKus" src="frmTopSKUs.aspx"  style="overflow:hidden;width:500px;height:365px; border:thin solid whiteSmoke;" ></iframe>
+                          <%--  <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>--%>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
@@ -61,7 +66,7 @@
                     <tr>
                         <td colspan="2" style="text-align: center;">
                             <div class="ShipmentNewDiv">
-                                <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel7" runat="server">
                                     <ContentTemplate>
                                         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                         <p class="leftSideBoxChartp">
@@ -84,7 +89,7 @@
                                     <tr>
 
                                         <td>
-                                            <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+                                            <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel8" runat="server">
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: white">
                                                         <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
@@ -104,7 +109,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:UpdatePanel ID="UpdatePanel10" runat="server">
+                                            <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel10" runat="server">
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
@@ -119,7 +124,7 @@
                                     <tr>
                                         <td>
                                             <div class="smallBox" style="background: white">
-                                                <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel6" runat="server">
                                                     <ContentTemplate>
 
                                                         <div style="text-align: right; width: 90px; float: right;">
@@ -148,7 +153,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:UpdatePanel ID="UpdatePanel9" runat="server">
+                                            <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel9" runat="server">
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White">
                                                         <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
@@ -169,7 +174,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:UpdatePanel ID="UpdatePanel11" runat="server">
+                                            <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel11" runat="server">
                                                 <ContentTemplate>
                                                     <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                         <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
@@ -184,7 +189,7 @@
                                     <tr>
                                         <td>
                                             <div class="smallBox" style="background:white">
-                                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel2" runat="server">
                                                     <ContentTemplate>
 
                                                         <div style="text-align: right; width: 90px; float: right;">
@@ -210,21 +215,21 @@
             <td style="vertical-align: top;">
                 <asp:Label ID="Label11" runat="server" Text="▶▶ Partner Performance" Font-Size="X-Large" ForeColor="Black" Font-Bold="true"/>
                 <div class="leftSideBoxChart">
-                    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
                         <ContentTemplate>
                             <asp:Literal ID="ltrStackedColumnTop5Partner" runat="server"></asp:Literal>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
                  <div class="leftSideBoxChart">
-                    <asp:UpdatePanel ID="UpdatePanel12" runat="server">
+                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel12" runat="server">
                         <ContentTemplate>
                             <asp:Literal ID="ltrTOPPartnerByOrder" runat="server"></asp:Literal>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
 <%--                <div id="Div1" class="leftSideBox" style="background: rgba(239, 239, 239, 0.60)">
-                    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel5" runat="server">
                         <ContentTemplate>
                             <asp:Label ID="lblpart" runat="server" Text="Part Order" CssClass="lblChartTitle" />
                             <asp:Literal ID="litPartOrderQuantity" runat="server"></asp:Literal>
