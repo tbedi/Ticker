@@ -85,6 +85,36 @@ namespace Ticker.Charts
                         }
                     }
 
+                }).SetOptions(new GlobalOptions
+                {
+                    Colors = new Color[]
+                    {
+                       // ColorTranslator.FromHtml("#F38630"),
+                       ColorTranslator.FromHtml("#FFA24A"),
+                        ColorTranslator.FromHtml("#E0E4CC"),
+                        ColorTranslator.FromHtml("#69D2E7"),
+                        ColorTranslator.FromHtml("#661CCD"),
+                        ColorTranslator.FromHtml("#ED561B"),
+                        ColorTranslator.FromHtml("#DF7EE6"),
+                        ColorTranslator.FromHtml("#C79EF5"),
+                        ColorTranslator.FromHtml("#98C1F2"),
+                        ColorTranslator.FromHtml("#96EAF0"),
+                        ColorTranslator.FromHtml("#96F0CD"),
+                        ColorTranslator.FromHtml("#BDE996"),
+                        ColorTranslator.FromHtml("#EEF6B3"),
+                        ColorTranslator.FromHtml("#EED4BE"),
+                        ColorTranslator.FromHtml("#F28563"),
+                        ColorTranslator.FromHtml("#DB1FD2"),
+                        ColorTranslator.FromHtml("#F7464A"),
+                        ColorTranslator.FromHtml("#E2EAE9"),
+                        ColorTranslator.FromHtml("#D4CCC5"),
+                        ColorTranslator.FromHtml("#949FB1"),
+                        ColorTranslator.FromHtml("#4D5360"),
+                        ColorTranslator.FromHtml("#2DDD68"),
+                        
+                        //ColorTranslator.FromHtml("#"),
+
+                    }
                 })
                 .SetSeries(new Series
                 {

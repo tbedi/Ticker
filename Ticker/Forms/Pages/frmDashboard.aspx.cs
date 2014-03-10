@@ -34,7 +34,7 @@ namespace Ticker.Forms.Pages
 
         protected void tmrAjaxOrderOnCold_Tick(object sender, EventArgs e)
         {
-            Call();
+            //Call();
         }
 
         /// <summary>

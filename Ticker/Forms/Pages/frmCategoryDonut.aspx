@@ -15,10 +15,9 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div id="asdFlick" class="boxStyleKey" style="width:500px;height:360px;" >
+        <div id="asdFlick" class="boxStyleKey" style="width: 500px; height: 360px;">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                  
                     <span>
                         <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" />
                         <span>
@@ -27,7 +26,7 @@
                         <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
-  <asp:Timer ID="Timer1" runat="server" Interval="5000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>

@@ -46,7 +46,7 @@
                     
                 </div>
                 <div class="BottomChartBOx" style="float: left;">
-                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel3" runat="server">
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                         <ContentTemplate>
                             <iframe id="iTopSKus" src="frmTopSKUs.aspx"  style="overflow:hidden;width:500px;height:365px; border:thin solid whiteSmoke;" ></iframe>
                           <%--  <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>--%>

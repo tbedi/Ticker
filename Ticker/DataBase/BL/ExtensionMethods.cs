@@ -91,5 +91,16 @@ namespace Ticker.DataBase.BL
 
             return returnObject;
         }
+
+
+        public static double ToTotalOrderCount( this List<OrderDTO> lsQuantityOrderCategory)
+        {
+            double _TotalCount = 0;
+            foreach (var item in lsQuantityOrderCategory)
+            {
+                _TotalCount = _TotalCount + item.QtyOrdered;
+            }
+            return _TotalCount;
+        }
     }
 }

@@ -21,7 +21,7 @@
                     <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="15000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>

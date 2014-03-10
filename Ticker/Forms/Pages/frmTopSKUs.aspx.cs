@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Ticker.Charts;
 using Ticker.DataBase.BL;
+using Ticker.Views;
 
 namespace Ticker.Forms.Pages
 {
@@ -15,17 +16,22 @@ namespace Ticker.Forms.Pages
         {
             if (!IsPostBack)
             {
-                cGlobal.Border = new blOrder();
-                 if (cGlobal.Border.lstopQuantityorder.Count > 0)
-                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
+                DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
+                List<TopQuantityOrdered> lstopQuantityorder = new List<TopQuantityOrdered>();
+                lstopQuantityorder = cmd.GetTop5SkuQuantityOrder();
+                if (lstopQuantityorder.Count > 0)
+                    ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(lstopQuantityorder).ToHtmlString();
 
             }
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            if (cGlobal.Border.lstopQuantityorder.Count > 0)
-                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(cGlobal.Border.lstopQuantityorder).ToHtmlString();
+            DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
+            List<TopQuantityOrdered> lstopQuantityorder = new List<TopQuantityOrdered>();
+            lstopQuantityorder = cmd.GetTop5SkuQuantityOrder();
+            if (lstopQuantityorder.Count > 0)
+                ltrStackedColumnTop5SKU.Text = cStackedBar.GetTop_5_SKU_By_Ordered(lstopQuantityorder).ToHtmlString();
 
         }
     }
