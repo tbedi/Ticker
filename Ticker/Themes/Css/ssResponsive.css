@@ -4,6 +4,7 @@
     height: 780px;
     margin: 0;
     font-family: Arial,Verdana;
+    overflow:hidden;
 }
 
 td {
@@ -41,8 +42,8 @@ td {
 }
 .boxStyleKey {
     background:white;
-    height:360px;
-    width: 500px;
+   width: 495px;
+    height: 360px;
     margin:5px;
     float:left;
     font-family:Arial,Verdana;
@@ -52,6 +53,7 @@ td {
 .BottomChartBOx {
     background: white;
     width: 500px;
+    overflow:hidden;
     margin: 5px;
     height: 365px;
     float: left;

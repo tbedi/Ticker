@@ -12,16 +12,16 @@
     <script src="../../Themes/js/jquery-2.0.2.js"></script>
      <link href="../../Themes/Css/ssResponsive.css" rel="stylesheet" />
 </head>
-<body>
+<body style="height:350px; width:495px;">
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div class="BottomChartBOx" style="float: left;width:500px ">
+        <div class="BottomChartBOx" style="float: left;height:350px; width:495px; ">
             <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                 <ContentTemplate>
                     <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Timer ID="Timer1" runat="server" Interval="15000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="17000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>

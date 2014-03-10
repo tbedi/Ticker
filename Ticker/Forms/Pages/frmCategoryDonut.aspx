@@ -12,10 +12,10 @@
     <script src="../../Themes/js/jquery-2.0.2.js"></script>
      <link href="../../Themes/Css/ssResponsive.css" rel="stylesheet" />
 </head>
-<body>
-    <form id="form1" runat="server">
+<body  style="width: 495px; height: 360px;" >
+    <form id="form1" runat="server" style="width: 495px; height: 360px;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div id="asdFlick" class="boxStyleKey" style="width: 500px; height: 360px;">
+        <div id="asdFlick" class="boxStyleKey"  >
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <span>
@@ -26,7 +26,7 @@
                         <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="14000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>

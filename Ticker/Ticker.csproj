@@ -69,6 +69,7 @@
     <Content Include="Forms\Pages\frmCategoryDonut.aspx" />
     <Content Include="Forms\Pages\frmDashboard.aspx" />
     <Content Include="Forms\Pages\frmGuages.aspx" />
+    <Content Include="Forms\Pages\frmRightStackedColunm.aspx" />
     <Content Include="Forms\Pages\frmTopSKUs.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
     <Content Include="Themes\Images\Down.png" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="Forms\Pages\frmGuages.aspx.designer.cs">
       <DependentUpon>frmGuages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmRightStackedColunm.aspx.cs">
+      <DependentUpon>frmRightStackedColunm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\frmRightStackedColunm.aspx.designer.cs">
+      <DependentUpon>frmRightStackedColunm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Pages\frmTopSKUs.aspx.cs">
       <DependentUpon>frmTopSKUs.aspx</DependentUpon>

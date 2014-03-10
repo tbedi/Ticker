@@ -12,7 +12,6 @@ namespace Ticker.Forms.Pages
     public partial class frmGuages : System.Web.UI.Page
     {
 
-        blTicker _ticker;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
