@@ -112,31 +112,31 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// UpdatePanel11 control.
+        /// UpdatePanel9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel11;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel9;
         
         /// <summary>
-        /// ltrShippedNYWH control.
+        /// ltrInprocessNyWH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrShippedNYWH;
+        protected global::System.Web.UI.WebControls.Literal ltrInprocessNyWH;
         
         /// <summary>
-        /// Label7 control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// Label4 control.
@@ -229,31 +229,31 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Label lblShipped;
         
         /// <summary>
-        /// UpdatePanel9 control.
+        /// UpdatePanel11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel9;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel11;
         
         /// <summary>
-        /// ltrInprocessNyWH control.
+        /// ltrShippedNYWH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrInprocessNyWH;
+        protected global::System.Web.UI.WebControls.Literal ltrShippedNYWH;
         
         /// <summary>
-        /// Label5 control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// UpdatePanel3 control.

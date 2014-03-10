@@ -73,18 +73,20 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td>
-                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel11" runat="server">
+                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel9" runat="server">
                                                     <ContentTemplate>
-                                                        <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
-                                                            <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
+                                                        <div class="ShipmentInfoDiv" style="width: 250px; background: White">
+                                                            <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#007acc" />
+                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#007acc" Font-Size="Large" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
+
                                             </td>
                                         </tr>
+                                    
                                     </table>
                                 </div>
                             </td>
@@ -153,19 +155,18 @@
                             <td>
                                 <div id="Div3" style="float: left; width: 250px">
                                     <table style="width: 100%">
-                                        <tr>
+                                          <tr>
                                             <td>
-                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel9" runat="server">
+                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel11" runat="server">
                                                     <ContentTemplate>
-                                                        <div class="ShipmentInfoDiv" style="width: 250px; background: White">
-                                                            <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
+                                                        <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
+                                                            <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#007acc" Font-Size="Large" />
+                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#007acc" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
-
                                             </td>
                                         </tr>
                                          <tr style="margin-top: -1px;">

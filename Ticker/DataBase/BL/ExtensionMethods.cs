@@ -111,7 +111,7 @@ namespace Ticker.DataBase.BL
             {
                 if (lsshipped.Count > 0)
                 {
-                    _TotalCount = (lsshipped[0] / lsshipped[1]) * 100;
+                    _TotalCount =  lsshipped[0];
                 }
             }
             catch (Exception)

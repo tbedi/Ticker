@@ -51,7 +51,7 @@ namespace Ticker.Forms.Pages
                 int ShippingInt = 0;
                 string Ship = Math.Round(lsshipped.ToShippedpercentage(), 0).ToString();
                 int.TryParse(Ship, out ShippingInt);
-                lblship.Text = ShippingInt.ToString() + "%";
+                lblship.Text = ShippingInt.ToString() ;
 
                 lblOrdersToday.Text = cmd.GetTodaysOrder().ToString();
                 lblToatalYesterday.Text = cmd.GetYesterdayOrder().ToString();
