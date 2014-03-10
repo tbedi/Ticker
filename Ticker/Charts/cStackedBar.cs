@@ -252,7 +252,7 @@ namespace Ticker.Charts
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '14px'" }
+                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '12px'" }
              })
             .SetYAxis(new YAxis
             {

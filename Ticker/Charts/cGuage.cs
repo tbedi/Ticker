@@ -100,13 +100,13 @@ namespace Ticker.Charts
                    TickPixelInterval = 20,
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
-                   TickLength = 5,
+                   TickLength = 3,
                    TickColor = ColorTranslator.FromHtml("#007acc"),
                    Labels = new YAxisLabels
                    {
                        Step = 3,
-                       Distance = -20,
-                       Style="color: 'Gray'"
+                       Distance = -15,
+                       Style = "color: 'Gray' ,fontSize: '8px'"
                    },
                    Title = new YAxisTitle
                    {
@@ -255,15 +255,15 @@ namespace Ticker.Charts
                    MinorTickPosition = TickPositions.Inside,
                    MinorTickColor = ColorTranslator.FromHtml("#fff"),
                    TickPixelInterval = 20,
-                   TickWidth = 2,
+                   TickWidth = 1,
                    TickPosition = TickPositions.Inside,
-                   TickLength = 5,
+                   TickLength = 3,
                    TickColor = ColorTranslator.FromHtml("#80a93b"),
                    Labels = new YAxisLabels
                    {
                        Step = 3,
-                       Distance = -20,
-                       Style = "color: 'Gray'"
+                       Distance = -15,
+                       Style = "color: 'Gray' ,fontSize: '8px'"
                    },
                    Title = new YAxisTitle
                    {
@@ -416,14 +416,14 @@ namespace Ticker.Charts
 
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
-                   TickLength = 5,
+                   TickLength = 3,
                    TickColor = ColorTranslator.FromHtml("#80a93b"),
                    Labels = new YAxisLabels
                    {
 
                        Step = 3,
-                       Distance = -20,
-                       Style = "color: 'Gray'"
+                       Distance = -15,
+                       Style = "color: 'Gray' ,fontSize: '8px'"
                    },
                    Title = new YAxisTitle
                    {
@@ -574,12 +574,13 @@ namespace Ticker.Charts
                    TickPixelInterval = 20,
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
-                   TickLength = 5,
+                   TickLength = 3,
                    TickColor = ColorTranslator.FromHtml("#5e0090"),
                    Labels = new YAxisLabels
                    {
                        Step = 3,
-                       Distance = -20
+                       Distance = -15,
+                       Style = "color: 'Gray' ,fontSize: '8px'"
                    },
                    Title = new YAxisTitle
                    {
@@ -732,12 +733,13 @@ namespace Ticker.Charts
                    TickPixelInterval = 20,
                    TickWidth = 2,
                    TickPosition = TickPositions.Inside,
-                   TickLength = 5,
+                   TickLength = 3,
                    TickColor = ColorTranslator.FromHtml("#5e0090"),
                    Labels = new YAxisLabels
                    {
                        Step = 3,
-                       Distance = -20
+                       Distance = -15,
+                       Style = "color: 'Gray' ,fontSize: '8px'"
                    },
                    Title = new YAxisTitle
                    {
