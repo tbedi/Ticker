@@ -239,7 +239,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#80a93b'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
                            BorderWidth = 0
 
                        }
@@ -311,7 +311,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -319,7 +319,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        }
                    }
@@ -394,7 +394,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#80a93b'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
                            BorderWidth = 0
 
                        }
@@ -472,7 +472,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -480,7 +480,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#80a93b" }, { 1, "#80a93b" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        }
                    }
@@ -556,7 +556,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#5e0090'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
                            BorderWidth = 0
 
                        }
@@ -633,7 +633,7 @@ namespace Ticker.Charts
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
 
-                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -641,7 +641,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
 
                            })
                        }
@@ -717,7 +717,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#5e0090'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
                            BorderWidth = 0
 
                        }
@@ -790,7 +790,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        },
                        Pivot = new PlotOptionsGaugePivot
@@ -798,7 +798,7 @@ namespace Ticker.Charts
                            BackgroundColor = new BackColorOrGradient(new Gradient
                            {
                                LinearGradient = new[] { 0, 0, 0, 1 },
-                               Stops = new object[,] { { 0, "#5e0090" }, { 1, "#5e0090" } }
+                               Stops = new object[,] { { 0, "#007acc" }, { 1, "#007acc" } }
                            })
                        }
                    }

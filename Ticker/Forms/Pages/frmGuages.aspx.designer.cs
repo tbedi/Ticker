@@ -148,31 +148,31 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// UpdatePanel3 control.
+        /// UpdatePanel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
         
         /// <summary>
-        /// lblToatalYesterday control.
+        /// lblOrdersToday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToatalYesterday;
+        protected global::System.Web.UI.WebControls.Label lblOrdersToday;
         
         /// <summary>
-        /// lblty control.
+        /// Label13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblty;
+        protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
         /// UpdatePanel6 control.
@@ -292,31 +292,31 @@ namespace Ticker.Forms.Pages {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// UpdatePanel4 control.
+        /// UpdatePanel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
         
         /// <summary>
-        /// lblOrdersToday control.
+        /// lblToatalYesterday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOrdersToday;
+        protected global::System.Web.UI.WebControls.Label lblToatalYesterday;
         
         /// <summary>
-        /// Label13 control.
+        /// lblty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
+        protected global::System.Web.UI.WebControls.Label lblty;
         
         /// <summary>
         /// UpdatePanel2 control.

@@ -54,7 +54,7 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: white">
                                                             <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label1" runat="server" Text="SYOSSET" ForeColor="#80a93b" Font-Size="Large" />
+                                                                <asp:Label ID="Label1" runat="server" Text="SYOSSET" ForeColor="#007acc" Font-Size="Large" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
@@ -74,31 +74,31 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                             <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="#5e0090" Font-Size="Large" />
+                                                                <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="#007acc" Font-Size="Large" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
                                             </td>
                                         </tr>
-                                  
-                                        <tr style="margin-top:-1px;">
+                                   <tr  style="margin-top:-1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
-                                                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel3" runat="server">
+                                                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
                                                         <ContentTemplate>
 
-                                                            <div style="text-align: right; width: 80px; float: right;">
-                                                                <asp:Label runat="server" ID="lblToatalYesterday" ForeColor="#e1530b" Text="074" Font-Size="27" Font-Bold="true">  </asp:Label>
+                                                            <div style="text-align: right; width: 90px; float: right;">
+                                                                <asp:Label runat="server" ID="lblOrdersToday" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
                                                             </div>
-                                                            <div style="text-align: left; width: 160px">
-                                                                <asp:Label runat="server" ID="lblty" Text="Orders Yesterday" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#e1530b" Font-Size="15"></asp:Label>
+                                                            <div style="text-align: left; width: 150px">
+                                                                <asp:Label runat="server" ID="Label13" Text="Orders Today" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
                                                 </div>
                                             </td>
                                         </tr>
+                                      
                                               <tr  style="margin-top:-1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
@@ -153,7 +153,7 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: White">
                                                             <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#80a93b" Font-Size="Large" />
+                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#007acc" Font-Size="Large" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
@@ -174,31 +174,31 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                             <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#5e0090" />
+                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#007acc" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
                                                 </asp:UpdatePanel>
                                             </td>
                                         </tr>
-                                     
-                                           <tr  style="margin-top:-1px;">
+                                       <tr style="margin-top:-1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
-                                                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
+                                                    <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel3" runat="server">
                                                         <ContentTemplate>
 
-                                                            <div style="text-align: right; width: 90px; float: right;">
-                                                                <asp:Label runat="server" ID="lblOrdersToday" ForeColor="#67ce38" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                            <div style="text-align: right; width: 80px; float: right;">
+                                                                <asp:Label runat="server" ID="lblToatalYesterday" ForeColor="#e1530b" Text="074" Font-Size="27" Font-Bold="true">  </asp:Label>
                                                             </div>
-                                                            <div style="text-align: left; width: 150px">
-                                                                <asp:Label runat="server" ID="Label13" Text="Orders Today" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#67ce385" Font-Size="15"></asp:Label>
+                                                            <div style="text-align: left; width: 160px">
+                                                                <asp:Label runat="server" ID="lblty" Text="Orders Yesterday" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#e1530b" Font-Size="15"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
                                                 </div>
                                             </td>
                                         </tr>
+                                          
                                            <tr  style="margin-top:-1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
