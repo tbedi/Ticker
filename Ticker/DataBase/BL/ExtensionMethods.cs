@@ -119,5 +119,27 @@ namespace Ticker.DataBase.BL
             }
             return _TotalCount;
         }
+
+        /// <summary>
+        /// Remove 0 Fileds from order DTO
+        /// </summary>
+        /// <param name="lsOrederDto"></param>
+        /// <returns></returns>
+        public static List<OrderDTO> RemoveLessThenZero(this List<OrderDTO> lsOrederDto)
+        {
+            List<OrderDTO> _rerurn = new List<OrderDTO>();
+            Double Total = lsOrederDto.ToTotalOrderCount();
+            Int32 Limit = Convert.ToInt32(Total / 100);
+
+            foreach (var item in lsOrederDto)
+            {
+                if (item.QtyOrdered >= Limit)
+                {
+                    OrderDTO order = (OrderDTO)item;
+                    _rerurn.Add(order);
+                }
+            }
+            return _rerurn;
+        }
     }
 }
