@@ -57,7 +57,14 @@
             <td class="gapdiv">
                 &nbsp</td>
             <td style="vertical-align: top;">
-                <table id="tblOrderDetails" style="width: 78%; float: left;">
+                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="GuageUpdate" runat="server">
+
+                    <ContentTemplate>
+                        <iframe id="Guages" src="frmGuages.aspx" style="overflow:hidden;width:498px;height:799px;border:thin solid whiteSmoke;" ></iframe>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+
+                <%--<table id="tblOrderDetails" style="width: 78%; float: left;">
                     <tr>
                         <td colspan="2">
                             <asp:Label ID="lblOrderHeader" runat="server" Text="▶▶ Order Processing" Font-Size="X-Large" Font-Bold="true" ForeColor="Black" />
@@ -208,7 +215,7 @@
                 
                         </td>
                     </tr>
-                </table>
+                </table>--%>
             </td>
             <td class="gapdiv">
                 &nbsp</td>

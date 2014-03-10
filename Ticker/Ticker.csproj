@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Forms\Pages\frmCategoryDonut.aspx" />
     <Content Include="Forms\Pages\frmDashboard.aspx" />
+    <Content Include="Forms\Pages\frmGuages.aspx" />
     <Content Include="Forms\Pages\frmTopSKUs.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
     <Content Include="Themes\Images\Down.png" />
@@ -119,6 +120,13 @@
     <Compile Include="Forms\Pages\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Pages\frmGuages.aspx.cs">
+      <DependentUpon>frmGuages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGuages.aspx.designer.cs">
+      <DependentUpon>frmGuages.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Pages\frmTopSKUs.aspx.cs">
       <DependentUpon>frmTopSKUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,7 +177,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>62229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
