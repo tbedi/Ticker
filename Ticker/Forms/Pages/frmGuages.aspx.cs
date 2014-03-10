@@ -43,10 +43,13 @@ namespace Ticker.Forms.Pages
                 //String PWShipped = "http://internal.kraususa.net/result.php?type=shipped_nywh";
                 ltrShippedNYWH.Text = cGuage.GetPurplWT((Convert.ToInt32(_ticker.GetNYWHShippedTicker()[0].ToString()))).ToHtmlString();
 
+                DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
+                List<double> lsshipped = new List<double>();
+                lsshipped = cmd.GetShipped();
 
-                lblHoldOrder.Text = cGlobal.Border.HoldOrder.ToString();
+                lblHoldOrder.Text = cmd.GetNoOfHoldOrders().ToString();
                 int ShippingInt = 0;
-                string Ship = Math.Round(cGlobal.Border.GetShippedpercentage(cGlobal.Border.lsshipped), 0).ToString();
+                string Ship = Math.Round(lsshipped.ToShippedpercentage(), 0).ToString();
                 int.TryParse(Ship, out ShippingInt);
                 lblship.Text = ShippingInt.ToString() + "%";
 
