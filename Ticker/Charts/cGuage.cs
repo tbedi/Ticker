@@ -118,10 +118,10 @@ namespace Ticker.Charts
                    },
                    PlotBands = new[]
                             {
-                                  new YAxisPlotBands 
+                                 new YAxisPlotBands 
                                 {
                                     From = 0, To = 200,
-                                    Color = ColorTranslator.FromHtml("#DF0101"), 
+                                    Color = ColorTranslator.FromHtml("#70C133"), 
                                     Thickness =new PercentageOrPixel (200,true), 
                                     InnerRadius = new PercentageOrPixel(130, true)
                                 },
@@ -135,7 +135,7 @@ namespace Ticker.Charts
                                new YAxisPlotBands
                                 {
                                     From = 400, To = 750,
-                                    Color = ColorTranslator.FromHtml("#70C133"), 
+                                    Color = ColorTranslator.FromHtml("#DF0101"), 
                                     Thickness =new PercentageOrPixel (200,true), 
                                     InnerRadius = new PercentageOrPixel(130, true)
                                 }
