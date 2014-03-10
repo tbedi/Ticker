@@ -102,5 +102,22 @@ namespace Ticker.DataBase.BL
             }
             return _TotalCount;
         }
+
+
+        public static double ToShippedpercentage(this List<double> lsshipped)
+        {
+            double _TotalCount = 0;
+            try
+            {
+                if (lsshipped.Count > 0)
+                {
+                    _TotalCount = (lsshipped[0] / lsshipped[1]) * 100;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return _TotalCount;
+        }
     }
 }
