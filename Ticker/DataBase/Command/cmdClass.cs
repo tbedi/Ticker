@@ -337,5 +337,37 @@ namespace Ticker.DataBase.Command
             return lspartner;
 
         }
+
+        public int GetTodaysOrder()
+        {
+            int todayorder = 0;
+            try
+            {
+               var order =_x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(SOHNUM_0) OrdersToday FROM PRODUCTION.SORDER WHERE CAST(ORDDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE) AND SOHTYP_0 IN ('SOI','SON','SOP')");
+
+               if (order != null)
+                   todayorder = Convert.ToInt32(order.FirstOrDefault().ToString());
+            }
+            catch (Exception)
+            {
+            }
+            return todayorder;
+        }
+
+        public int GetYesterdayOrder()
+        {
+            int yesterday = 0;
+            try
+            {
+               var orderyes =_x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(SOHNUM_0) OrdersYesterday FROM PRODUCTION.SORDER WHERE CAST(ORDDAT_0 AS DATE) = CAST(DATEADD(D,-1,GETDATE()) AS DATE) AND SOHTYP_0 IN ('SOI','SON','SOP')");
+               if (orderyes != null)
+                   yesterday = Convert.ToInt32(orderyes.FirstOrDefault().ToString());
+            }
+            catch (Exception)
+            {
+            }
+            return yesterday;
+        }
+
     }
 }

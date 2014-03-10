@@ -53,6 +53,8 @@ namespace Ticker.Forms.Pages
                 int.TryParse(Ship, out ShippingInt);
                 lblship.Text = ShippingInt.ToString() + "%";
 
+                lblOrdersToday.Text = cmd.GetTodaysOrder().ToString();
+                lblToatalYesterday.Text = cmd.GetYesterdayOrder().ToString();
 
             }
             catch (Exception)
