@@ -19,14 +19,14 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <span>
-                        <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" />
+                        <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCTS ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" />
                         <span>
                             <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
                         </span>
                         <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Timer ID="Timer1" runat="server" Interval="14000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="60000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>

@@ -42,7 +42,7 @@
             </table>
 
         </div>
-         <asp:Timer ID="Timer1" runat="server" Interval="20000" OnTick="Timer1_Tick"></asp:Timer>
+         <asp:Timer ID="Timer1" runat="server" Interval="64000" OnTick="Timer1_Tick"></asp:Timer>
     </form>
 </body>
 </html>

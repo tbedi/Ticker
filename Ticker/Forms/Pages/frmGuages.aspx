@@ -170,7 +170,7 @@
                     </table>
                 </ContentTemplate>
             </asp:UpdatePanel>
-            <asp:Timer ID="Timer1" runat="server" Interval="24000" OnTick="Timer1_Tick"></asp:Timer>
+            <asp:Timer ID="Timer1" runat="server" Interval="62000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>
