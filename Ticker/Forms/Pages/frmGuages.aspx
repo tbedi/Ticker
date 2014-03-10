@@ -109,7 +109,7 @@
                                                                 <asp:Label runat="server" ID="lblship" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
                                                             </div>
                                                             <div style="text-align: left; width: 150px">
-                                                                <asp:Label runat="server" ID="lblShipped" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
+                                                                <asp:Label runat="server" ID="lblShipped" Text="Total Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
