@@ -170,7 +170,7 @@ namespace Ticker.DataBase.Command
             int Orders=0;
             try
             {
-              var Order = _x3v6.ExecuteStoreQuery<HoldOrder>(@"SELECT cast(COUNT(so.SOHNUM_0) as int) [NoofHoldOrders] FROM PRODUCTION.SORDER so WHERE so.ORDSTA_0 = 1 AND so.XB_HLDSTA_0 = 3;");
+                var Order = _x3v6.ExecuteStoreQuery<HoldOrder>(@"SELECT cast(COUNT(so.SOHNUM_0) as int) [NoofHoldOrders] FROM PRODUCTION.SORDER so WHERE so.ORDSTA_0 = 1 AND so.XB_HLDSTA_0 = 3 AND LTRIM(RTRIM(CCLREN_0)) = '';");
               foreach (var item in Order)
               {
                   Orders = item.NoofHoldOrders;
