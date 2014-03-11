@@ -19,9 +19,9 @@
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <span>
-                        <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCTS ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" />
+                        <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCTS ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" Font-Names="Arial" />
                         <span>
-                            <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" />
+                            <asp:Label ID="lblNewOrderNH" runat="server" Text="100" CssClass="CenterLabel1" Font-Names="Arial"/>
                         </span>
                         <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                 </ContentTemplate>

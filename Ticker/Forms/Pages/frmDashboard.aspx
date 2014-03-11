@@ -29,7 +29,7 @@
                 </div>--%>
             </td>
             <td style="width: 30%; vertical-align: top;overflow:hidden;">
-                <asp:Label ID="Label8" runat="server" Text="▶▶ Order Details" Font-Size="X-Large" Font-Bold="true" ForeColor="Black" />
+                <asp:Label ID="Label8" runat="server" Text="▶▶ Order Details" Font-Size="X-Large" Font-Bold="true" ForeColor="Black" Font-Names="Arial"/>
                 <div id="asdFlick" class="boxStyleKey" style="overflow:hidden" >
                     <asp:UpdatePanel  ID="UpdatePanel1" runat="server">
                         <ContentTemplate >

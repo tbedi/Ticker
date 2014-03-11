@@ -20,7 +20,7 @@
                     <table id="tblOrderDetails">
                         <tr>
                             <td colspan="2">
-                                <asp:Label ID="lblOrderHeader" runat="server" Text="▶▶ Order Processing" Font-Size="X-Large" Font-Bold="true" ForeColor="Black" />
+                                <asp:Label ID="lblOrderHeader" runat="server" Text="▶▶ Order Processing" Font-Size="X-Large" Font-Bold="true" ForeColor="Black" Font-Names="Arial"  />
                             </td>
                         </tr>
                         <tr>
@@ -30,7 +30,7 @@
                                         <ContentTemplate>
                                             <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                                             <p class="leftSideBoxChartp">
-                                                <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#007acc" Font-Size="35px" />
+                                                <asp:Label ID="Label6" runat="server" Text="New" ForeColor="#007acc" Font-Size="35px" Font-Names="Arial" />
                                             </p>
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
@@ -43,7 +43,7 @@
                                     <table style="width: 100%">
                                         <tr>
                                             <td>
-                                                <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="15" ForeColor="Black" />
+                                                <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="15" ForeColor="Black" Font-Names="Arial" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -54,7 +54,7 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: white">
                                                             <asp:Literal ID="ltrInProcessSOS" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label1" runat="server" Text="SYOSSET" ForeColor="#007acc" Font-Size="Large" />
+                                                                <asp:Label ID="Label1" runat="server" Text="SYOSSET" ForeColor="#007acc" Font-Size="Large" Font-Names="Arial"/>
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
@@ -64,7 +64,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="15" ForeColor="Black" />
+                                                <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="15" ForeColor="Black" Font-Names="Arial"/>
                                             </td>
                                         </tr>
                                         <tr>
@@ -74,7 +74,7 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                             <asp:Literal ID="ltrShippedSYS" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="#007acc" Font-Size="Large" />
+                                                                <asp:Label ID="Label2" runat="server" Text="SYOSSET" ForeColor="#007acc" Font-Size="Large" Font-Names="Arial"/>
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
@@ -88,10 +88,10 @@
                                                         <ContentTemplate>
 
                                                             <div style="text-align: right; width: 90px; float: right;">
-                                                                <asp:Label runat="server" ID="lblOrdersToday" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                                <asp:Label runat="server" ID="lblOrdersToday" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true" Font-Names="Arial"> </asp:Label>
                                                             </div>
                                                             <div style="text-align: left; width: 150px">
-                                                                <asp:Label runat="server" ID="Label13" Text="Orders Today" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
+                                                                <asp:Label runat="server" ID="Label13" Text="Orders Today" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15" Font-Names="Arial"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
@@ -106,10 +106,10 @@
                                                         <ContentTemplate>
 
                                                             <div style="text-align: right; width: 90px; float: right;">
-                                                                <asp:Label runat="server" ID="lblship" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                                <asp:Label runat="server" ID="lblship" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true" Font-Names="Arial"> </asp:Label>
                                                             </div>
                                                             <div style="text-align: left; width: 150px">
-                                                                <asp:Label runat="server" ID="lblShipped" Text="Total Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
+                                                                <asp:Label runat="server" ID="lblShipped" Text="Total Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15" Font-Names="Arial"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
@@ -123,10 +123,10 @@
                                                         <ContentTemplate>
 
                                                             <div style="text-align: right; width: 90px; float: right;">
-                                                                <asp:Label runat="server" ID="Label8" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                                <asp:Label runat="server" ID="Label8" ForeColor="#44A7ED" Text="074" Font-Size="27" Font-Bold="true" Font-Names="Arial"> </asp:Label>
                                                             </div>
                                                             <div style="text-align: left; width: 150px">
-                                                                <asp:Label runat="server" ID="Label11" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15"></asp:Label>
+                                                                <asp:Label runat="server" ID="Label11" Text="% Shipped" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#44A7ED" Font-Size="15" Font-Names="Arial"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
@@ -153,7 +153,7 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: White">
                                                             <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#007acc" Font-Size="Large" />
+                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#007acc" Font-Size="Large" Font-Names="Arial"/>
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
@@ -174,7 +174,7 @@
                                                         <div class="ShipmentInfoDiv" style="width: 250px; background: White;">
                                                             <asp:Literal ID="ltrShippedNYWH" runat="server"></asp:Literal>
                                                             <p class="leftSideBoxChartp">
-                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#007acc" />
+                                                                <asp:Label ID="Label7" runat="server" Text="PORT WASHINGTON" Font-Size="Large" ForeColor="#007acc" Font-Names="Arial" />
                                                             </p>
                                                         </div>
                                                     </ContentTemplate>
@@ -188,10 +188,10 @@
                                                         <ContentTemplate>
 
                                                             <div style="text-align: right; width: 80px; float: right;">
-                                                                <asp:Label runat="server" ID="lblToatalYesterday" ForeColor="#e1530b" Text="074" Font-Size="27" Font-Bold="true">  </asp:Label>
+                                                                <asp:Label runat="server" ID="lblToatalYesterday" ForeColor="#e1530b" Text="074" Font-Size="27" Font-Bold="true" Font-Names="Arial">  </asp:Label>
                                                             </div>
                                                             <div style="text-align: left; width: 160px">
-                                                                <asp:Label runat="server" ID="lblty" Text="Orders Yesterday" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#e1530b" Font-Size="15"></asp:Label>
+                                                                <asp:Label runat="server" ID="lblty" Text="Orders Yesterday" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#e1530b" Font-Size="15" Font-Names="Arial"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>
@@ -206,10 +206,10 @@
                                                         <ContentTemplate>
 
                                                             <div style="text-align: right; width: 90px; float: right;">
-                                                                <asp:Label runat="server" ID="lblHoldOrder" ForeColor="#ee0000" Text="074" Font-Size="27" Font-Bold="true"> </asp:Label>
+                                                                <asp:Label runat="server" ID="lblHoldOrder" ForeColor="#ee0000" Text="074" Font-Size="27" Font-Bold="true" Font-Names="Arial"> </asp:Label>
                                                             </div>
                                                             <div style="text-align: left; width: 150px">
-                                                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#ee0000" Font-Size="15"></asp:Label>
+                                                                <asp:Label runat="server" ID="lblHold" Text="Hold Orders" CssClass="lblChartTitle" Font-Bold="false" ForeColor="#ee0000" Font-Size="15" Font-Names="Arial"></asp:Label>
                                                             </div>
                                                         </ContentTemplate>
                                                     </asp:UpdatePanel>

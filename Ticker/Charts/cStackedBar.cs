@@ -49,19 +49,19 @@ namespace Ticker.Charts
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
-                                Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                                Style = "color: 'Black', fontBold: 'true', fontSize: '25px',fontFamily: 'Arial'"
                                 
                             }
                        )
              .SetXAxis(new XAxis
                  {
-                     Labels = new XAxisLabels { Style = "color: 'Black',fontBold: 'true',fontSize: '14px'" },
+                     Labels = new XAxisLabels { Style = "color: 'Black',fontBold: 'true',fontSize: '14px',fontFamily: 'Arial'" },
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU()
                  })
             .SetYAxis(new YAxis
                 {
                     Labels = new YAxisLabels { Style = "color: 'Black'" },
-                    Title = new YAxisTitle { Text = "", Style = "color: 'Black',fontBold: 'true'" }
+                    Title = new YAxisTitle { Text = "", Style = "color: 'Black',fontBold: 'true',fontFamily: 'Arial'" }
                 })
 
               .SetLegend(new Legend
@@ -84,7 +84,7 @@ namespace Ticker.Charts
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
                                  Y = -5,
-                                 Style="fontSize: '14px'"
+                                 Style = "fontSize: '14px',fontFamily: 'Arial'"
                              },
                          BorderWidth = 2,
                          BorderColor = ColorTranslator.FromHtml("#FF6B00"),
@@ -134,18 +134,18 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNERS BY SALES",
-                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px',fontFamily: 'Arial'"
              }
                        )
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartner.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '14px'" }
+                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '14px',fontFamily: 'Arial'" }
              })
             .SetYAxis(new YAxis
             {
                 Title = new YAxisTitle { Text = "", Style = "color: 'Black'" },
-                Labels = new YAxisLabels { Style = "color: 'Black'" }
+                Labels = new YAxisLabels { Style = "color: 'Black',fontFamily: 'Arial'" }
             })
 
               .SetLegend(new Legend
@@ -247,16 +247,16 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNERS BY # OF ORDERS",
-                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px',fontFamily: 'Arial'"
              })
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '12px'" }
+                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '12px',fontFamily: 'Arial'" }
              })
             .SetYAxis(new YAxis
             {
-                Title = new YAxisTitle { Text = "", Style = "color: 'Black'" },
+                Title = new YAxisTitle { Text = "", Style = "color: 'Black',fontFamily: 'Arial'" },
                 Labels = new YAxisLabels { Style = "color: 'Black'" }
             })
 
@@ -280,7 +280,7 @@ namespace Ticker.Charts
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -10,
-                         Style = "fontSize: '14px'"
+                         Style = "fontSize: '14px',fontFamily: 'Arial'"
                          //Formatter = "function() {return  '$'+this.y}"
                      },
                      BorderWidth=2,

@@ -81,7 +81,7 @@ namespace Ticker.Charts
                        {
                            Y = 10,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '45px' ,color: '#007acc'",
+                           Style = "fontWeight:'bold',fontSize: '45px' ,color: '#007acc',fontFamily: 'Arial'",
                            BorderWidth = 0
 
                        }
@@ -107,12 +107,12 @@ namespace Ticker.Charts
                        Enabled=false,
                        Step = 3,
                        Distance = -15,
-                       Style = "color: 'Gray' ,fontSize: '8px'"
+                       Style = "color: 'Gray' ,fontSize: '8px',fontFamily: 'Arial'"
                    },
                    Title = new YAxisTitle
                    {
                        Text = "",
-                       Style = "fontSize: '30px' ,color: '#666'",
+                       Style = "fontSize: '30px' ,color: '#666',fontFamily: 'Arial'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
                    },
@@ -239,7 +239,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc',fontFamily: 'Arial'",
                            BorderWidth = 0
 
                        }
@@ -264,12 +264,12 @@ namespace Ticker.Charts
                    {
                        Enabled=false,
                        Distance = -15,
-                       Style = "color: 'Gray' ,fontSize: '8px'"
+                       Style = "color: 'Gray' ,fontSize: '8px',fontFamily: 'Arial'"
                    },
                    Title = new YAxisTitle
                    {
                        Text = "",
-                       Style = "fontSize: '30px' ,color: '#666'",
+                       Style = "fontSize: '30px' ,color: '#666',fontFamily: 'Arial'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
                    },
@@ -394,7 +394,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc',fontFamily: 'Arial'",
                            BorderWidth = 0
 
                        }
@@ -429,7 +429,7 @@ namespace Ticker.Charts
                    Title = new YAxisTitle
                    {
                        Text = "",
-                       Style = "fontSize: '30px' ,color: '#80a93b'",
+                       Style = "fontSize: '30px' ,color: '#80a93b',fontFamily: 'Arial'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
 
@@ -556,7 +556,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc',fontFamily: 'Arial'",
                            BorderWidth = 0
 
                        }
@@ -583,12 +583,12 @@ namespace Ticker.Charts
                        Enabled = false,
                        Step = 3,
                        Distance = -15,
-                       Style = "color: 'Gray' ,fontSize: '8px'"
+                       Style = "color: 'Gray' ,fontSize: '8px',fontFamily: 'Arial'"
                    },
                    Title = new YAxisTitle
                    {
                        Text = "",
-                       Style = "fontSize: '30px' ,color: '#666'",
+                       Style = "fontSize: '30px' ,color: '#666',fontFamily: 'Arial'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
                    },
@@ -717,7 +717,7 @@ namespace Ticker.Charts
                        {
                            Y = 0,
                            X = 0,
-                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc'",
+                           Style = "fontWeight:'bold',fontSize: '40px' ,color: '#007acc',fontFamily: 'Arial'",
                            BorderWidth = 0
 
                        }
@@ -743,12 +743,12 @@ namespace Ticker.Charts
                        Enabled=false,
                        Step = 3,
                        Distance = -15,
-                       Style = "color: 'Gray' ,fontSize: '8px'"
+                       Style = "color: 'Gray' ,fontSize: '8px',fontFamily: 'Arial'"
                    },
                    Title = new YAxisTitle
                    {
                        Text = "",
-                       Style = "fontSize: '30px' ,color: '#666'",
+                       Style = "fontSize: '30px' ,color: '#666',fontFamily: 'Arial'",
                        Align = AxisTitleAligns.High,
                        Margin = -10
                    },
