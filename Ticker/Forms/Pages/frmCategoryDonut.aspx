@@ -20,13 +20,13 @@
                 <ContentTemplate>
                     <span>
                         <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCTS ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
-                      
-                          <div class="CenterLabel1">
- <asp:Label ID="lblNewOrderNH" runat="server" Text="100" Font-Names="Arial"/>
-                          </div>
-                           
-                        </span>
-                        <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+
+                        <div class="CenterLabel1">
+                            <asp:Label ID="lblNewOrderNH" runat="server" Text="100" Font-Names="Arial" />
+                        </div>
+
+                    </span>
+                    <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
             <asp:Timer ID="Timer1" runat="server" Interval="60000" OnTick="Timer1_Tick"></asp:Timer>
