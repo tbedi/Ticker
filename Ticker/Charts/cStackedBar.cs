@@ -49,7 +49,7 @@ namespace Ticker.Charts
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
-                                Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                                Style = "color: 'Black', fontBold: 'true', fontSize: '20px'"
                                 
                             }
                        )
@@ -134,7 +134,7 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNERS BY SALES",
-                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '20px'"
              }
                        )
              .SetXAxis(new XAxis
@@ -247,7 +247,7 @@ namespace Ticker.Charts
              .SetTitle(new Title
              {
                  Text = "TOP PARTNERS BY # OF ORDERS",
-                 Style = "color: 'Black', fontBold: 'true', fontSize: '25px'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '20px'"
              })
              .SetXAxis(new XAxis
              {
