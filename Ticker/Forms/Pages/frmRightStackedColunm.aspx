@@ -20,11 +20,7 @@
                 <tr>
                   
                         <td style="vertical-align: top;">
-<<<<<<< HEAD
                             <asp:Label ID="Label11" runat="server" Text="▶▶ Partner Performance" Font-Size="X-Large" ForeColor="Black" Font-Bold="true" Font-Names="Arial" />
-=======
-                            <asp:Label ID="Label11" runat="server" Text="▶▶ Partner Performance" Font-Size="20px" ForeColor="Black" Font-Bold="true" />
->>>>>>> 1d1d39cfff056d65848d005ca53849d4a6aa6459
                             <div class="leftSideBoxChart" style="width:500px; ">
                                 <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
                                     <ContentTemplate>
