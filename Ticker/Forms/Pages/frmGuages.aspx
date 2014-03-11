@@ -20,7 +20,7 @@
                     <table id="tblOrderDetails">
                         <tr>
                             <td colspan="2">
-                                <asp:Label ID="lblOrderHeader" runat="server" Text="▶▶ Order Processing" Font-Size="X-Large" Font-Bold="true" ForeColor="Black" Font-Names="Arial"  />
+                                <asp:Label ID="lblOrderHeader" runat="server" Text="▶▶ Order Processing" Font-Size="20px" Font-Bold="true" ForeColor="Black" Font-Names="Arial"  />
                             </td>
                         </tr>
                         <tr>
@@ -38,16 +38,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td colspan="2" style="text-align: center">
+                                <asp:Label ID="Label3" runat="server" Text="IN PROCESS" Font-Size="15" ForeColor="Black" Font-Names="Arial"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top">
                                 <div id="dvNywhDetails" style="float: right; width: 250px">
                                     <table style="width: 100%">
                                         <tr>
-                                            <td>
-                                                <asp:Label ID="Label3" runat="server" Text="In Process" Font-Size="15" ForeColor="Black" Font-Names="Arial" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-
                                             <td>
                                                 <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel8" runat="server">
                                                     <ContentTemplate>
@@ -62,11 +61,47 @@
 
                                             </td>
                                         </tr>
+                                       </table>
+                                </div>
+
+                            </td>
+
+                            <td style="vertical-align: top;">
+                                <div id="Div2" style="float: right; width: 250px">
+                                    <table style="width: 100%">
                                         <tr>
                                             <td>
+<<<<<<< HEAD
                                                 <asp:Label ID="Label9" runat="server" Text="Shipped" Font-Size="15" ForeColor="Black" Font-Names="Arial"/>
+=======
+                                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel9" runat="server">
+                                                    <ContentTemplate>
+                                                        <div class="ShipmentInfoDiv" style="width: 250px; background: White">
+                                                            <asp:Literal ID="ltrInprocessNyWH" runat="server"></asp:Literal>
+                                                            <p class="leftSideBoxChartp">
+                                                                <asp:Label ID="Label5" runat="server" Text="PORT WASHINGTON" ForeColor="#007acc" Font-Size="Large" />
+                                                            </p>
+                                                        </div>
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+
+>>>>>>> 1d1d39cfff056d65848d005ca53849d4a6aa6459
                                             </td>
                                         </tr>
+                                    
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center" >
+                                 <asp:Label ID="Label4" runat="server" Text="SHIPPED" Font-Size="15" ForeColor="Black" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="Div1" style="float: right; width: 250px">
+                                    <table style="width: 100%">
                                         <tr>
                                             <td>
                                                 <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel10" runat="server">
@@ -81,7 +116,7 @@
                                                 </asp:UpdatePanel>
                                             </td>
                                         </tr>
-                                   <tr  style="margin-top:-1px;">
+                                        <tr style="margin-top: -1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
                                                     <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
@@ -98,8 +133,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                      
-                                              <tr  style="margin-top:-1px;">
+                                         <tr style="margin-top: -1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
                                                     <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel6" runat="server">
@@ -116,6 +150,7 @@
                                                 </div>
                                             </td>
                                         </tr>
+<<<<<<< HEAD
                                         <tr>
                                             <td>
                                                 <div class="smallBox" style="background: white">
@@ -133,14 +168,16 @@
                                                 </div>
                                             </td>
                                         </tr>
+=======
+>>>>>>> 1d1d39cfff056d65848d005ca53849d4a6aa6459
                                     </table>
                                 </div>
 
                             </td>
-
-                            <td style="vertical-align:top;">
-                                <div id="Div2" style="float: right; width: 250px">
+                            <td>
+                                <div id="Div3" style="float: left; width: 250px">
                                     <table style="width: 100%">
+<<<<<<< HEAD
                                         <tr>
                                             <td>
                                                <div style="height:25px;"> </div>
@@ -168,6 +205,9 @@
                                             </td>
                                         </tr>
                                         <tr>
+=======
+                                          <tr>
+>>>>>>> 1d1d39cfff056d65848d005ca53849d4a6aa6459
                                             <td>
                                                 <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel11" runat="server">
                                                     <ContentTemplate>
@@ -181,7 +221,7 @@
                                                 </asp:UpdatePanel>
                                             </td>
                                         </tr>
-                                       <tr style="margin-top:-1px;">
+                                         <tr style="margin-top: -1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
                                                     <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel3" runat="server">
@@ -198,8 +238,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                          
-                                           <tr  style="margin-top:-1px;">
+                                         <tr style="margin-top: -1px;">
                                             <td>
                                                 <div class="smallBox" style="background: white">
                                                     <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel2" runat="server">
@@ -218,6 +257,7 @@
                                         </tr>
                                     </table>
                                 </div>
+
                             </td>
                         </tr>
                     </table>

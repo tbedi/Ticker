@@ -51,17 +51,26 @@ namespace Ticker.DataBase.Command
             List<int> lsshipped = new List<int>();
             try
             {
-                var NYWHShipped = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(DISTINCT SDELIVERY.SDHNUM_0)
-                                                                    FROM PRODUCTION.SORDER
-                                                                    LEFT JOIN
-                                                                    x3v6.PRODUCTION.SDELIVERY
-                                                                    ON SORDER.SOHNUM_0 = SDELIVERY.SOHNUM_0
-                                                                    LEFT JOIN
-                                                                    PRODUCTION.STOJOU
-                                                                    ON PRODUCTION.SDELIVERY.SDHNUM_0 = PRODUCTION.STOJOU.VCRNUM_0
-                                                                    WHERE CAST(SDELIVERY.SHIDAT_0 AS DATE) = CAST(GETDATE() AS DATE)
-                                                                    AND STOJOU.LOC_0 = 'NYWH'
-                                                                    AND SOHTYP_0 IN ('SON','SOP')").ToList();
+                var NYWHShipped = _x3v6.ExecuteStoreQuery<int>(@"Select COUNT(*) from 
+                                                                                       (
+                                                                                       SELECT
+                                                                                                       COUNT(shd.SDHNUM_0) as Col1
+                                                                                       FROM
+                                                                                                       x3v6.PRODUCTION.SORDER so
+                                                                                       inner join PRODUCTION.SDELIVERY sh on sh.SOHNUM_0 = so.SOHNUM_0
+                                                                                       inner join PRODUCTION.SDELIVERYD shd on shd.SDHNUM_0 = sh.SDHNUM_0
+                                                                                       inner join PRODUCTION.SPACKD sp on sp.VCRNUM_0 = sh.SDHNUM_0
+                                                                                       inner join x3v6.PRODUCTION.STOJOU st on st.VCRNUM_0 = sh.SDHNUM_0 and st.VCRTYP_0 = 4 and st.VCRLIN_0 = shd.SDDLIN_0
+                                                                                       Where
+                                                                                                       ORDSTA_0 = 2
+                                                                                                       and SOHTYP_0 in ('SON','SOEXP')
+                                                                                                       and CAST(sp.CREDAT_0 AS DATE) >= CAST(GETDATE() AS DATE)
+                                                                                                       and sp.CREDAT_0 <= sh.SHIDAT_0
+                                                                                                       and sh.CFMFLG_0 = 2 -- Validated
+                                                                                                       and st.LOC_0 = 'NYWH'
+                                                                                       group by
+                                                                                                       shd.SDHNUM_0
+                                                                                       ) NYWH").ToList();
 
                 if (NYWHShipped.Count() > 0)
                 {
@@ -89,17 +98,26 @@ namespace Ticker.DataBase.Command
             List<int> lsshipped = new List<int>();
             try
             {
-                var NYWTShipped = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(DISTINCT SDELIVERY.SDHNUM_0)
-                                                                    FROM PRODUCTION.SORDER
-                                                                    LEFT JOIN
-                                                                    x3v6.PRODUCTION.SDELIVERY
-                                                                    ON SORDER.SOHNUM_0 = SDELIVERY.SOHNUM_0
-                                                                    LEFT JOIN
-                                                                    PRODUCTION.STOJOU
-                                                                    ON PRODUCTION.SDELIVERY.SDHNUM_0 = PRODUCTION.STOJOU.VCRNUM_0
-                                                                    WHERE CAST(SDELIVERY.SHIDAT_0 AS DATE) = CAST(GETDATE() AS DATE)
-                                                                    AND STOJOU.LOC_0 = 'NYWT'
-                                                                    AND SOHTYP_0 IN ('SON','SOP')").ToList();
+                var NYWTShipped = _x3v6.ExecuteStoreQuery<int>(@"Select COUNT(*) from 
+                                                                                       (
+                                                                                       SELECT
+                                                                                                       COUNT(shd.SDHNUM_0) as Col1
+                                                                                       FROM
+                                                                                                       x3v6.PRODUCTION.SORDER so
+                                                                                       inner join PRODUCTION.SDELIVERY sh on sh.SOHNUM_0 = so.SOHNUM_0
+                                                                                       inner join PRODUCTION.SDELIVERYD shd on shd.SDHNUM_0 = sh.SDHNUM_0
+                                                                                       inner join PRODUCTION.SPACKD sp on sp.VCRNUM_0 = sh.SDHNUM_0
+                                                                                       inner join x3v6.PRODUCTION.STOJOU st on st.VCRNUM_0 = sh.SDHNUM_0 and st.VCRTYP_0 = 4 and st.VCRLIN_0 = shd.SDDLIN_0
+                                                                                       Where
+                                                                                                       ORDSTA_0 = 2
+                                                                                                       and SOHTYP_0 in ('SON','SOEXP')
+                                                                                                       and CAST(sp.CREDAT_0 AS DATE) >= CAST(GETDATE() AS DATE)
+                                                                                                       and sp.CREDAT_0 <= sh.SHIDAT_0
+                                                                                                       and sh.CFMFLG_0 = 2 -- Validated
+                                                                                                       and st.LOC_0 = 'NYWT'
+                                                                                       group by
+                                                                                                       shd.SDHNUM_0
+                                                                                       ) NYWT").ToList();
 
                 if (NYWTShipped.Count() > 0)
                 {

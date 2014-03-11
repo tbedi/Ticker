@@ -275,17 +275,24 @@ namespace Ticker.DataBase.Command
             List<double> lsshipped = new List<double>();
             try
             {
-                var shipped = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(*) [Shipped]
-                                                                    FROM
-                                                                    PRODUCTION.SDELIVERY 
-                                                                    WHERE CAST(SHIDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE)
-                                                                    AND CFMFLG_0 = 2
-                                                                    UNION ALL
-                                                                    SELECT
-                                                                    COUNT(*)
-                                                                    FROM
-                                                                    PRODUCTION.SDELIVERY
-                                                                    WHERE CAST(CREDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE)").ToList();
+                var shipped = _x3v6.ExecuteStoreQuery<int>(@"Select COUNT(*) from 
+                                                                                   (
+                                                                                   SELECT
+                                                                                                   shd.SDHNUM_0,COUNT(shd.SDHNUM_0) as Col1
+                                                                                   FROM
+                                                                                                   x3v6.PRODUCTION.SORDER so
+                                                                                   inner join PRODUCTION.SDELIVERY sh on sh.SOHNUM_0 = so.SOHNUM_0
+                                                                                   inner join PRODUCTION.SDELIVERYD shd on shd.SDHNUM_0 = sh.SDHNUM_0
+                                                                                   inner join PRODUCTION.SPACKD sp on sp.VCRNUM_0 = sh.SDHNUM_0
+                                                                                   Where
+                                                                                                   ORDSTA_0 = 2
+                                                                                                   and SOHTYP_0 in ('SON','SOEXP')
+                                                                                                   and CAST(sp.CREDAT_0 AS DATE) >= CAST(GETDATE() AS DATE)
+                                                                                                   and sp.CREDAT_0 <= sh.SHIDAT_0
+                                                                                                   and sh.CFMFLG_0 = 2 -- Validated
+                                                                                   group by
+                                                                                                   shd.SDHNUM_0
+                                                                                   ) as AllShipped").ToList();
                                                                    
                 if (shipped.Count() > 0)
                 {

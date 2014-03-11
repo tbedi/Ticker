@@ -20,18 +20,17 @@ td {
     font-family:Arial,Verdana;
 }
 .CenterLabel1 {
-    position:absolute;
-    margin-left:-410px;
-    margin-top:-40px;
     color:#661CCD;
-    /*color:#093b5c;*/
     font-size:50px;
     font-weight:bold;
     font-family:Arial,Verdana;
+<<<<<<< HEAD
     top: 210px;
     left: 605px;
     
     
+=======
+>>>>>>> 1d1d39cfff056d65848d005ca53849d4a6aa6459
 }
 
 .ImgeUpDown {
