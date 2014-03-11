@@ -24,13 +24,11 @@ td {
     font-size:50px;
     font-weight:bold;
     font-family:Arial,Verdana;
-<<<<<<< HEAD
-    top: 210px;
-    left: 605px;
-    
-    
-=======
->>>>>>> 1d1d39cfff056d65848d005ca53849d4a6aa6459
+    position:absolute;
+    vertical-align:central;
+    text-align:center;
+    margin-top:130px;
+    width:99%;
 }
 
 .ImgeUpDown {
