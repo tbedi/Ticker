@@ -72,8 +72,19 @@
     <Content Include="Forms\Pages\frmRightStackedColunm.aspx" />
     <Content Include="Forms\Pages\frmTopSKUs.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
+    <Content Include="Themes\Images\Amazon.com.caInc..jpg" />
+    <Content Include="Themes\Images\Amazon.com.indcLLC.jpg" />
+    <Content Include="Themes\Images\Amazon.com.jpg" />
+    <Content Include="Themes\Images\AMAZONDROPSHIP.jpg" />
+    <Content Include="Themes\Images\Build.com.jpg" />
     <Content Include="Themes\Images\Down.png" />
+    <Content Include="Themes\Images\EIMPROVEMENT.COM.jpg" />
+    <Content Include="Themes\Images\Expressdecor.com.jpg" />
+    <Content Include="Themes\Images\HOMECLICKLLC.jpg" />
+    <Content Include="Themes\Images\HOMEDEPOT.jpg" />
+    <Content Include="Themes\Images\Overstock.com.jpg" />
     <Content Include="Themes\Images\up.png" />
+    <Content Include="Themes\Images\WayfairLLC.jpg" />
     <Content Include="Themes\js\highcharts-more.js" />
     <Content Include="Themes\js\highcharts-more.src.js" />
     <Content Include="Themes\js\highcharts.js" />
@@ -185,7 +196,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>62229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

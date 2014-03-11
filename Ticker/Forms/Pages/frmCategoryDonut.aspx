@@ -15,7 +15,8 @@
 <body  style="width: 495px; height: 360px;" >
     <form id="form1" runat="server" style="width: 495px; height: 360px;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div id="asdFlick" class="boxStyleKey"  >
+        <div style="" id="asdFlick" class="boxStyleKey"  >
+           
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <span>

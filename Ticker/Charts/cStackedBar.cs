@@ -55,7 +55,9 @@ namespace Ticker.Charts
                        )
              .SetXAxis(new XAxis
                  {
-                     Labels = new XAxisLabels { Style = "color: 'Black',fontBold: 'true',fontSize: '14px',fontFamily: 'Arial'" },
+                     Labels = new XAxisLabels 
+                     {
+                         Style = "color: 'Black',fontBold: 'true',fontSize: '14px',fontFamily: 'Arial'" },
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU()
                  })
             .SetYAxis(new YAxis
@@ -83,8 +85,10 @@ namespace Ticker.Charts
                                  Color = ColorTranslator.FromHtml("#000000"),
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
-                                 Y = -5,
-                                 Style = "fontSize: '14px',fontFamily: 'Arial'"
+                                 Y = -20,
+                                 Style = "fontSize: '14px',fontFamily: 'Arial'",
+                                // UseHTML = true,
+                                 //Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+'$'+this.y}",
                              },
                          BorderWidth = 2,
                          BorderColor = ColorTranslator.FromHtml("#FF6B00"),
@@ -142,7 +146,14 @@ namespace Ticker.Charts
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartner.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '14px',fontFamily: 'Arial'" }
+                 Labels = new XAxisLabels
+                 {
+                     //  Formatter = "function() { return this.labels; }",
+                     Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
+                     UseHTML = true,
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','')+'.jpg)\"/></br></br>';}",
+                 }
+
              })
             .SetYAxis(new YAxis
             {
@@ -165,12 +176,14 @@ namespace Ticker.Charts
                      PointWidth = 30,
                      DataLabels = new PlotOptionsColumnDataLabels
                      {
+                         // Formatter="function() { return '<div class=\"ImageDiv\"/>'",
                          Enabled = true,
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -11,
-                         Formatter = "function() {return  '$'+this.y}",
+                         Y = -20,
+                         UseHTML = true,
+                         Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+'$'+this.y}",
                          Style = "fontSize: '14px'"
                      },
                      BorderWidth = 2,
@@ -179,7 +192,7 @@ namespace Ticker.Charts
              })
              .SetSeries(new[]
                 {
-                    new Series { Name = "Partners", Data = new Data(lstopPartner.ToTop5ParnerObject())  },
+                    new Series { Name = "Cost", Data = new Data(lstopPartner.ToTop5ParnerObject())  },
                 })
                 .SetOptions(new GlobalOptions
                 {
@@ -256,7 +269,12 @@ namespace Ticker.Charts
              .SetXAxis(new XAxis
              {
                  Categories = lstopPartnerByOrder.ToCatagorysListFromPartner(),
-                 Labels = new XAxisLabels { Style = "color: 'Black',fontSize: '12px',fontFamily: 'Arial'" }
+                 Labels = new XAxisLabels
+                 { //  Formatter = "function() { return this.labels; }",
+                     Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
+                     UseHTML = true,
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','')+'.jpg)\"/></br></br>';}",
+                 }
              })
             .SetYAxis(new YAxis
             {
@@ -283,9 +301,10 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -10,
-                         Style = "fontSize: '14px',fontFamily: 'Arial'"
-                         //Formatter = "function() {return  '$'+this.y}"
+                         Y = -20,
+                         //Style = "fontSize: '14px',fontFamily: 'Arial'",
+                         UseHTML = true,
+                         Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+this.y}",
                      },
                      BorderWidth=2,
                      BorderColor = ColorTranslator.FromHtml("#FF6B00")
