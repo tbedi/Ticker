@@ -35,7 +35,7 @@
                         <span>
                             <asp:Label Width="500" ID="Label1" runat="server" Text="PRODUCT CATEGORIES BY AMOUNT" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
                             <div class="CenterLabel1" >
-                                <asp:Label ID="lbltotalamount" runat="server" Text="100" Font-Names="Arial" Font-Size="20" />
+                                <asp:Label ID="lbltotalamount" runat="server" Text="100" Font-Names="Arial"  />
                             </div>
                         </span>
                         <asp:Literal ID="litOrderAmount" runat="server"></asp:Literal>

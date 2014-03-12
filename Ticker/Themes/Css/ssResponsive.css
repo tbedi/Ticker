@@ -30,14 +30,14 @@ td {
 }
 .CenterLabel1 {
     color:#661CCD;
-    font-size:30px;
+    font-size:18px;
     font-weight:bold;
     font-family:Arial,Verdana;
     position:absolute;
     vertical-align:central;
     text-align:center;
-    margin-top:60px;
-    width:50%;
+    margin-top:80px;
+    width:495px;
 }
 
 .ImgeUpDown {

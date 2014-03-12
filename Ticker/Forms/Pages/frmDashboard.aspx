@@ -35,7 +35,7 @@
                 <div id="asdFlick" class="boxStyleKey" style="overflow:hidden" >
                     <asp:UpdatePanel  ID="UpdatePanel1" runat="server">
                         <ContentTemplate >
-                            <iframe id="iDonutTopLeft" src="frmCategoryDonut.aspx" style="overflow:hidden;width:510px;height:370px; border:thin solid whiteSmoke; margin:0px;"></iframe>
+                            <iframe id="iDonutTopLeft" src="frmCategoryDonut.aspx" style="overflow:hidden;width:510px;height:460px; border:thin solid whiteSmoke; margin:0px;"></iframe>
                             <%--<asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
                             <span>
                                 <asp:Label Width="500" ID="Label16" runat="server" Text="QTY ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="25px" />
