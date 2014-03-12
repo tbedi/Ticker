@@ -5,6 +5,7 @@ using System.Web;
 using Ticker.DataBase;
 using Ticker.Views;
 using Ticker.DataBase.BL;
+using Ticker.DataBase.Views;
 namespace Ticker.DataBase.Command
 {
     public class cmdClass
@@ -355,6 +356,36 @@ namespace Ticker.DataBase.Command
             {
             }
             return yesterday;
+        }
+
+        public List<WeekOrederDTO> GetWeekOrders()
+        {
+            List<WeekOrederDTO> lsweekorder = new List<WeekOrederDTO>();
+            try
+            {
+                var orderweek = _x3v6.ExecuteStoreQuery<WeekOrederDTO>(@"SELECT CAST(ORDDAT_0 AS DATE) DATE,
+                                                                            COUNT(SOHNUM_0) ORDERS
+                                                                            FROM
+                                                                            PRODUCTION.SORDER
+                                                                            WHERE SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                            AND CAST(ORDDAT_0 AS DATE) >= CAST(DATEADD(DD,-13,GETDATE()) AS DATE)
+                                                                            AND CAST(ORDDAT_0 AS DATE) !> CAST(GETDATE() AS DATE)
+                                                                            GROUP BY ORDDAT_0, DATENAME(DW,ORDDAT_0)
+                                                                            ORDER BY ORDDAT_0 DESC ").ToList();
+
+                if (orderweek.Count() > 0)
+                {
+                    foreach (var item in orderweek)
+                    {
+                      WeekOrederDTO  partnertop = (WeekOrederDTO)item;
+                        lsweekorder.Add(partnertop);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return lsweekorder;
         }
 
     }
