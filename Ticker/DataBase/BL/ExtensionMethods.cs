@@ -141,5 +141,17 @@ namespace Ticker.DataBase.BL
             }
             return _rerurn;
         }
+
+
+        public static DateTime LastWeekStartDate()
+        {
+            DateTime date = DateTime.Now.AddDays(-6);
+            while (date.DayOfWeek != DayOfWeek.Wednesday)
+            {
+                date = date.AddDays(-1);
+            }
+
+           return date;
+        }
     }
 }

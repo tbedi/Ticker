@@ -72,6 +72,7 @@
     <Content Include="Forms\Pages\frmGuages.aspx" />
     <Content Include="Forms\Pages\frmRightStackedColunm.aspx" />
     <Content Include="Forms\Pages\frmTopSKUs.aspx" />
+    <Content Include="Forms\Pages\frmWeekOrderTotalLineChart.aspx" />
     <Content Include="Themes\Css\ssResponsive.css" />
     <Content Include="Themes\Images\ALLIEDTRADEGROUPINC.jpg" />
     <Content Include="Themes\Images\Amazon.com.caInc..jpg" />
@@ -1636,6 +1637,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Charts\cLine.cs" />
     <Compile Include="DataBase\BL\blOrder.cs" />
     <Compile Include="Charts\cDonut.cs" />
     <Compile Include="Charts\cGuage.cs" />
@@ -1693,6 +1695,13 @@
     </Compile>
     <Compile Include="Forms\Pages\frmTopSKUs.aspx.designer.cs">
       <DependentUpon>frmTopSKUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmWeekOrderTotalLineChart.aspx.cs">
+      <DependentUpon>frmWeekOrderTotalLineChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\frmWeekOrderTotalLineChart.aspx.designer.cs">
+      <DependentUpon>frmWeekOrderTotalLineChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataBase\Views\HoldOrder.cs" />
