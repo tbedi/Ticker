@@ -24,7 +24,7 @@ namespace Ticker.DataBase.BL
         /// <summary>
         /// Assign GetRegularQuantityOrdred to List of RegularDTO lsRegularOrder
         /// </summary>
-        public  List<RegularOrderDTO> lsRegularOrder = order.GetRegularQuantityOrdred();
+        public  List<AmountOrderDTO> lsRegularOrder = order.GetAmountCategoryOrdred();
 
         /// <summary>
         /// Assign GetPartQuantityOrdered Method to list of PartorderDTO lsPartOrerDTO. 
@@ -102,30 +102,30 @@ namespace Ticker.DataBase.BL
         /// <returns>
         /// Return List of Regular Order.
         /// </returns>
-        public List<RegularOrderDTO> GetRegularOrderQuantity(List<RegularOrderDTO> lsRegularOrder)
-        {
-            List<RegularOrderDTO> lsRegularOrderTemp = new List<RegularOrderDTO>();
-            try
-            {
-                lsRegularOrderTemp = lsRegularOrder;
-                if (lsRegularOrderTemp.Count > 0)
-                {
-                    double _TotalCount = 0;
-                    foreach (var item in lsRegularOrderTemp)
-                    {
-                        _TotalCount = _TotalCount + item.NoofRegularOrders;
-                    }
-                    foreach (var items in lsRegularOrderTemp)
-                    {
-                        items.NoofRegularOrders = Math.Round(((items.NoofRegularOrders / _TotalCount) * 100), 2);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-            }
-            return lsRegularOrderTemp;
-        }
+        //public List<AmountOrderDTO> GetRegularOrderQuantity(List<AmountOrderDTO> lsRegularOrder)
+        //{
+        //    List<AmountOrderDTO> lsRegularOrderTemp = new List<AmountOrderDTO>();
+        //    try
+        //    {
+        //        lsRegularOrderTemp = lsRegularOrder;
+        //        if (lsRegularOrderTemp.Count > 0)
+        //        {
+        //            double _TotalCount = 0;
+        //            foreach (var item in lsRegularOrderTemp)
+        //            {
+        //                _TotalCount = _TotalCount + item.NoofRegularOrders;
+        //            }
+        //            foreach (var items in lsRegularOrderTemp)
+        //            {
+        //                items.NoofRegularOrders = Math.Round(((items.NoofRegularOrders / _TotalCount) * 100), 2);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //    }
+        //    return lsRegularOrderTemp;
+        //}
 
         /// <summary>
         /// This Method is for get Part Order List with Calculation.

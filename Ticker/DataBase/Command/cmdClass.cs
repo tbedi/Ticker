@@ -51,46 +51,27 @@ namespace Ticker.DataBase.Command
         /// <returns>
         /// List of Regular Quantity Order.
         /// </returns>
-        public List<RegularOrderDTO> GetRegularQuantityOrdred()
+        public List<AmountOrderDTO> GetAmountCategoryOrdred()
         {
-            List<RegularOrderDTO> lsorder = new List<RegularOrderDTO>();
+            List<AmountOrderDTO> lsorder = new List<AmountOrderDTO>();
             try
             {
-                var Reugular = _x3v6.ExecuteStoreQuery<RegularOrderDTO>(@"select distinct soh.SOHTYP_0 [OrderType] , ISNULL(a.[NoofRegularOrders],0) AS [NoofRegularOrders]
-                                                                                                        from PRODUCTION.SORDER soh left join (SELECT
-                                                                                                        so.SOHTYP_0 [OrderType],
-                                                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-                                                                                                        FROM
-                                                                                                        PRODUCTION.SORDER so
-                                                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                                                        AND so.SOHTYP_0 IN ('SOI')
-                                                                                                        GROUP BY so.SOHTYP_0
-                                                                                                        union
-                                                                                                        SELECT
-                                                                                                        so.SOHTYP_0 [OrderType],
-                                                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-                                                                                                        FROM
-                                                                                                        PRODUCTION.SORDER so
-                                                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                                                        AND so.SOHTYP_0 IN ('SON')
-                                                                                                        GROUP BY so.SOHTYP_0
-                                                                                                        union
-                                                                                                        SELECT
-                                                                                                        so.SOHTYP_0 [OrderType],
-                                                                                                        cast(COUNT(so.SOHNUM_0) as float) [NoofRegularOrders]
-                                                                                                        FROM
-                                                                                                        PRODUCTION.SORDER so
-                                                                                                        WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
-                                                                                                        AND so.SOHTYP_0 IN ('SOP')
-                                                                                                        GROUP BY so.SOHTYP_0) as a
-                                                                                                        on soh.SOHTYP_0 = a.[OrderType]
-                                                                                                        where soh.SOHTYP_0 IN ('SON','SOI','SOP')
-                                                                                                        ORDER BY [NoofRegularOrders] DESC;").ToList();
+                var Reugular = _x3v6.ExecuteStoreQuery<AmountOrderDTO>(@"SELECT itm.TCLCOD_0 [Category],
+                                                                            cast(sum(sop.NETPRI_0 * soq.QTY_0) as float) [Amount]
+                                                                            FROM
+                                                                            PRODUCTION.SORDER so
+                                                                            INNER JOIN PRODUCTION.SORDERQ soq ON soq.SOHNUM_0 = so.SOHNUM_0
+                                                                            INNER JOIN PRODUCTION.SORDERP sop ON so.SOHNUM_0 = sop.SOHNUM_0 AND soq.SOPLIN_0 = sop.SOPLIN_0 AND sop.LINTYP_0 <> 7
+                                                                            INNER JOIN PRODUCTION.ITMMASTER itm ON itm.ITMREF_0 = soq.ITMREF_0
+                                                                            WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
+                                                                            AND so.SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                            GROUP BY itm.TCLCOD_0 ORDER BY [Category];
+                                                                            ").ToList();
                 if (Reugular.Count() > 0)
                 {
                     foreach (var item in Reugular)
                     {
-                        RegularOrderDTO regularorder = (RegularOrderDTO)item;
+                        AmountOrderDTO regularorder = (AmountOrderDTO)item;
                         lsorder.Add(regularorder);
                     }
                 }

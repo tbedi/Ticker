@@ -20,13 +20,13 @@ namespace Ticker.DataBase.BL
             return returnObject.ToArray();
         }
 
-        public static object[] ToPichartRegularOrder(this List<RegularOrderDTO> data)
+        public static object[] ToDonutchartAmountOrder(this List<AmountOrderDTO> data)
         {
             var returnObject = new List<object>();
 
             foreach (var item in data)
             {
-                returnObject.Add(new object[] { item.OrderType, item.NoofRegularOrders });
+                returnObject.Add(new object[] { item.Category, item.Amount });
             }
 
             return returnObject.ToArray();
@@ -103,6 +103,15 @@ namespace Ticker.DataBase.BL
             return _TotalCount;
         }
 
+        public static double ToTotalOrderAmount(this List<AmountOrderDTO> lsAmountOrderCategory)
+        {
+            double _TotalCount = 0;
+            foreach (var item in lsAmountOrderCategory)
+            {
+                _TotalCount = _TotalCount + item.Amount;
+            }
+            return _TotalCount;
+        }
 
         public static double ToShippedpercentage(this List<double> lsshipped)
         {
@@ -136,6 +145,23 @@ namespace Ticker.DataBase.BL
                 if (item.QtyOrdered >= Limit)
                 {
                     OrderDTO order = (OrderDTO)item;
+                    _rerurn.Add(order);
+                }
+            }
+            return _rerurn;
+        }
+
+        public static List<AmountOrderDTO> RemoveLessThanZeroAmountOrder(this List<AmountOrderDTO> lsOrederamountDto)
+        {
+            List<AmountOrderDTO> _rerurn = new List<AmountOrderDTO>();
+            Double Total = lsOrederamountDto.ToTotalOrderAmount();
+            Int32 Limit = Convert.ToInt32(Total / 100);
+
+            foreach (var item in lsOrederamountDto)
+            {
+                if (item.Amount >= Limit)
+                {
+                    AmountOrderDTO order = (AmountOrderDTO)item;
                     _rerurn.Add(order);
                 }
             }

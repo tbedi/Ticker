@@ -39,6 +39,22 @@ namespace Ticker.Forms.Pages
 
                 ltrChart.Text = cDonut.OrderCategory(lsOrderCount.RemoveLessThenZero()).ToHtmlString();
             }
+
+
+            List<AmountOrderDTO> lsOrderAmount = new List<AmountOrderDTO>();
+            lsOrderAmount = cmd.GetAmountCategoryOrdred();
+            if (lsOrderCount.Count > 0)
+            {
+
+                lbltotalamount.Text = (Convert.ToInt32(lsOrderAmount.ToTotalOrderAmount())).ToString();
+
+                litOrderAmount.Text = cDonut.RegularOrder(lsOrderAmount.RemoveLessThanZeroAmountOrder()).ToHtmlString();
+            }
+
+
+
+
+
         }
     }
 }
