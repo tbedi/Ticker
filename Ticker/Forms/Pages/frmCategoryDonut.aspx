@@ -16,11 +16,11 @@
     <form id="form1" runat="server" style="width: 495px; height: 360px;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <div style="" id="asdFlick" class="boxStyleKey">
-            <div id="OrderInner" class="divInner">
+            <div id="OrderInner" class="divInner" >
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <span>
-                            <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCT CATEGORIES BY # OF QUANTITIES" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
+                            <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCT CATEGORIES BY UNITS SOLD" CssClass="lblChartTitle" ForeColor="Black" Font-Size="15px" Font-Names="Arial" />
                             <div class="CenterLabel1">
                                 <asp:Label ID="lblNewOrderNH" runat="server" Text="100" Font-Names="Arial" />
                             </div>
@@ -33,7 +33,7 @@
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                         <span>
-                            <asp:Label Width="500" ID="Label1" runat="server" Text="PRODUCT CATEGORIES BY AMOUNT" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
+                            <asp:Label Width="500" ID="Label1" runat="server" Text="PRODUCT CATEGORIES BY SALES AMT" CssClass="lblChartTitle" ForeColor="Black" Font-Size="15px" Font-Names="Arial" />
                             <div class="CenterLabel1" >
                                 <asp:Label ID="lbltotalamount" runat="server" Text="100" Font-Names="Arial"  />
                             </div>

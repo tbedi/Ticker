@@ -31,7 +31,7 @@ namespace Ticker.Charts
              {
                  DefaultSeriesType = ChartTypes.Column,
                  Width = 495,
-                 Height = 355,
+                 Height = 280,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
@@ -50,7 +50,7 @@ namespace Ticker.Charts
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
 
-                                Style = "color: 'Black', fontBold: 'true', fontSize: '20px',fontFamily: 'Arial'"
+                                Style = "color: 'Black', fontBold: 'true', fontSize: '15px',fontFamily: 'Arial'"
                             }
                        )
              .SetXAxis(new XAxis
@@ -60,7 +60,7 @@ namespace Ticker.Charts
                      //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/SKUimages/'+ this.value.replace(' ','').replace(',','')+'-1.jpg)\"/></br></br>';}",
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"height:25px; background-image:url(../../Themes/Images/SKUimages/'+ this.value.replace(' ','').replace(',','')+'-1.jpg)\"/></br></br>';}",
                  },
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU()
                  })
@@ -82,7 +82,7 @@ namespace Ticker.Charts
              {
                  Column = new PlotOptionsColumn
                      {
-                         PointWidth = 40,
+                         PointWidth = 30,
                          DataLabels = new PlotOptionsColumnDataLabels
                              {
                                  Enabled = true,
@@ -144,7 +144,7 @@ namespace Ticker.Charts
              {
                  Text = "TOP PARTNERS BY SALES",
 
-                 Style = "color: 'Black', fontBold: 'true', fontSize: '20px',fontFamily: 'Arial'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '15px',fontFamily: 'Arial'"
 
              }
                        )
@@ -268,7 +268,7 @@ namespace Ticker.Charts
              {
                  Text = "TOP PARTNERS BY # OF ORDERS",
 
-                 Style = "color: 'Black', fontBold: 'true', fontSize: '20px',fontFamily: 'Arial'"
+                 Style = "color: 'Black', fontBold: 'true', fontSize: '15px',fontFamily: 'Arial'"
 
              })
              .SetXAxis(new XAxis

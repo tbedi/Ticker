@@ -50,7 +50,7 @@
                 <div class="BottomChartBOx" style="float: left;">
                     <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                         <ContentTemplate>
-                            <iframe id="iTopSKus" src="frmTopSKUs.aspx"  style="overflow:hidden;width:510px;height:365px; border:thin solid whiteSmoke;" ></iframe>
+                            <iframe id="iTopSKus" src="frmTopSKUs.aspx"  style="overflow:hidden;width:510px;height:300px; border:thin solid whiteSmoke;" ></iframe>
                           <%--  <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>--%>
                         </ContentTemplate>
                     </asp:UpdatePanel>

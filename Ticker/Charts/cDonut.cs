@@ -177,7 +177,7 @@ namespace Ticker.Charts
                             Color = ColorTranslator.FromHtml("#fffff"),
                             ConnectorColor = ColorTranslator.FromHtml("#00000"),
                             Style = "FontName: 'Arial'",
-                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ '$'+Math.round(this.percentage); }"
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
                         },
                         Point = new PlotOptionsPiePoint
                         {
