@@ -155,7 +155,7 @@ namespace Ticker.DataBase.BL
         public static DateTime LastWeekStartDate()
         {
             DateTime date = DateTime.Now.AddDays(-6);
-            while (date.DayOfWeek != DayOfWeek.Wednesday)
+            while (date.DayOfWeek != DayOfWeek.Monday)
             {
                 date = date.AddDays(-1);
             }
