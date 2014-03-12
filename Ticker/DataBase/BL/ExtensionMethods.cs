@@ -151,6 +151,17 @@ namespace Ticker.DataBase.BL
             return _rerurn;
         }
 
+
+        public static DateTime LastWeekStartDate()
+        {
+            DateTime date = DateTime.Now.AddDays(-6);
+            while (date.DayOfWeek != DayOfWeek.Wednesday)
+            {
+                date = date.AddDays(-1);
+            }
+
+            return date;
+        }
         public static List<AmountOrderDTO> RemoveLessThanZeroAmountOrder(this List<AmountOrderDTO> lsOrederamountDto)
         {
             List<AmountOrderDTO> _rerurn = new List<AmountOrderDTO>();
