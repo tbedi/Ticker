@@ -44,7 +44,7 @@ namespace Ticker.Charts
                              { 1, Color.FromArgb(13, 255, 255, 255) }
                          }
                     }),
-                    Height = 328,
+                    Height = 200,
                     Width = 494,
                     ZoomType = ZoomTypes.Xy,
 
@@ -132,9 +132,9 @@ namespace Ticker.Charts
         /// <returns>
         /// Return HighChart.
         /// </returns>
-        public static Highcharts RegularOrder(List<RegularOrderDTO> lsRegularOrder)
+        public static Highcharts RegularOrder(List<AmountOrderDTO> lsRegularOrder)
         {
-            List<RegularOrderDTO> ChartSriesData = lsRegularOrder;
+            List<AmountOrderDTO> ChartSriesData = lsRegularOrder;
 
             Highcharts chart = new Highcharts("chartRegular")
                 .InitChart(new Chart
@@ -149,8 +149,8 @@ namespace Ticker.Charts
                     { 1, Color.FromArgb(13, 255, 255, 255) }
                   }
                     }),
-                    Height = 170,
-                    Width = 250,
+                    Height = 200,
+                    Width = 494,
                     ZoomType = ZoomTypes.Xy,
                 }).SetCredits(new Credits
                 {
@@ -174,9 +174,10 @@ namespace Ticker.Charts
                         DataLabels = new PlotOptionsPieDataLabels
                         {
                             Distance = 5,
-                            Color = ColorTranslator.FromHtml("#f3f3f3"),
-                            ConnectorColor = ColorTranslator.FromHtml("#fffff"),
-                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: <b style=\"color:#f3f3f3\">'+ Math.round(this.percentage)+'% </b>'; }"
+                            Color = ColorTranslator.FromHtml("#fffff"),
+                            ConnectorColor = ColorTranslator.FromHtml("#00000"),
+                            Style = "FontName: 'Arial'",
+                            Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ '$'+Math.round(this.percentage); }"
                         },
                         Point = new PlotOptionsPiePoint
                         {
@@ -189,11 +190,39 @@ namespace Ticker.Charts
                     }
 
                 })
+                .SetOptions(new GlobalOptions
+                {
+                    Colors = new Color[]
+                    {
+                       // ColorTranslator.FromHtml("#F38630"),
+                       ColorTranslator.FromHtml("#EED4BE"),
+                         ColorTranslator.FromHtml("#F28563"),
+                          ColorTranslator.FromHtml("#949FB1"),
+                        ColorTranslator.FromHtml("#4D5360"),
+                          ColorTranslator.FromHtml("#DB1FD2"),
+                        ColorTranslator.FromHtml("#F7464A"),
+                        ColorTranslator.FromHtml("#D4CCC5"),
+                       ColorTranslator.FromHtml("#FFA24A"),
+                       ColorTranslator.FromHtml("#EEF6B3"),
+                        ColorTranslator.FromHtml("#E0E4CC"),
+                        ColorTranslator.FromHtml("#69D2E7"),
+                         ColorTranslator.FromHtml("#96EAF0"),
+                        ColorTranslator.FromHtml("#ED561B"),
+                        ColorTranslator.FromHtml("#DF7EE6"),
+                        ColorTranslator.FromHtml("#C79EF5"),
+                        ColorTranslator.FromHtml("#98C1F2"),
+                        ColorTranslator.FromHtml("#96F0CD"),
+                        ColorTranslator.FromHtml("#BDE996"),
+                        ColorTranslator.FromHtml("#2DDD68"),
+                         ColorTranslator.FromHtml("#661CCD"),
+                        //ColorTranslator.FromHtml("#"),
+                    }
+                })
                 .SetSeries(new Series
                 {
                     Type = ChartTypes.Pie,
                     Name = "Browser share",
-                    Data = new Data(  ChartSriesData.ToPichartRegularOrder())
+                    Data = new Data(ChartSriesData.ToDonutchartAmountOrder())
                 });
             return chart;
         }

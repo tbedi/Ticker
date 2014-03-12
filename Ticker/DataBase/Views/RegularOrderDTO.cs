@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Ticker.Views
 {
-    public class RegularOrderDTO
+    public class AmountOrderDTO
     {
-        public string  OrderType { get; set; }
-        public double NoofRegularOrders { get; set; }
+        public string Category { get; set; }
+        public double Amount { get; set; }
     }
 }

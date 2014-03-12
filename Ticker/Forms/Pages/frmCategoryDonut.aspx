@@ -15,21 +15,33 @@
 <body  style="width: 495px; height: 360px;" >
     <form id="form1" runat="server" style="width: 495px; height: 360px;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div style="" id="asdFlick" class="boxStyleKey"  >
-           
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <span>
-                        <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCTS ORDERED BY CATEGORY" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
-
-                        <div class="CenterLabel1">
-                            <asp:Label ID="lblNewOrderNH" runat="server" Text="100" Font-Names="Arial" />
-                        </div>
-
-                    </span>
-                    <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+        <div style="" id="asdFlick" class="boxStyleKey">
+            <div id="OrderInner" class="divInner">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <span>
+                            <asp:Label Width="500" ID="Label16" runat="server" Text="PRODUCT CATEGORIES BY # OF QUANTITIES" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
+                            <div class="CenterLabel1">
+                                <asp:Label ID="lblNewOrderNH" runat="server" Text="100" Font-Names="Arial" />
+                            </div>
+                        </span>
+                        <asp:Literal ID="ltrChart" runat="server"></asp:Literal>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+            <div id="Div1" class="divInner">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <span>
+                            <asp:Label Width="500" ID="Label1" runat="server" Text="PRODUCT CATEGORIES BY AMOUNT" CssClass="lblChartTitle" ForeColor="Black" Font-Size="20px" Font-Names="Arial" />
+                            <div class="CenterLabel1" >
+                                <asp:Label ID="lbltotalamount" runat="server" Text="100" Font-Names="Arial" Font-Size="20" />
+                            </div>
+                        </span>
+                        <asp:Literal ID="litOrderAmount" runat="server"></asp:Literal>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
             <asp:Timer ID="Timer1" runat="server" Interval="60000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
