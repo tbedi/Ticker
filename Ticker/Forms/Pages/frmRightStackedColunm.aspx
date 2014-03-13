@@ -19,7 +19,7 @@
             <table style="width:495px; height:495px;">
                 <tr>
                     <td style="vertical-align: top;">
-                        <asp:Label ID="Label11" runat="server" Text="▶▶ Partner Performance" Font-Size="X-Large" ForeColor="Black" Font-Bold="true" Font-Names="Arial" />
+                        <asp:Label ID="Label11" runat="server" Text="▶▶ Performance" Font-Size="X-Large" ForeColor="Black" Font-Bold="true" Font-Names="Arial" />
                         <div class="leftSideBoxChart" style="width: 500px;">
                             <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
                                 <ContentTemplate>
