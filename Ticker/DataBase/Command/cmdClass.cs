@@ -388,5 +388,44 @@ namespace Ticker.DataBase.Command
             return lsweekorder;
         }
 
+        public List<YearAvg> GetYearAvg()
+        {
+            List<YearAvg> lsYearAvgReturn = new List<YearAvg>();
+            try
+            {
+                var orderweek = _x3v6.ExecuteStoreQuery<YearAvg>(@"SELECT
+                                                                            DayName,
+                                                                            AVG(ORDERS) Avarage
+                                                                            FROM
+                                                                            (
+                                                                            SELECT
+                                                                            CAST(ORDDAT_0 AS DATE) DATE,
+                                                                            DATENAME(DW,ORDDAT_0) DayName,
+                                                                            COUNT(SOHNUM_0) ORDERS
+                                                                            FROM
+                                                                            PRODUCTION.SORDER
+                                                                            WHERE SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                            AND CAST(ORDDAT_0 AS DATE) !> CAST(GETDATE() AS DATE)
+                                                                            AND YEAR(ORDDAT_0) = YEAR(GETDATE())
+                                                                            GROUP BY ORDDAT_0, DATENAME(DW,ORDDAT_0)
+                                                                            ) AS D
+                                                                            GROUP BY DayName ").ToList();
+
+                if (orderweek.Count() > 0)
+                {
+                    foreach (var item in orderweek)
+                    {
+                        YearAvg partnertop = (YearAvg)item;
+                        lsYearAvgReturn.Add(partnertop);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return lsYearAvgReturn;
+        }
+
+
     }
 }

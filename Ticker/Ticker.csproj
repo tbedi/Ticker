@@ -1655,6 +1655,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DataBase\Views\WeekOrederDTO.cs" />
+    <Compile Include="DataBase\Views\YearAvg.cs" />
     <Compile Include="Forms\MasterForms\mstMain.Master.cs">
       <DependentUpon>mstMain.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
