@@ -22,7 +22,7 @@ namespace Ticker.DataBase.Command
             {
                 var neworder = _x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(*) FROM PRODUCTION.SORDER
                                                                 WHERE ORDSTA_0 = 1 AND DLVSTA_0 = 1 AND XB_HLDSTA_0 <> 3
-                                                                AND SOHTYP_0 IN ('SON','SOP')").ToList();
+                                                                AND SOHTYP_0 IN ('SON','SOEXP')").ToList();
 
                 if (neworder.Count() > 0)
                 {
@@ -158,8 +158,8 @@ namespace Ticker.DataBase.Command
                                                                         where LOC_0 in ('NYWT','NYWH') and st1.ITMREF_0 = st.ITMREF_0)) as stock on stock.ITMREF_0 = shd.ITMREF_0
                                                                         where
                                                                         ORDSTA_0 = 2
-                                                                        and SOHTYP_0 in ('SON','SOP')
-                                                                        and ORDDAT_0 > DATEADD(DD,-7,GETDATE())
+                                                                        and SOHTYP_0 in ('SON','SOEXP')
+                                                                        and ORDDAT_0 > DATEADD(DD,-45,GETDATE())
                                                                         and so.XB_HLDSTA_0 <> 3
                                                                         and DLVSTA_0 = 3
                                                                         and sh.CFMFLG_0 = 1
@@ -206,8 +206,8 @@ namespace Ticker.DataBase.Command
                                                                         where LOC_0 in ('NYWT','NYWH') and st1.ITMREF_0 = st.ITMREF_0)) as stock on stock.ITMREF_0 = shd.ITMREF_0
                                                                         where
                                                                         ORDSTA_0 = 2
-                                                                        and SOHTYP_0 in ('SON','SOP')
-                                                                        and ORDDAT_0 > DATEADD(DD,-7,GETDATE())
+                                                                        and SOHTYP_0 in ('SON','SOEXP')
+                                                                        and ORDDAT_0 > DATEADD(DD,-45,GETDATE())
                                                                         and so.XB_HLDSTA_0 <> 3
                                                                         and DLVSTA_0 = 3
                                                                         and sh.CFMFLG_0 = 1
