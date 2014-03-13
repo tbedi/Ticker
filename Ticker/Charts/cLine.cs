@@ -27,7 +27,7 @@ namespace Ticker.Charts
                      Text = "TOTAL ORDERS BY WEEK",
 
                      Style = "color: 'Black', fontBold: 'true', fontSize: '15px',fontFamily: 'Arial'"
-                 })
+                 }).SetExporting(new Exporting{Enabled=false})
                  .SetXAxis(new XAxis
                  {
                      Categories = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },

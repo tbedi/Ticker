@@ -11,7 +11,7 @@ namespace Ticker.Forms.Pages
     public partial class frmWeekOrderTotalLineChart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {if(!IsPostBack)
             FillChart();
         }
         public void FillChart()
@@ -61,6 +61,11 @@ namespace Ticker.Forms.Pages
             catch (Exception)
             { }
             return _return;
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            FillChart();
         }
     }
 }

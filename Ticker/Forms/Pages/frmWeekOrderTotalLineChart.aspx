@@ -21,7 +21,7 @@
                     <asp:Literal ID="ltrWeekToatalLineChart" runat="server"></asp:Literal>
                 </ContentTemplate>
             </asp:UpdatePanel>
-           <%-- <asp:Timer ID="Timer1" runat="server" Interval="70000" OnTick="Timer1_Tick"></asp:Timer>--%>
+            <asp:Timer ID="Timer1" runat="server" Interval="70000" OnTick="Timer1_Tick"></asp:Timer>
         </div>
     </form>
 </body>

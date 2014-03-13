@@ -31,7 +31,7 @@ namespace Ticker.DataBase.Command
                                                                     INNER JOIN PRODUCTION.ITMMASTER itm ON itm.ITMREF_0 = soq.ITMREF_0 AND sop.LINTYP_0 <> 7
                                                                     WHERE  cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                     AND so.SOHTYP_0 IN ('SON','SOI','SOP')
-                                                                    GROUP BY itm.TCLCOD_0 ORDER BY [Category];").ToList();
+                                                                    GROUP BY itm.TCLCOD_0 ORDER BY [QtyOrdered];").ToList();
                 if (Catorder.Count() > 0)
                 {
                     foreach (var item in Catorder)
@@ -66,7 +66,7 @@ namespace Ticker.DataBase.Command
                                                                             INNER JOIN PRODUCTION.ITMMASTER itm ON itm.ITMREF_0 = soq.ITMREF_0
                                                                             WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                             AND so.SOHTYP_0 IN ('SON','SOI','SOP')
-                                                                            GROUP BY itm.TCLCOD_0 ORDER BY [Category];
+                                                                            GROUP BY itm.TCLCOD_0 ORDER BY [Amount];
                                                                             ").ToList();
                 if (Reugular.Count() > 0)
                 {

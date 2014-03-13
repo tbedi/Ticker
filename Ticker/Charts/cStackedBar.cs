@@ -165,7 +165,7 @@ namespace Ticker.Charts
             .SetYAxis(new YAxis
             {
                 Title = new YAxisTitle { Text = "", Style = "color: 'Black'" },
-                Labels = new YAxisLabels { Style = "color: 'Black',fontFamily: 'Arial'" }
+                Labels = new YAxisLabels { Style = "color: 'Black',fontFamily: 'Arial'", Formatter="function (){return '$'+ this.value}" }
             })
 
               .SetLegend(new Legend
