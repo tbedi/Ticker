@@ -47,21 +47,21 @@ td {
     text-align: center;
     
 }
-.boxStyleKey {
+.boxStyleKey1 {
     background:white;
-   width: 495px;
-    height: 460px;
+    width: 495px;
+    height: 230px;
     margin:5px;
     float:left;
     font-family:Arial,Verdana;
     -webkit-transition: all 1s;
     transition: all 1s ;
 }
-    .boxStyleKey .divInner {
-         background:white;
+    .boxStyleKey2 {
+   background:white;
    width: 495px;
-    height:240px;
-    margin:2px;
+    height:230px;
+    margin:5px;
     float:left;
     font-family:Arial,Verdana;
     -webkit-transition: all 1s;
