@@ -50,12 +50,15 @@ namespace Ticker.Charts
                  .SetYAxis(new YAxis
                  {
                      Title = new YAxisTitle { Text = "" },
+                     Min=0,
+                     Max=500,
+                     TickInterval=250
                  }).SetCredits(new Credits { Enabled = false })
                  .SetSeries(new[]
                    {
-                       new Series { Name = "This Week", Data = new Data(ThisWeek.ToArray()) , Color = ColorTranslator.FromHtml("#70C133"), PlotOptionsLine = new PlotOptionsLine{ LineWidth= 1,  }},
-                       new Series { Name = "Last Week", Data = new Data(LastWeek.ToArray()) , Color = ColorTranslator.FromHtml("#FF8000"), PlotOptionsLine = new PlotOptionsLine{ LineWidth= 1 }},
-                       new Series { Name = "Avg this Year", Data = new Data(lsYearAvg.ToArray()) , Color = ColorTranslator.FromHtml("#6E6E6E") , PlotOptionsLine = new PlotOptionsLine{  LineWidth= 1 , DashStyle = DashStyles.Dash}}
+                       new Series { Name = "This Week", Data = new Data(ThisWeek.ToArray()) , Color = ColorTranslator.FromHtml("#70C133"), PlotOptionsLine = new PlotOptionsLine{ LineWidth= 2, Marker= new PlotOptionsLineMarker{Radius=2}  }},
+                       new Series { Name = "Last Week", Data = new Data(LastWeek.ToArray()) , Color = ColorTranslator.FromHtml("#FF8000"), PlotOptionsLine = new PlotOptionsLine{ LineWidth= 2, Marker= new PlotOptionsLineMarker{Radius=2}  }},
+                       new Series { Name = "Avg this Year", Data = new Data(lsYearAvg.ToArray()) , Color = ColorTranslator.FromHtml("#6E6E6E") , PlotOptionsLine = new PlotOptionsLine{  LineWidth= 2 , DashStyle = DashStyles.Dash,Marker= new PlotOptionsLineMarker{Radius=2} }}
                    });
          
             return Chart;
