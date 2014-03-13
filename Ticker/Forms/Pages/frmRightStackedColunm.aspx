@@ -12,30 +12,29 @@
     <script src="../../Themes/js/jquery-2.0.2.js"></script>
      <link href="../../Themes/Css/ssResponsive.css" rel="stylesheet" />
 </head>
-<body>
-    <form id="form1" runat="server" style="width:500px; height:795px; overflow:hidden">
+<body style="width:500px; height:495px; overflow:hidden">
+    <form id="form1" runat="server" >
         <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-            <table style="width:495px; height:794px;">
+            <table style="width:495px; height:495px;">
                 <tr>
-                  
-                        <td style="vertical-align: top;">
-                            <asp:Label ID="Label11" runat="server" Text="▶▶ Partner Performance" Font-Size="X-Large" ForeColor="Black" Font-Bold="true" Font-Names="Arial" />
-                            <div class="leftSideBoxChart" style="width:500px; ">
-                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
-                                    <ContentTemplate>
-                                        <asp:Literal ID="ltrStackedColumnTop5Partner" runat="server"></asp:Literal>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                            <div class="leftSideBoxChart" style="width:500px;">
-                                <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel12" runat="server">
-                                    <ContentTemplate>
-                                        <asp:Literal ID="ltrTOPPartnerByOrder" runat="server"></asp:Literal>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-                            </div>
-                        </td>
+                    <td style="vertical-align: top;">
+                        <asp:Label ID="Label11" runat="server" Text="▶▶ Partner Performance" Font-Size="X-Large" ForeColor="Black" Font-Bold="true" Font-Names="Arial" />
+                        <div class="leftSideBoxChart" style="width: 500px;">
+                            <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel4" runat="server">
+                                <ContentTemplate>
+                                    <asp:Literal ID="ltrStackedColumnTop5Partner" runat="server"></asp:Literal>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                        <div class="leftSideBoxChart" style="width: 500px;">
+                            <asp:UpdatePanel ChildrenAsTriggers="false" UpdateMode="Conditional" ID="UpdatePanel12" runat="server">
+                                <ContentTemplate>
+                                    <asp:Literal ID="ltrTOPPartnerByOrder" runat="server"></asp:Literal>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </td>
                 </tr>
             </table>
 

@@ -19,15 +19,19 @@ namespace Ticker.Charts
                  .InitChart(new Chart
                  {
                      Type = ChartTypes.Line,
+                     Width = 495,
+                     Height = 270
                  })
                  .SetTitle(new Title
                  {
-                    Text = "Shipment Packing Count"
+                     Text = "TOTAL ORDERS BY WEEK",
+
+                     Style = "color: 'Black', fontBold: 'true', fontSize: '15px',fontFamily: 'Arial'"
                  })
                  .SetXAxis(new XAxis
                  {
-                        Categories = new string[]{"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"},
-                        Title = new XAxisTitle { Text = "" },
+                     Categories = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" },
+                     Title = new XAxisTitle { Text = "" },
 
                  }).SetPlotOptions(new PlotOptions
                  {
@@ -35,8 +39,8 @@ namespace Ticker.Charts
                      {
                          DataLabels = new PlotOptionsLineDataLabels
                          {
-                             Enabled=true,
-                             Y = -2,
+                             Enabled = true,
+                             Y = -4,
                              X = 10,
                              Style = "fontSize: '10px' ,color: 'Black',fontFamily: 'Arial'"
                          }
@@ -44,7 +48,8 @@ namespace Ticker.Charts
                  })
                  .SetYAxis(new YAxis
                  {
-                        Title = new YAxisTitle { Text = "Shipments packed" }
+                     Title = new YAxisTitle { Text = "" },
+                     Labels = new YAxisLabels { Enabled=false}
                  }).SetCredits(new Credits { Enabled = false })
                  .SetSeries(new[]
                    {

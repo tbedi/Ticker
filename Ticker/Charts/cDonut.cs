@@ -51,9 +51,10 @@ namespace Ticker.Charts
                 })
                 .SetCredits(new Credits
                 {
+                    Enabled = false,
                     Href = "http://www.kraususa.com/",
                     Text = "kraus USA Inc."
-                })
+                }).SetExporting(new Exporting { Enabled=false})
                 .SetTitle(new Title
                     {
 
@@ -73,7 +74,7 @@ namespace Ticker.Charts
                             Distance = 5,
                             Color = ColorTranslator.FromHtml("#fffff"),
                             ConnectorColor = ColorTranslator.FromHtml("#00000"),
-                            Style="FontName: 'Arial'",
+                            Style = "FontName: 'Arial'",
                             Formatter = "function() { return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage)+'%'; }"
                         },
                         Point = new PlotOptionsPiePoint
@@ -154,9 +155,10 @@ namespace Ticker.Charts
                     ZoomType = ZoomTypes.Xy,
                 }).SetCredits(new Credits
                 {
+                    Enabled = false,
                     Href = "http://www.kraususa.com/",
                     Text = "kraus USA Inc."
-                })
+                }).SetExporting(new Exporting { Enabled = false })
                 .SetTitle(new Title
                 {
 

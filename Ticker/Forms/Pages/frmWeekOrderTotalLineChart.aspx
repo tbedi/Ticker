@@ -15,7 +15,7 @@
 <body style="width:495px;">
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
-        <div style="" id="asdFlick" class="boxStyleKey"  >
+        <div style="" id="asdFlick" class="leftSideBoxChart"  >
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <asp:Literal ID="ltrWeekToatalLineChart" runat="server"></asp:Literal>
