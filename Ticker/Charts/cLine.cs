@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Web;
+using System.Runtime.InteropServices;
 
 namespace Ticker.Charts
 {
     public static class cLine
     {
 
-        public static Highcharts WeeklyTotalOrders(List<object>ThisWeek, List<object> LastWeek)
+        public static Highcharts WeeklyTotalOrders(List<object>ThisWeek, List<object> LastWeek ,[Optional, DefaultParameterValue(null)] List<Object> lsYearAvg )
         {
             Highcharts Chart = new Highcharts("Chart")
                  .InitChart(new Chart
@@ -39,22 +40,22 @@ namespace Ticker.Charts
                      {
                          DataLabels = new PlotOptionsLineDataLabels
                          {
-                             Enabled = true,
+                             Enabled = false,
                              Y = -4,
                              X = 10,
                              Style = "fontSize: '10px' ,color: 'Black',fontFamily: 'Arial'"
-                         }
+                         },
                      }
                  })
                  .SetYAxis(new YAxis
                  {
                      Title = new YAxisTitle { Text = "" },
-                     Labels = new YAxisLabels { Enabled=false}
                  }).SetCredits(new Credits { Enabled = false })
                  .SetSeries(new[]
                    {
                        new Series { Name = "This Week", Data = new Data(ThisWeek.ToArray()) , Color = ColorTranslator.FromHtml("#70C133")},
-                       new Series { Name = "Last Week", Data = new Data(LastWeek.ToArray()) , Color = ColorTranslator.FromHtml("#DF0101")}
+                       new Series { Name = "Last Week", Data = new Data(LastWeek.ToArray()) , Color = ColorTranslator.FromHtml("#007acc")},
+                       new Series { Name = "This Year", Data = new Data(lsYearAvg.ToArray()) , Color = ColorTranslator.FromHtml("#6E6E6E") , PlotOptionsLine = new PlotOptionsLine{ DashStyle= DashStyles.LongDash}}
                    });
          
             return Chart;

@@ -18,7 +18,7 @@ namespace Ticker.Forms.Pages
         {
             DataBase.Command.cmdClass cmd = new DataBase.Command.cmdClass();
             List<WeekOrederDTO> lsAllWeeks= cmd.GetWeekOrders();
-            ltrWeekToatalLineChart.Text = Charts.cLine.WeeklyTotalOrders(ThisWeekData(lsAllWeeks), lastWeekData(lsAllWeeks)).ToHtmlString();
+            ltrWeekToatalLineChart.Text = Charts.cLine.WeeklyTotalOrders(ThisWeekData(lsAllWeeks), lastWeekData(lsAllWeeks), YearDat(cmd.GetYearAvg())).ToHtmlString();
         }
 
         public List<Object> lastWeekData(List<WeekOrederDTO> lsData)
@@ -62,6 +62,35 @@ namespace Ticker.Forms.Pages
             { }
             return _return;
         }
+
+        public List<Object> YearDat(List<YearAvg> lsData)
+        {
+            List<Object> _lsreturn = new List<object>();
+            try
+            {
+
+                Object item = lsData.SingleOrDefault(i => i.DayName == "Monday").Avarage;
+                _lsreturn.Add(item);
+                Object item1 = lsData.SingleOrDefault(i => i.DayName == "Tuesday").Avarage;
+                _lsreturn.Add(item1);
+                Object item2 = lsData.SingleOrDefault(i => i.DayName == "Wednesday").Avarage;
+                _lsreturn.Add(item2);
+                Object item3 = lsData.SingleOrDefault(i => i.DayName == "Thursday").Avarage;
+                _lsreturn.Add(item3);
+                Object item4 = lsData.SingleOrDefault(i => i.DayName == "Friday").Avarage;
+                _lsreturn.Add(item4);
+                 Object item5 = lsData.SingleOrDefault(i => i.DayName == "Saturday").Avarage;
+                _lsreturn.Add(item5);
+                 Object item7 = lsData.SingleOrDefault(i => i.DayName == "Sunday").Avarage;
+                _lsreturn.Add(item7);
+            }
+            catch (Exception)
+            {}
+            return _lsreturn;
+        }
+
+
+
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {

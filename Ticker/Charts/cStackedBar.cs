@@ -158,7 +158,7 @@ namespace Ticker.Charts
                      //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','')+'.jpg)\"/></br></br>';}",
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/></br></br>';}",
                  }
 
              })
@@ -205,31 +205,27 @@ namespace Ticker.Charts
                 {
                     Colors = new Color[]
                     {
-                       // ColorTranslator.FromHtml("#F38630"),
                        ColorTranslator.FromHtml("#FFA24A"),
-                        ColorTranslator.FromHtml("#E0E4CC"),
-                        ColorTranslator.FromHtml("#69D2E7"),
-                        ColorTranslator.FromHtml("#661CCD"),
-                        ColorTranslator.FromHtml("#ED561B"),
-                        ColorTranslator.FromHtml("#DF7EE6"),
-                        ColorTranslator.FromHtml("#C79EF5"),
-                        ColorTranslator.FromHtml("#98C1F2"),
-                        ColorTranslator.FromHtml("#96EAF0"),
-                        ColorTranslator.FromHtml("#96F0CD"),
-                        ColorTranslator.FromHtml("#BDE996"),
-                        ColorTranslator.FromHtml("#EEF6B3"),
-                        ColorTranslator.FromHtml("#EED4BE"),
-                        ColorTranslator.FromHtml("#F28563"),
-                        ColorTranslator.FromHtml("#DB1FD2"),
-                        ColorTranslator.FromHtml("#F7464A"),
-                        ColorTranslator.FromHtml("#E2EAE9"),
-                        ColorTranslator.FromHtml("#D4CCC5"),
-                        ColorTranslator.FromHtml("#949FB1"),
-                        ColorTranslator.FromHtml("#4D5360"),
-                        ColorTranslator.FromHtml("#2DDD68"),
-                        
-                        //ColorTranslator.FromHtml("#"),
-
+                       ColorTranslator.FromHtml("#4D5360"),
+                       ColorTranslator.FromHtml("#E0E4CC"),
+                       ColorTranslator.FromHtml("#661CCD"),
+                       ColorTranslator.FromHtml("#ED561B"),
+                       ColorTranslator.FromHtml("#DF7EE6"),
+                       ColorTranslator.FromHtml("#C79EF5"),
+                       ColorTranslator.FromHtml("#98C1F2"),
+                       ColorTranslator.FromHtml("#EED4BE"),
+                       ColorTranslator.FromHtml("#96F0CD"),
+                       ColorTranslator.FromHtml("#BDE996"),
+                       ColorTranslator.FromHtml("#EEF6B3"),
+                       ColorTranslator.FromHtml("#B669E9"),
+                       ColorTranslator.FromHtml("#F28563"),
+                       ColorTranslator.FromHtml("#DB1FD2"),
+                       ColorTranslator.FromHtml("#F7464A"),
+                       ColorTranslator.FromHtml("#E2EAE9"),
+                       ColorTranslator.FromHtml("#D4CCC5"),
+                       ColorTranslator.FromHtml("#949FB1"),
+                       ColorTranslator.FromHtml("#96EAF0"),
+                       ColorTranslator.FromHtml("#2DDD68"),
                     }
                 });
             return chart;
@@ -281,7 +277,7 @@ namespace Ticker.Charts
                  { //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','')+'.jpg)\"/></br></br>';}",
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/></br></br>';}",
                  }
              })
             .SetYAxis(new YAxis
