@@ -53,9 +53,9 @@ namespace Ticker.Charts
                  }).SetCredits(new Credits { Enabled = false })
                  .SetSeries(new[]
                    {
-                       new Series { Name = "This Week", Data = new Data(ThisWeek.ToArray()) , Color = ColorTranslator.FromHtml("#70C133")},
-                       new Series { Name = "Last Week", Data = new Data(LastWeek.ToArray()) , Color = ColorTranslator.FromHtml("#007acc")},
-                       new Series { Name = "This Year", Data = new Data(lsYearAvg.ToArray()) , Color = ColorTranslator.FromHtml("#6E6E6E") , PlotOptionsLine = new PlotOptionsLine{ DashStyle= DashStyles.LongDash}}
+                       new Series { Name = "This Week", Data = new Data(ThisWeek.ToArray()) , Color = ColorTranslator.FromHtml("#70C133"), PlotOptionsLine = new PlotOptionsLine{ LineWidth= 1,  }},
+                       new Series { Name = "Last Week", Data = new Data(LastWeek.ToArray()) , Color = ColorTranslator.FromHtml("#FF8000"), PlotOptionsLine = new PlotOptionsLine{ LineWidth= 1 }},
+                       new Series { Name = "Avg this Year", Data = new Data(lsYearAvg.ToArray()) , Color = ColorTranslator.FromHtml("#6E6E6E") , PlotOptionsLine = new PlotOptionsLine{  LineWidth= 1 , DashStyle = DashStyles.Dash}}
                    });
          
             return Chart;
