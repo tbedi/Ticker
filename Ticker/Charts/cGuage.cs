@@ -43,7 +43,12 @@ namespace Ticker.Charts
                                                     }
                        })
 
-               }).SetCredits(new Credits { Enabled = false })
+               }).SetCredits(new Credits
+               {
+                   Enabled = false,
+                   Href = "http://www.kraususa.com/",
+                   Text = "kraus USA Inc."
+               }).SetExporting(new Exporting { Enabled = false })
                .SetTitle(new Title
                {
                    Text = "",
@@ -201,7 +206,12 @@ namespace Ticker.Charts
                                                     }
                    })
 
-               }).SetCredits(new Credits { Enabled = false })
+               }).SetCredits(new Credits
+               {
+                   Enabled = false,
+                   Href = "http://www.kraususa.com/",
+                   Text = "kraus USA Inc."
+               }).SetExporting(new Exporting { Enabled = false })
                .SetTitle(new Title
                {
                    Text = "",
@@ -356,7 +366,12 @@ namespace Ticker.Charts
                                                     }
                    })
 
-               }).SetCredits(new Credits { Enabled = false })
+               }).SetCredits(new Credits
+               {
+                   Enabled = false,
+                   Href = "http://www.kraususa.com/",
+                   Text = "kraus USA Inc."
+               }).SetExporting(new Exporting { Enabled = false })
                .SetTitle(new Title
                {
                    Text = "",
@@ -517,7 +532,12 @@ namespace Ticker.Charts
                                                     }
                    })
 
-               }).SetCredits(new Credits { Enabled = false })
+               }).SetCredits(new Credits
+               {
+                   Enabled = false,
+                   Href = "http://www.kraususa.com/",
+                   Text = "kraus USA Inc."
+               }).SetExporting(new Exporting { Enabled = false })
                .SetTitle(new Title
                {
                    Text = "",
@@ -679,7 +699,12 @@ namespace Ticker.Charts
                                                     }
                    })
 
-               }).SetCredits(new Credits { Enabled = false })
+               }).SetCredits(new Credits
+               {
+                   Enabled = false,
+                   Href = "http://www.kraususa.com/",
+                   Text = "kraus USA Inc."
+               }).SetExporting(new Exporting { Enabled = false })
                .SetTitle(new Title
                {
                    Text = "",

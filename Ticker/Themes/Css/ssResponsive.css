@@ -47,6 +47,7 @@ td {
     text-align: center;
     
 }
+
 .boxStyleKey1 {
     background:white;
     width: 495px;
@@ -134,7 +135,7 @@ td {
     float: left;
     background: white;
     width: 500px;
-    height: 365px;
+    height: 233px;
     -webkit-transition: all 1s;
     transition: all 1s;
 }

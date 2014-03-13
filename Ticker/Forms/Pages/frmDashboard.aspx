@@ -60,7 +60,6 @@
                 &nbsp</td>
             <td style="vertical-align: top;overflow:hidden;">
                 <asp:UpdatePanel ID="GuageUpdate" runat="server">
-
                     <ContentTemplate>
                         <iframe id="Guages" src="frmGuages.aspx" style="overflow:hidden;width:515px;height:799px;border:thin solid whiteSmoke; overflow:hidden;" ></iframe>
                     </ContentTemplate>
@@ -71,11 +70,17 @@
             <td style="vertical-align: top;">
                <asp:UpdatePanel runat="server" ID="updateStackedCulunm" >
                    <ContentTemplate>
-                       <iframe id="iStackedColunm" style="overflow:hidden;width:510px;height:798px;border:thin solid whitesmoke;" src="frmRightStackedColunm.aspx"></iframe>
+                       <iframe id="iStackedColunm" style="overflow:hidden;width:510px;height:500px;border:thin solid whitesmoke;" src="frmRightStackedColunm.aspx"></iframe>
                    </ContentTemplate>
-
+               </asp:UpdatePanel>
+                 <asp:UpdatePanel runat="server" ID="updatepanelWeeked" >
+                   <ContentTemplate>
+                       <iframe id="iWeekOrder" style="overflow: hidden; width: 510px; height: 350px; border: thin solid whitesmoke;" src="frmWeekOrderTotalLineChart.aspx"></iframe>
+                   </ContentTemplate>
                </asp:UpdatePanel>
             </td>
+            
+              
             <td style="vertical-align: bottom; width: 10px;">
                 &nbsp</td>
         </tr>

@@ -43,9 +43,10 @@ namespace Ticker.Charts
                  })
              }).SetCredits(new Credits
              {
+                 Enabled = false,
                  Href = "http://www.kraususa.com/",
                  Text = "kraus USA Inc."
-             })
+             }).SetExporting(new Exporting { Enabled = false })
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
@@ -125,7 +126,7 @@ namespace Ticker.Charts
              {
                  DefaultSeriesType = ChartTypes.Column,
                  Width = 500,
-                 Height = 360,
+                 Height = 223,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
@@ -137,9 +138,10 @@ namespace Ticker.Charts
                  })
              }).SetCredits(new Credits
              {
+                 Enabled = false,
                  Href = "http://www.kraususa.com/",
                  Text = "kraus USA Inc."
-             })
+             }).SetExporting(new Exporting { Enabled=false})
              .SetTitle(new Title
              {
                  Text = "TOP PARTNERS BY SALES",
@@ -249,7 +251,7 @@ namespace Ticker.Charts
              {
                  DefaultSeriesType = ChartTypes.Column,
                  Width = 500,
-                 Height = 360,
+                 Height = 223,
                  BackgroundColor = new BackColorOrGradient(new Gradient
                  {
                      LinearGradient = new[] { 0, 0, 0, 400 },
@@ -261,9 +263,10 @@ namespace Ticker.Charts
                  })
              }).SetCredits(new Credits
              {
+                 Enabled = false,
                  Href = "http://www.kraususa.com/",
                  Text = "kraus USA Inc."
-             })
+             }).SetExporting(new Exporting { Enabled = false })
              .SetTitle(new Title
              {
                  Text = "TOP PARTNERS BY # OF ORDERS",
