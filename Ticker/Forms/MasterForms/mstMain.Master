@@ -10,8 +10,8 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <form id="form1" runat="server">
+<body style="margin:0px; height:100%">
+    <form id="form1" runat="server" style="margin:0px; height:100%">
     <div >
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         

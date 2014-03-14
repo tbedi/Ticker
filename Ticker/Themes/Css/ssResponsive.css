@@ -10,15 +10,21 @@
 td {
     /*//border:thin solid Black*/
 }
+
+#maintbl {
+    height:100%;
+    width:100%;
+    margin:0px;
+}
+
 .ImageDiv {
-    height:40px;
-    width:50px;
-    /*background-image:url(../../Themes/Images/HomeClick.jpg) ;*/
+    height: 25px;
+    width: 50px;
     margin-top: 0px;
     vertical-align: top;
     background-size: contain;
-     background-repeat: no-repeat;
-  
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
 .HomeDivKey {
@@ -73,7 +79,7 @@ td {
     width: 500px;
     overflow:hidden;
     margin: 5px;
-    height: 365px;
+    height: 291px;
     float: left;
     font-family:Arial,Verdana;
     -webkit-transition: all 1s;

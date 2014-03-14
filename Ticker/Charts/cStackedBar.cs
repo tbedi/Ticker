@@ -188,10 +188,10 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -20,
+                         Y = -18,
                          UseHTML = true,
                          Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+'$'+this.y}",
-                         Style = "fontSize: '14px'"
+                         Style = "fontSize: '13px'"
                      },
                      BorderWidth = 2,
                      BorderColor = ColorTranslator.FromHtml("#FF6B00")
@@ -305,8 +305,8 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -20,
-                         //Style = "fontSize: '14px',fontFamily: 'Arial'",
+                         Y = -18,
+                         Style = "fontSize: '13px',fontFamily: 'Arial'",
                          UseHTML = true,
                          Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+this.y}",
                      },

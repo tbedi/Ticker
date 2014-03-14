@@ -12,7 +12,7 @@
     <script src="../../Themes/js/jquery-2.0.2.js"></script>
     <title></title>
 </head>
-<body style="width:495px;">
+<body style="width:250px;">
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <div style="" id="asdFlick" class="leftSideBoxChart"  >

@@ -50,7 +50,7 @@
                 <div class="BottomChartBOx" style="float: left;">
                     <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                         <ContentTemplate>
-                            <iframe id="iTopSKus" src="frmTopSKUs.aspx"  style="overflow:hidden;width:510px;height:300px; border:thin solid whiteSmoke;" ></iframe>
+                            <iframe id="iTopSKus" src="frmTopSKUs.aspx"  style="overflow:hidden;width:510px;height:280px; border:thin solid whiteSmoke;" ></iframe>
                           <%--  <asp:Literal ID="ltrStackedColumnTop5SKU" runat="server"></asp:Literal>--%>
                         </ContentTemplate>
                     </asp:UpdatePanel>
@@ -61,7 +61,7 @@
             <td style="vertical-align: top;overflow:hidden;">
                 <asp:UpdatePanel ID="GuageUpdate" runat="server">
                     <ContentTemplate>
-                        <iframe id="Guages" src="frmGuages.aspx" style="overflow:hidden;width:515px;height:799px;border:thin solid whiteSmoke; overflow:hidden;" ></iframe>
+                        <iframe id="Guages" src="frmGuages.aspx" style="overflow:hidden;width:515px;height:787px; border:thin solid whiteSmoke; overflow:hidden;" ></iframe>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </td>
@@ -75,12 +75,10 @@
                </asp:UpdatePanel>
                  <asp:UpdatePanel runat="server" ID="updatepanelWeeked" >
                    <ContentTemplate>
-                       <iframe id="iWeekOrder" style="overflow: hidden; width: 510px; height: 350px; border: thin solid whitesmoke;" src="frmWeekOrderTotalLineChart.aspx"></iframe>
+                       <iframe id="iWeekOrder" style="overflow: hidden; width: 510px; height: 282px; border: thin solid whitesmoke;" src="frmWeekOrderTotalLineChart.aspx"></iframe>
                    </ContentTemplate>
                </asp:UpdatePanel>
             </td>
-            
-              
             <td style="vertical-align: bottom; width: 10px;">
                 &nbsp</td>
         </tr>

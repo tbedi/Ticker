@@ -52,7 +52,7 @@ namespace Ticker.Charts
                      Title = new YAxisTitle { Text = "" },
                      Min=0,
                      Max=500,
-                     TickInterval=250
+                     TickInterval=100
                  }).SetCredits(new Credits { Enabled = false })
                  .SetSeries(new[]
                    {
