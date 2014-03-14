@@ -29,7 +29,7 @@ namespace Ticker.Forms.Pages
                 DateTime LastweekSratdate = DataBase.BL.ExtensionMethods.LastWeekStartDate();
                 DateTime LastWeekEndDate = LastweekSratdate.AddDays(7);
                 // List<WeekOrederDTO> lslastWeek = lsData.Where(i =>i.date>=LastweekSratdate && i.date<=LastWeekEndDate);
-                var v = (from ls in lsData
+                var v = (from ls in lsData.AsParallel()
                          where ls.date.Date >= LastweekSratdate.Date && ls.date.Date < LastWeekEndDate.Date
                          select ls).OrderBy(j => j.date).ToList();
 
@@ -49,7 +49,7 @@ namespace Ticker.Forms.Pages
             try
             {
                 DateTime thisweekStartDate = DataBase.BL.ExtensionMethods.LastWeekStartDate().AddDays(7);
-                var v = (from ls in lsData
+                var v = (from ls in lsData.AsParallel()
                          where ls.date.Date >= thisweekStartDate.Date
                          select ls).OrderBy(j => j.date).ToList();
 
