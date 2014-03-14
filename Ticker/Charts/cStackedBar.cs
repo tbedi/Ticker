@@ -52,7 +52,6 @@ namespace Ticker.Charts
              .SetTitle(new Title
                             {
                                 Text = "TOP SKU ORDERED BY QUANTITY",
-
                                 Style = "color: 'Black', fontBold: 'true', fontSize: '15px',fontFamily: 'Arial'"
                             }
                        )
