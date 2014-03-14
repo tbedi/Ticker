@@ -31,7 +31,7 @@ namespace Ticker.DataBase.Command
                                                                     INNER JOIN PRODUCTION.ITMMASTER itm ON itm.ITMREF_0 = soq.ITMREF_0 AND sop.LINTYP_0 <> 7
                                                                     WHERE  cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                     AND so.SOHTYP_0 IN ('SON','SOI','SOP')
-                                                                    GROUP BY itm.TCLCOD_0 ORDER BY [QtyOrdered];").ToList();
+                                                                    GROUP BY itm.TCLCOD_0 ORDER BY [QtyOrdered];").AsParallel().ToList();
                 if (Catorder.Count() > 0)
                 {
                     foreach (var item in Catorder)
@@ -67,7 +67,7 @@ namespace Ticker.DataBase.Command
                                                                             WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                             AND so.SOHTYP_0 IN ('SON','SOI','SOP')
                                                                             GROUP BY itm.TCLCOD_0 ORDER BY [Amount];
-                                                                            ").ToList();
+                                                                            ").AsParallel().ToList();
                 if (Reugular.Count() > 0)
                 {
                     foreach (var item in Reugular)
@@ -124,7 +124,7 @@ namespace Ticker.DataBase.Command
                                                                         GROUP BY so.SOHTYP_0) as a
                                                                         on soh.SOHTYP_0 = a.[OrderType]
                                                                         where soh.SOHTYP_0 IN ('SOPR','SOPRM','WRT')
-                                                                        ORDER BY [NoofPartsOrders] DESC;").ToList();
+                                                                        ORDER BY [NoofPartsOrders] DESC;").AsParallel().ToList();
                 if (parts.Count() > 0)
                 {
                     foreach (var item in parts)
@@ -152,7 +152,7 @@ namespace Ticker.DataBase.Command
             int Orders=0;
             try
             {
-                var Order = _x3v6.ExecuteStoreQuery<HoldOrder>(@"SELECT cast(COUNT(so.SOHNUM_0) as int) [NoofHoldOrders] FROM PRODUCTION.SORDER so WHERE so.ORDSTA_0 = 1 AND so.XB_HLDSTA_0 = 3 AND LTRIM(RTRIM(CCLREN_0)) = '';");
+                var Order = _x3v6.ExecuteStoreQuery<HoldOrder>(@"SELECT cast(COUNT(so.SOHNUM_0) as int) [NoofHoldOrders] FROM PRODUCTION.SORDER so WHERE so.ORDSTA_0 = 1 AND so.XB_HLDSTA_0 = 3 AND LTRIM(RTRIM(CCLREN_0)) = '';").AsParallel();
               foreach (var item in Order)
               {
                   Orders = item.NoofHoldOrders;
@@ -187,7 +187,7 @@ namespace Ticker.DataBase.Command
                                                                         WHERE cast(soq.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date) 
                                                                         AND so.SOHTYP_0 IN ('SON','SOI','SOP')
                                                                         GROUP BY soq.ITMREF_0, sop.ITMDES_0
-                                                                        ORDER BY [QtyOrdered] desc, [ProductID];").ToList();
+                                                                        ORDER BY [QtyOrdered] desc, [ProductID];").AsParallel().ToList();
                 if (top.Count() > 0)
                 {
                     foreach (var item in top)
@@ -228,7 +228,7 @@ namespace Ticker.DataBase.Command
                                                                         WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                         AND so.SOHTYP_0 IN ('SON','SOI','SOP')
                                                                         GROUP BY so.BPCORD_0, so.BPCNAM_0
-                                                                        ORDER BY [QtyOrdered] DESC, [Partner]; ").ToList();
+                                                                        ORDER BY [QtyOrdered] DESC, [Partner]; ").AsParallel().ToList();
 
                 if (partner.Count() > 0)
                 {
@@ -274,7 +274,7 @@ namespace Ticker.DataBase.Command
                                                                                                    and sh.CFMFLG_0 = 2 -- Validated
                                                                                    group by
                                                                                                    shd.SDHNUM_0
-                                                                                   ) as AllShipped").ToList();
+                                                                                   ) as AllShipped").AsParallel().ToList();
                                                                    
                 if (shipped.Count() > 0)
                 {
@@ -309,7 +309,7 @@ namespace Ticker.DataBase.Command
                                                                         WHERE cast(so.ORDDAT_0 as date)= cast(dateadd(d,0,getdate()) as date)
                                                                         AND so.SOHTYP_0 IN ('SON','SOI','SOP')
                                                                         GROUP BY so.BPCORD_0, so.BPCNAM_0
-                                                                        ORDER BY [QtyOrdered] DESC, [Partner]; ").ToList();
+                                                                        ORDER BY [QtyOrdered] DESC, [Partner]; ").AsParallel().ToList();
 
                 if (partner.Count() > 0)
                 {
@@ -332,7 +332,7 @@ namespace Ticker.DataBase.Command
             int todayorder = 0;
             try
             {
-               var order =_x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(SOHNUM_0) OrdersToday FROM PRODUCTION.SORDER WHERE CAST(ORDDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE) AND SOHTYP_0 IN ('SOI','SON','SOP')");
+               var order =_x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(SOHNUM_0) OrdersToday FROM PRODUCTION.SORDER WHERE CAST(ORDDAT_0 AS DATE) = CAST(DATEADD(D,0,GETDATE()) AS DATE) AND SOHTYP_0 IN ('SOI','SON','SOP')").AsParallel();
 
                if (order != null)
                    todayorder = Convert.ToInt32(order.FirstOrDefault().ToString());
@@ -348,7 +348,7 @@ namespace Ticker.DataBase.Command
             int yesterday = 0;
             try
             {
-               var orderyes =_x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(SOHNUM_0) OrdersYesterday FROM PRODUCTION.SORDER WHERE CAST(ORDDAT_0 AS DATE) = CAST(DATEADD(D,-1,GETDATE()) AS DATE) AND SOHTYP_0 IN ('SOI','SON','SOP')");
+               var orderyes =_x3v6.ExecuteStoreQuery<int>(@"SELECT COUNT(SOHNUM_0) OrdersYesterday FROM PRODUCTION.SORDER WHERE CAST(ORDDAT_0 AS DATE) = CAST(DATEADD(D,-1,GETDATE()) AS DATE) AND SOHTYP_0 IN ('SOI','SON','SOP')").AsParallel();
                if (orderyes != null)
                    yesterday = Convert.ToInt32(orderyes.FirstOrDefault().ToString());
             }
@@ -371,7 +371,7 @@ namespace Ticker.DataBase.Command
                                                                             AND CAST(ORDDAT_0 AS DATE) >= CAST(DATEADD(DD,-13,GETDATE()) AS DATE)
                                                                             AND CAST(ORDDAT_0 AS DATE) !> CAST(GETDATE() AS DATE)
                                                                             GROUP BY ORDDAT_0, DATENAME(DW,ORDDAT_0)
-                                                                            ORDER BY ORDDAT_0 DESC ").ToList();
+                                                                            ORDER BY ORDDAT_0 DESC ").AsParallel().ToList();
 
                 if (orderweek.Count() > 0)
                 {
@@ -409,7 +409,7 @@ namespace Ticker.DataBase.Command
                                                                             AND YEAR(ORDDAT_0) = YEAR(GETDATE())
                                                                             GROUP BY ORDDAT_0, DATENAME(DW,ORDDAT_0)
                                                                             ) AS D
-                                                                            GROUP BY DayName ").ToList();
+                                                                            GROUP BY DayName ").AsParallel().ToList();
 
                 if (orderweek.Count() > 0)
                 {
