@@ -26,6 +26,8 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_SKU_By_Ordered(List<TopQuantityOrdered> lstopQuantityorder)
         {
+            int MaxValue = Convert.ToInt32(lstopQuantityorder.Max(i => i.QtyOrdered) + 50);
+
             Highcharts chart = new Highcharts("StackedColumn")
              .InitChart(new Chart
              {
@@ -67,6 +69,7 @@ namespace Ticker.Charts
                  })
             .SetYAxis(new YAxis
                 {
+                    Max=MaxValue,
                     Labels = new YAxisLabels { Style = "color: 'Black'" },
                     Title = new YAxisTitle { Text = "", Style = "color: 'Black',fontBold: 'true',fontFamily: 'Arial'" }
                 })
@@ -120,6 +123,7 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_Partner_By_Sales(List<TopPartnerDTO> lstopPartner)
         {
+            int MaxValue =Convert.ToInt32(lstopPartner.Max(i=> i.QtyOrdered)+10000);
 
             Highcharts chart = new Highcharts("StackedColumnPartner")
              .InitChart(new Chart
@@ -158,14 +162,16 @@ namespace Ticker.Charts
                      //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/></br></br>';}",
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/>';}",
                  }
 
              })
             .SetYAxis(new YAxis
             {
+                Max = MaxValue,
                 Title = new YAxisTitle { Text = "", Style = "color: 'Black'" },
-                Labels = new YAxisLabels { Style = "color: 'Black',fontFamily: 'Arial'", Formatter="function (){return '$'+ this.value}" }
+                Labels = new YAxisLabels { Style = "color: 'Black',fontFamily: 'Arial'", Formatter = "function (){return '$'+ this.value}" },
+                
             })
 
               .SetLegend(new Legend
@@ -188,10 +194,10 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -18,
+                         Y = -15,
                          UseHTML = true,
-                         Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+'$'+this.y}",
-                         Style = "fontSize: '13px'"
+                         Formatter = "function() {return '<div style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</div>&nbsp;&nbsp;'+'$'+this.y}",
+                         Style = "fontSize: '13px'",
                      },
                      BorderWidth = 2,
                      BorderColor = ColorTranslator.FromHtml("#FF6B00")
@@ -242,6 +248,8 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_Partner_By_OrderCount(List<TopPartnerDTO> lstopPartnerByOrder)
         {
+            int MaxValue = Convert.ToInt32(lstopPartnerByOrder.Max(i => i.QtyOrdered) + 10);
+
             Highcharts chart = new Highcharts("StackedColumnPartnerByorderCount")
              .InitChart(new Chart
              {
@@ -277,11 +285,12 @@ namespace Ticker.Charts
                  { //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/></br></br>';}",
+                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/>';}",
                  }
              })
             .SetYAxis(new YAxis
             {
+                Max=MaxValue,
                 Title = new YAxisTitle { Text = "", Style = "color: 'Black',fontFamily: 'Arial'" },
                 Labels = new YAxisLabels { Style = "color: 'Black'" }
             })

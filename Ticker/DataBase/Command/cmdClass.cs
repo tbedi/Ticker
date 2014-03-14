@@ -394,22 +394,22 @@ namespace Ticker.DataBase.Command
             try
             {
                 var orderweek = _x3v6.ExecuteStoreQuery<YearAvg>(@"SELECT
-                                                                            DayName,
-                                                                            AVG(ORDERS) Avarage
-                                                                            FROM
-                                                                            (
-                                                                            SELECT
-                                                                            CAST(ORDDAT_0 AS DATE) DATE,
-                                                                            DATENAME(DW,ORDDAT_0) DayName,
-                                                                            COUNT(SOHNUM_0) ORDERS
-                                                                            FROM
-                                                                            PRODUCTION.SORDER
-                                                                            WHERE SOHTYP_0 IN ('SON','SOI','SOP')
-                                                                            AND CAST(ORDDAT_0 AS DATE) !> CAST(GETDATE() AS DATE)
-                                                                            AND YEAR(ORDDAT_0) = YEAR(GETDATE())
-                                                                            GROUP BY ORDDAT_0, DATENAME(DW,ORDDAT_0)
-                                                                            ) AS D
-                                                                            GROUP BY DayName ").AsParallel().ToList();
+                                                                        DayName,
+                                                                        AVG(ORDERS) Avarage
+                                                                        FROM
+                                                                        (
+                                                                        SELECT
+                                                                        CAST(ORDDAT_0 AS DATE) DATE,
+                                                                        DATENAME(DW,ORDDAT_0) DayName,
+                                                                        COUNT(SOHNUM_0) ORDERS
+                                                                        FROM
+                                                                        PRODUCTION.SORDER
+                                                                        WHERE SOHTYP_0 IN ('SON','SOI','SOP')
+                                                                        AND CAST(ORDDAT_0 AS DATE) !> CAST(DATEADD(DD,-1,GETDATE()) AS DATE)
+                                                                        AND YEAR(ORDDAT_0) = YEAR(GETDATE())
+                                                                        GROUP BY ORDDAT_0, DATENAME(DW,ORDDAT_0)
+                                                                        ) AS D
+                                                                        GROUP BY DayName ").AsParallel().ToList();
 
                 if (orderweek.Count() > 0)
                 {
