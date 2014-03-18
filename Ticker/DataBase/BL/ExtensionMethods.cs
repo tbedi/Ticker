@@ -178,5 +178,39 @@ namespace Ticker.DataBase.BL
             }
             return _rerurn;
         }
+
+        /// <summary>
+        /// Set the max stacked bar chart max vaue to avoide hiding of top labels.
+        /// </summary>
+        /// <param name="HighValue"></param>
+        /// <returns></returns>
+        public static int ConvertToMaxGraphValue(this int HighValue)
+        {
+            int DigitsCount = 1;
+            foreach (char item in HighValue.ToString())
+            {
+                DigitsCount = DigitsCount * 10;
+            }
+            if (DigitsCount >= 1000 && DigitsCount < 10000)
+            {
+                return HighValue + (DigitsCount / 10);
+            }
+            else if (DigitsCount >= 10000 && DigitsCount < 100000)
+            {
+                return HighValue + (DigitsCount / 20);
+            }
+            else if (DigitsCount >= 100000 && DigitsCount < 1000000)
+            {
+                return HighValue + (DigitsCount / 50);
+            }
+            else if (DigitsCount >= 1000000)
+            {
+                return HighValue + (DigitsCount / 60);
+            }
+            {
+                return HighValue + (DigitsCount / 4);
+            }
+        }
+
     }
 }

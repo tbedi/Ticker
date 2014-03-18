@@ -26,7 +26,7 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_SKU_By_Ordered(List<TopQuantityOrdered> lstopQuantityorder)
         {
-            int MaxValue = Convert.ToInt32(lstopQuantityorder.Max(i => i.QtyOrdered) + 50);
+            int MaxValue = Convert.ToInt32(lstopQuantityorder.Max(i => i.QtyOrdered)).ConvertToMaxGraphValue();
 
             Highcharts chart = new Highcharts("StackedColumn")
              .InitChart(new Chart
@@ -95,7 +95,7 @@ namespace Ticker.Charts
                                  Y = -20,
                                 // Style = "fontSize: '14px',fontFamily: 'Arial'",
                                  UseHTML = true,
-                                 Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+this.y}",
+                                 Formatter = "function() {return '<div style=\"width:50px;word-wrap:nowrap;font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</div>&nbsp;&nbsp;'+this.y}",
                                  Style = "fontSize: '14px'"
                              },
                          BorderWidth = 2,
@@ -122,7 +122,7 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_Partner_By_Sales(List<TopPartnerDTO> lstopPartner)
         {
-            int MaxValue =Convert.ToInt32(lstopPartner.Max(i=> i.QtyOrdered)+10000);
+            int MaxValue = Convert.ToInt32(lstopPartner.Max(i => i.QtyOrdered)).ConvertToMaxGraphValue();
 
             Highcharts chart = new Highcharts("StackedColumnPartner")
              .InitChart(new Chart
@@ -247,7 +247,7 @@ namespace Ticker.Charts
         /// </returns>
         public static Highcharts GetTop_5_Partner_By_OrderCount(List<TopPartnerDTO> lstopPartnerByOrder)
         {
-            int MaxValue = Convert.ToInt32(lstopPartnerByOrder.Max(i => i.QtyOrdered) + 10);
+            int MaxValue = Convert.ToInt32(lstopPartnerByOrder.Max(i => i.QtyOrdered)).ConvertToMaxGraphValue();
 
             Highcharts chart = new Highcharts("StackedColumnPartnerByorderCount")
              .InitChart(new Chart
@@ -314,9 +314,9 @@ namespace Ticker.Charts
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
                          Y = -18,
-                         Style = "fontSize: '13px',fontFamily: 'Arial'",
+                       //  Style = "'white-space': 'wrap',fontSize: '13px',fontFamily: 'Arial'",
                          UseHTML = true,
-                         Formatter = "function() {return '<p style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+this.y}",
+                         Formatter = "function() {return '<p style=\"width:50px;white-space: break-word; font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x +'</p>&nbsp;&nbsp;'+this.y}",
                      },
                      BorderWidth=2,
                      BorderColor = ColorTranslator.FromHtml("#FF6B00")
