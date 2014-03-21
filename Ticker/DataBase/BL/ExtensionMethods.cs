@@ -197,7 +197,7 @@ namespace Ticker.DataBase.BL
             }
             else if (DigitsCount >= 10000 && DigitsCount < 100000)
             {
-                return HighValue + (DigitsCount / 10);
+                return HighValue + (DigitsCount / 8);
             }
             else if (DigitsCount >= 100000 && DigitsCount < 1000000)
             {
@@ -208,7 +208,7 @@ namespace Ticker.DataBase.BL
                 return HighValue + (DigitsCount / 18);
             }
             {
-                return HighValue + (DigitsCount / 3);
+                return HighValue + (DigitsCount /4);
             }
         }
 
