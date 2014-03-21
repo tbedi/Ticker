@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
+     <script src="../../Themes/js/jquery-1.5.1.min.js"></script>
     <script src="../../Themes/js/highcharts.src.js"></script>
     <script src="../../Themes/js/highcharts-more.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>

@@ -235,6 +235,7 @@ namespace Ticker.DataBase.Command
                     foreach (var item in partner)
                     {
                         TopPartnerDTO partnertop = (TopPartnerDTO)item;
+                        item.Partner = item.Partner.Replace("'", "");
                         lspartner.Add(partnertop);
                     }
                 }
@@ -316,6 +317,7 @@ namespace Ticker.DataBase.Command
                     foreach (var item in partner)
                     {
                         TopPartnerDTO partnertop = (TopPartnerDTO)item;
+                        item.Partner = item.Partner.Replace("'", "");
                         lspartner.Add(partnertop);
                     }
                 }

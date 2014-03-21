@@ -10,11 +10,13 @@ using DotNet.Highcharts;
 using DotNet.Highcharts.Enums;
 using DotNet.Highcharts.Helpers;
 using DotNet.Highcharts.Options;
+using System.Web.Services;
 
 namespace Ticker.Charts
 {
     public class cStackedBar
     {
+
         /// <summary>
         /// This Method is for Stacked Column of Top 5 SKU By order.
         /// </summary>
@@ -62,7 +64,8 @@ namespace Ticker.Charts
                      //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"height:25px; background-image:url(../../Themes/Images/SKUimages/'+ this.value.replace(' ','').replace(',','')+'-1.jpg)\"/></br></br>';}",
+                     //Formatter = "function() { return '<div class=\"ImageDiv\" style=\"height:25px; background-image:url(../../Themes/Images/SKUimages/'+ this.value.replace(' ','').replace(',','')+'-1.jpg)\"/></br></br>';}",
+                     Formatter = "function() { return '<img class=\"ImageDivForSKU\" src=\"../../Themes/Images/SKUimages/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'-1.jpg\" alt=\"'+ this.value+'\">'}",
                  },
                      Categories = lstopQuantityorder.ToCatagorysListFromSKU()
                  })
@@ -92,10 +95,11 @@ namespace Ticker.Charts
                                  Color = ColorTranslator.FromHtml("#000000"),
                                  Align = HorizontalAligns.Center,
                                  VerticalAlign = VerticalAligns.Middle,
-                                 Y = -20,
+                                 Y = -8,
                                 // Style = "fontSize: '14px',fontFamily: 'Arial'",
                                  UseHTML = true,
-                                 Formatter = "function() {return '<div style=\"width:50px;word-wrap:nowrap;font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x.replace(' ','<br/>').replace('-','-<br/>') +'</div>&nbsp;&nbsp;'+this.y}",
+                               //  Formatter = "function() {return '<div style=\"width:50px;word-wrap:nowrap;font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x.replace(' ','<br/>').replace('-','-<br/>') +'</div>&nbsp;&nbsp;'+this.y}",
+                                 Formatter = "function() {return this.y}",
                                  Style = "fontSize: '14px'"
                              },
                          BorderWidth = 2,
@@ -161,7 +165,8 @@ namespace Ticker.Charts
                      //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/>';}",
+                   //  Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/>';}",
+                     Formatter = "function() { return '<img class=\"ImageDiv\" src=\"../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg\" alt=\"'+ this.value+'\"></br>'}",
                  }
 
              })
@@ -193,9 +198,10 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -25,
+                         Y = -8,
                          UseHTML = true,
-                         Formatter = "function() {return '<div style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x.replace(' ','<br/>').replace('.','.<br/>') +'</div>&nbsp;&nbsp;'+'$'+this.y}",
+                         //Formatter = "function() {return '<div style=\"font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x.replace(' ','<br/>').replace('.','.<br/>') +'</div>&nbsp;&nbsp;'+'$'+this.y}",
+                         Formatter = "function() {return '$'+this.y}",
                          Style = "fontSize: '13px'",
                      },
                      BorderWidth = 2,
@@ -248,7 +254,7 @@ namespace Ticker.Charts
         public static Highcharts GetTop_5_Partner_By_OrderCount(List<TopPartnerDTO> lstopPartnerByOrder)
         {
             int MaxValue = Convert.ToInt32(lstopPartnerByOrder.Max(i => i.QtyOrdered)).ConvertToMaxGraphValue();
-
+            
             Highcharts chart = new Highcharts("StackedColumnPartnerByorderCount")
              .InitChart(new Chart
              {
@@ -284,7 +290,9 @@ namespace Ticker.Charts
                  { //  Formatter = "function() { return this.labels; }",
                      Style = "color: 'Black',fontSize: '10px',fontFamily: 'Arial'",
                      UseHTML = true,
-                     Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/>';}",
+                    // Formatter = "function() { return '<div class=\"ImageDiv\" style=\"background-image:url(../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg)\"/></br>'} }",
+                     //formatter with the category in bellow.
+                     Formatter = "function() { return '<img class=\"ImageDiv\" src=\"../../Themes/Images/'+ this.value.replace(' ','').replace(',','').replace(' ','').replace(' ','').replace(' ','')+'.jpg\" alt=\"'+ this.value+'\"></br>'}",
                  }
              })
             .SetYAxis(new YAxis
@@ -313,10 +321,11 @@ namespace Ticker.Charts
                          Color = ColorTranslator.FromHtml("Black"),
                          Align = HorizontalAligns.Center,
                          VerticalAlign = VerticalAligns.Middle,
-                         Y = -25,
+                         Y = -8,
                        //  Style = "'white-space': 'wrap',fontSize: '13px',fontFamily: 'Arial'",
                          UseHTML = true,
-                         Formatter = "function() {return '<p style=\"width:50px;white-space: break-word; font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x.replace(' ','<br/>').replace('.','.<br/>') +'</p>&nbsp;&nbsp;'+this.y}",
+                        // Formatter = "function() {return '<p style=\"width:50px;white-space: break-word; font-size:10px;margin:0px;text-align:center; color:#764e0f\">'+ this.x.replace(' ','<br/>').replace('.','.<br/>') +'</p>&nbsp;&nbsp;'+this.y}",
+                         Formatter = "function() {return this.y}",
                      },
                      BorderWidth=2,
                      BorderColor = ColorTranslator.FromHtml("#FF6B00")
@@ -330,5 +339,7 @@ namespace Ticker.Charts
                        });
             return chart;
         }
+
     }
+
 }

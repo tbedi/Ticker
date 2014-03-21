@@ -193,22 +193,22 @@ namespace Ticker.DataBase.BL
             }
             if (DigitsCount >= 1000 && DigitsCount < 10000)
             {
-                return  HighValue + (DigitsCount / 5);
+                return  HighValue + (DigitsCount /3);
             }
             else if (DigitsCount >= 10000 && DigitsCount < 100000)
             {
-                return HighValue + (DigitsCount / 13);
+                return HighValue + (DigitsCount / 10);
             }
             else if (DigitsCount >= 100000 && DigitsCount < 1000000)
             {
-                return HighValue + (DigitsCount / 15);
+                return HighValue + (DigitsCount / 12);
             }
             else if (DigitsCount >= 1000000)
             {
-                return HighValue + (DigitsCount / 20);
+                return HighValue + (DigitsCount / 18);
             }
             {
-                return HighValue + (DigitsCount / 4);
+                return HighValue + (DigitsCount / 3);
             }
         }
 
